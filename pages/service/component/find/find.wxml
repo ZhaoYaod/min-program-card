@@ -1,0 +1,34 @@
+<view class="findBox">
+  <view class="set-hd">
+    <image class="user-img" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="user-desc">
+      <view class="user-name">
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <view class="user-new">新</view>
+        <view class="user-manage">管理员</view>
+      </view> 
+      <navigator url="page/doc-find/doc-find" class="navigator user-site">主体名称主体名称</navigator>
+    </view>
+  </view>
+  <view class="set-bd">
+    <view class="set-bd-title">权限设置</view>
+    <view class="set-bd-list">
+      <block wx:for="{{list}}" wx:key="{{item.id}}">
+        <view class="set-bd-item">
+          <view id="{{item.id}}" class="icon-isSelect  {{item.select ? 'icon-select' : '' }}"  bindtap="selectSet">
+            <!-- <view class="icon-select" wx:if="{{item.select}}">
+              <image class="icon-select-show" src="img/gou.png"></image>
+            </view> -->
+            
+          </view>
+          <view class="set-bd-item-text">{{item.text}}</view>
+        </view>  
+
+      </block>
+    </view>
+    <text class="setting-more">更多权限请登录【zuma.com】→【商家总台】设置</text>
+  </view>
+  <view class="set-foot">
+    <button bindtap="saveSet">保存</button>
+  </view>
+</view>

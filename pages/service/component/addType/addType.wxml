@@ -1,0 +1,58 @@
+<!--pages/my_product/my_product.wxml-->
+<!-- 登录页面 -->
+<login bind:myevent="onMyEvent" loginState='{{loginState}}' link="{{link}}"></login>
+
+<view class="search">
+ <view class="iconfont">
+    <image class="icon-sousuo" src="{{fangdajing}}" />
+  </view>
+  <view class="search-content">
+   <view class="img-swiper" style="width:{{scrollViewWidth}}rpx" >
+    <scroll-view scroll-x class="scroll-view" scroll-left="{{(scrollLeft)}}" style="white-space:nowrap"  scroll-with-animation="true">
+         <view wx:for="{{list}}" wx:key="index" class="img-swiper-item" wx:if="{{item.isCheck}}" bindtap="delList" data-index="{{index}}">
+          <image mode='aspectFill' class="swiper-img"
+            src="{{item.fGoodsImgUrl ? item.fGoodsImgUrl :noImg}}">
+          </image>
+        </view>
+    </scroll-view>
+    </view>
+    <input bindinput="searchKey" data-type='product' value="{{inputVal}}" 
+      placeholder="  {{type+'名称'}}" placeholder-style="color:#C4C4C4" class="search-ipt" style="width:{{421.2-scrollViewWidth}}rpx;left:{{scrollViewWidth}}rpx"></input>
+  </view>
+  <button class="btn-addtocard {{blueBg?'btn-addtocard-bg1':'btn-addtocard-bg2'}}" bindtap="addToList">
+    <image wx:if="{{!btnTextIsShow && btnImgIsLoad}}" mode='aspectFill' class="btn-add-img btn-add-img-rotate" src="{{imgUrl+'shuaxin.png'}}" />
+  <image wx:if="{{!btnTextIsShow && !btnImgIsLoad}}"  class="btn-add-img" src="{{imgUrl+'gou.png'}}"  />
+  
+    <text wx:if="{{btnTextIsShow}}" class="" selectable="false" space="false" decode="false"> +添加到名片</text>
+  </button>
+</view>
+<view class="add-product" bindtap='addClick'>
+  <text>+ 添加新{{type}}</text>
+  <view class="iconfont icon-jiantou2">
+    <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+  </view>
+</view>
+<text class="noMoreProduct" wx:if="{{resData.length == 0}}">暂时没有{{type}}</text>
+<text class="noMoreProduct" wx:if="{{!serachNoOne}}" selectable="false" space="false" decode="false">没有搜索到相关{{type}}</text>
+  
+<scroll-view scroll-y="true" wx:if="{{!upRoadingRotate}}" class="scroll-item">
+  <view wx:for="{{list}}" wx:key="index" data-index="{{index}}" wx:if="{{item.isShow}}"
+    class="product-item {{showA[index] ?'product-item-selected':''}}" catchtap="productSelect">
+    <view class="check-radio {{item.isCheck ?'check-radio-bg':''}}">
+    </view>
+    <image mode='aspectFill' src="{{item.fGoodsImgUrl}}" class="product-item-image" wx:if="{{item.fGoodsImgUrl}}"></image>
+    <view class="item-box" style="left:{{item.fGoodsImgUrl ?'230.4rpx': '86.58rpx' }};width:{{item.fGoodsImgUrl ?'475.02rpx':'627.12rpx'}}">
+      <rich-text class='product-item-title' nodes="{{item.fGoodsName}}" style="top:{{item.fGoodsImgUrl ?'21.6rpx': '35.1rpx'}};height:{{type=='文章' ? '42.12rpx' : '81.9rpx'}}"></rich-text>
+      <rich-text wx:if="{{item.fGoodsContentShow}}" class='product-item-content' nodes="{{item.fGoodsContent}}" style="top:{{item.fGoodsImgUrl ?'65.52rpx': '75.52rpx'}};height:{{type=='文章' ? '42.12rpx' : '81.9rpx'}}"></rich-text>
+      <view class="product-item-price">
+        <text wx:if="{{type=='产品' || type=='服务'}}" style="font-size:23.4rpx">¥</text>
+        <text wx:if="{{type=='产品' || type=='服务'}}" class="product-item-price-text">{{item.fGoodsPrice/100}}</text>
+        <text  wx:if="{{type=='文章'}}" class="product-item-price-text" style="color:#bbbbbb">{{item.fCreateTime}}</text> 
+      </view>
+      <text class="product-item-subName">来自{{item.fEntrepName}}</text>
+    </view>
+    <view class="item-bottom-line"></view>
+  </view>
+
+</scroll-view>
+<warnBox id="myComponent" title="{{title}}" warnFlash="{{warnFlash}}" hideModal="{{hideModal}}"></warnBox>

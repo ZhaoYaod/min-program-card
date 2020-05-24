@@ -1,0 +1,284 @@
+/* pages/scan/scan.wxss */
+
+/*隐藏滚动条*/
+@import "./scanicon.wxss";
+
+cover-view {
+  line-height: inherit;
+}
+
+.create-container {
+  width: 100%;
+  background-color: #808080;
+  height: 100%;
+  position: fixed;
+}
+
+.create-box {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.create-take-card {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  /* padding-left: 117rpx;
+  padding-right: 117rpx; */
+  box-sizing: border-box;
+}
+
+.create-take-box {
+  width: 514.8rpx;
+  height: 720.92rpx;
+  display: flex;
+  /* margin: 50.82rpx auto 30.44rpx; */
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  margin-left: -257.4rpx;
+  /* border: 70.2rpx solid transparent; *//* background-color: white; */
+}
+
+.create-take-text {
+  font-size: 23.4rpx;
+  color: white;
+  /* padding-top: 28.08rpx;
+  padding-bottom: 35.1rpx; */
+  position: absolute;
+  left: -120rpx;
+  top: 35%;
+  transform: rotate(90deg);
+}
+
+.btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: 201.24rpx;
+  position: absolute;
+  padding-left: 170.82rpx;
+  padding-right: 170.82rpx;
+  padding-bottom: 28.08rpx;
+  box-sizing: border-box;
+  font-size: 30.42rpx;
+  color: white;
+  font-weight: bold;
+  left: 0;
+}
+
+.btn {
+  width: 117rpx;
+  height: 117rpx;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* position: absolute;
+  left: 50%;
+  margin-left: -70.2rpx; */
+}
+
+.takePhoto {
+  height: inherit;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: baseline;
+  position: relative;
+  padding-bottom: 30.42rpx;
+  box-sizing: border-box;
+}
+
+.takePhotoImg {
+  width: 81.9rpx;
+  height: 63.18rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 86.58rpx;
+  transform: translateX(-50%);
+}
+
+.confirm {
+  padding-bottom: 30.42rpx;
+  box-sizing: border-box;
+}
+
+.textPhoto {
+  width: 100%;
+  text-align: center;
+  padding-top: 11rpx;
+  box-sizing: border-box;
+}
+
+.text {
+  border: 6.68rpx solid #1081ff;
+  width: 98.28rpx;
+  height: 98.28rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: 0.3s all;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* position: relative; */
+}
+
+.check {
+  /* width: 80.86rpx;
+  height: 67.86rpx; *//* font-weight: bold; *//* line-height: 67.86rpx; *//* text-align: center; *//* color: #1081ff; *//* position: absolute;
+  left: -10%;
+  margin-left: -40.43rpx;
+  margin-top: -33.93rpx;
+  font-size: 90.86rpx;
+  animation: mytext 0.5s linear both;
+  transition: 0.3s all; */
+  width: 50rpx;
+  height: 35rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nocheck {
+  width: 0;
+}
+
+@keyframes mytext {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 80.86rpx;
+  }
+}
+
+.create-footer {
+  width: 100%;
+  height: 112.32rpx;
+  background-color: #000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  padding-left: 117rpx;
+  padding-right: 117rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.create-footer-box {
+  width: 121.68rpx;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.create-text {
+  display: block;
+  width: 100%;
+  font-size: 23.4rpx;
+  padding-top: 11.7rpx;
+}
+
+.create-check {
+  color: #1081ff;
+}
+
+/* 扫小程序码; */
+
+.create-sweep-card {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 283.14rpx;
+}
+
+.create-sweep-box {
+  width: 514.8rpx;
+  height: 514.8rpx;
+  background-color: white;
+}
+
+.create-sweep-text {
+  font-size: 23.4rpx;
+  color: white;
+  padding-top: 28.08rpx;
+}
+
+.box {
+  width: 580.32rpx;
+  background: #fff;
+  border-radius: 11.7rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* margin-left: -290.16rpx; */
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  box-sizing: border-box;
+  height: 163.8rpx;
+  line-height: 163.8rpx;
+  padding: 0rpx 46.8rpx 0rpx 46.8rpx;
+  font-size: 32.76rpx;
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  font-weight: normal;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  color: #474747;
+  text-align: center;
+}
+
+.contentBorder {
+  height: 2.34rpx;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.btnff {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 52rpx;
+  box-sizing: border-box;
+  flex-direction: column;
+  height: 117rpx;
+  line-height: 117rpx;
+  overflow: hidden;
+  align-items: center;
+}
+
+.btnff cover-view {
+  width: 100%;
+  font-size: 32.76rpx;
+  text-align: center;
+  font-weight: bold;
+  height: 117rpx;
+  line-height: 117rpx;
+}

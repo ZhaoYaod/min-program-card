@@ -1,0 +1,369 @@
+page{
+  box-sizing: border-box;
+  padding-bottom: 48px;
+  background-color: #F8FAFB;
+}
+.cardlist{
+  margin-bottom: 44.46rpx;
+}
+.plus{
+  height: 46rpx;
+  width: 46rpx;
+  position: absolute;
+  right: 35rpx;
+  top: 29rpx;
+}
+/* 名片列表 */
+.cardcount{
+  padding: 0 23.4rpx;
+  font-size: 28rpx;
+  height: 107.64rpx;
+  line-height: 107.64rpx;
+  color: #474747;
+  border-bottom: 12rpx solid #f2f2f2;
+  background-color: #fff;
+}
+.mycard{
+  position: relative;
+  font-size: 23.4rpx;
+  color: #949494;
+  border-top: 1px solid #f2f2f2;
+  padding: 23.4rpx;
+  height: 164.46rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.cavatar{
+  width: 117rpx;
+  height: 117rpx;
+  margin-right: 23.4rpx;
+  border-radius: 10rpx;
+  float: left;
+  background-color: #ccc;
+}
+.new{
+  position: absolute;
+  top: 9rpx;
+  left: 113rpx;
+  width: 37.44rpx;
+  height: 37.44rpx;
+  line-height: 37.44rpx;
+  text-align: center;
+  border-radius: 18rpx;
+  color: #fff;
+  background-color: #ff0066;
+}
+.ctitle{
+  font-size: 28rpx;
+  /* margin-bottom: 4rpx; */
+  white-space: nowrap;
+  width: 416rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #A1A1A1;
+}
+.cn{
+  display: inline-block;
+  height:40rpx;
+}
+.cname{
+  font-size: 32.76rpx;
+  color: #122F46;
+  display: inline-block;
+  max-width: 230rpx;
+  line-height: 32.76rpx;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.ctag{
+  /* transform: translateY(-1rpx); */
+  display: inline-block;
+  line-height: 40rpx;
+  padding: 0rpx 8rpx;
+  font-size: 23.4rpx;
+  border-radius: 5rpx;
+  color: #718290;
+  background-color: #f2f2f2;
+  margin-left: 22rpx;
+  max-width: 140rpx;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cother{
+  font-size: 23.4rpx;
+  color: #bbb;
+}
+.b_box{
+  height:100%
+}
+.hiddenblock{
+  margin-top: 321rpx; 
+  position: relative;
+  left: 50%;
+  width: 374.4rpx;
+  margin-left: -187rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cfiles{
+  height: 140rpx;
+  width: 140rpx;
+}
+.hiddentext{
+  font-size: 28rpx;
+  color: #6292A6;
+  margin-bottom: 74rpx;
+}
+.cme{
+  margin: 0 auto;
+  width: 421.2rpx;
+  height: 84.24rpx;
+  line-height: 84.24rpx;
+  font-size: 32.76rpx;
+  background-color: #1081FF;
+  color: #fff;
+  text-align: center;
+  border-radius: 9.36rpx;
+}
+.sendcard{
+  position: absolute;
+  right: 23.4rpx;
+  top: 51.48rpx;
+}
+.sendcard>view{
+  width: 140.4rpx;
+  height: 60.84rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  background-color: #1081FF;
+  color: #fff;
+  overflow: hidden;
+}
+.sendbtn{
+  border:1rpx solid #1081FF !important;
+  background-color:#fff !important;
+  color:#1081FF !important;
+  /* color: #1081FF!important; */
+  /* background-color: #F2F2F2!important; */
+}
+.anim{
+  font-size: 50rpx;
+  font-family: '黑体';
+  font-weight: 700;
+  animation: changewidth 0.7s linear;
+  overflow: hidden;
+}
+.anim image{
+  width:50rpx;
+  height: 46rpx;
+}
+@keyframes changewidth
+{
+from {width:0rpx;}
+to {width:50rpx;}
+}
+.animbox{
+  width: 50rpx;
+  /* transform: rotate(19deg); */
+}
+.functab{
+  position: absolute;
+  top: 53.82rpx;
+  left: 280rpx;
+  font-size: 28rpx;
+  color: #515151;
+  background-color: #fff;
+  z-index: 10;
+  box-shadow: 0px 0px 5px #ccc;
+  padding-left: 23.4rpx;
+  border-radius: 8rpx;
+}
+.functab view{
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 234rpx;
+}
+/* .functab view{
+  height: 77.22rpx;
+  line-height: 77.22rpx;
+  width: 234rpx;
+} */
+.shade{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0)
+}
+.functabshow{
+  background-color: #f2f2f2!important;
+}
+.mask {
+  padding-left: 4.68rpx;
+  padding-right: 4.68rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+.scan-box {
+  background-color: white;
+  height: 629.46rpx;
+  position: fixed;
+  bottom: 0;
+  left:4.68rpx;
+  right:4.68rpx;
+  border-top-left-radius: 14.04rpx;
+  border-top-right-radius: 14.04rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32.76rpx;
+  color:#797979;
+  text-align: left;
+  box-sizing: border-box;
+  padding-top:30rpx;
+  z-index: 9;
+  animation: sflash 0.2s linear both;
+}
+@keyframes sflash {
+  from {
+    height: 0;
+    bottom: -629.46rpx;
+  }
+
+  to {
+    height: 629.46rpx;
+    bottom: 0rpx;
+  }
+}
+.scan-box button{
+  font-size: 32.76rpx;
+  color: #797979;
+  text-align: left;
+  width: 100%;
+  padding-left: 53.82rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  background-color: white;
+}
+.scan-box button::after{
+  border: 0;
+}
+/* .scan-createcards{
+  width: 100%;
+  padding-left: 53.82rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  background-color: white;
+}
+.scan-mycards{
+  width: 100%;
+  padding-left: 53.82rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  background-color: white;
+} */
+.seachPoint{
+  position: relative;
+  top:40vh;
+  width:70.2rpx;
+  height: 70.2rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  color: rebeccapurple;
+  animation: headRotate 1s linear infinite;
+  display: block;
+}
+@keyframes headRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+.numbtn{
+  background-color: rgba(0,0, 0, 0);
+}
+.numbtn::after{
+  border: 0;
+}
+
+
+
+/*弹框样式*/
+
+.box{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  overflow: hidden
+}
+.box1{
+  height: 318.24rpx;
+  width: 580.32rpx;
+  background: #fff;
+  border-radius: 11.7rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-100%);
+}
+.contnet{
+  box-sizing: border-box;
+  height: 219.96rpx;
+  border-bottom: solid 1px #F2F2F2;
+  padding: 79.56rpx 40rpx 0rpx 40rpx;
+  font-size: 32.76rpx;
+  text-align: center;
+}
+.contnet>text{
+  line-height: 46.8rpx;
+  color: #474747
+
+}
+.btn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 52rpx;
+  height: 98.28rpx;
+  overflow: hidden;
+}
+.btn .l,.r{
+  box-sizing: border-box;
+  font-size: 32.76rpx;
+  height: 100%;
+  line-height:98.28rpx;
+}
+.btn .center{
+  height: 100%;
+  border: solid 2.34rpx #F2F2F2
+}
+.wxPublic{
+  position: fixed;
+  bottom:58px;
+  width:93%;
+  margin:0 3.5% 0 3%;
+}
+.wxPublicIPhone{
+  position: fixed;
+  bottom:98px;
+  width:93%;
+  margin:0 3.5% 0 3%;
+}
+.marB100{
+  margin-bottom: 100px;
+}

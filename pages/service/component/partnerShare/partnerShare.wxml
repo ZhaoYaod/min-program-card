@@ -1,0 +1,45 @@
+<!--pages/service/component/partnerShare/partnerShare.wxml-->
+<view class="custom-title" style='height: {{status+navHeight}}px;color:#fff;background-color:#1081ff;'>
+    <view class='cstatus' style='height: {{status}}px;color:#fff'></view>
+    <view class='cnavbar' style='height:{{navHeight}}px;color:#fff'>
+        <view  class='back-icon' bindtap='backtCard'>
+            <image src="{{cardLogo}}" />
+            <text>族蚂名片</text>
+        </view>
+        <view class='nav-title'>
+            <text class='nav-titleText'>合伙人邀请</text>
+        </view>
+    </view>
+</view>
+<view class="share-bg"
+    style="height:{{winHeight-navHeight-status}}px;background-size:100% {{winHeight-navHeight-status}}px;background-image:url({{shareBg}})">
+    <view class="share-head">
+        <text>#诚邀您加入#</text>
+        <text>{{fName}}</text>
+    </view>
+    <view class="share-content">
+        <view class="share-info">
+            <image src='{{img}}' />
+            <view class="infor-text">
+                <text>来自{{name}}的邀请</text>
+                <text>{{phone}}</text>
+            </view>
+        </view>
+        <view class="share-text">
+            <view>
+                <image src="{{yinhao}}" />
+                <text class="" selectable="false" space="false" decode="false">成为合伙人，共享主体资源：</text>
+            </view>
+            <text class="" selectable="false" space="false" decode="false">—  管理、使用主体产品、服务、文章</text>
+            <text class="" selectable="false" space="false" decode="false">—  族蚂名片快速搭建品牌微店</text>
+            <text class="" selectable="false" space="false" decode="false">—  名片雷达裂变获客，赋能传统销售</text>
+
+        </view>
+        <view class="share-button" bindtap="buttonClick">
+            <image class="animation-img" src="{{shareButton}}" />
+        </view>
+    </view>
+</view>
+<login bind:myevent="onMyEvent" loginState='{{loginState}}'  link="{{link}}"></login>
+<popup wx:if="{{showPop}}" bind:leftBtn="cancel" bind:rightBtn="confirm" contentTit="{{contentTit}}"  leftBtnTit="{{leftBtnTit}}" rightBtnTit='{{rightBtnTit}}' leftcolor='{{leftcolor}}' rightcolor='{{rightcolor}}' direction="{{direction}}" contColor="{{contColor}}" textAlign="{{textAlign}}" leftWeight="{{leftWeight}}" btnFsize="{{btnFsize}}" rightWeight="{{rightWeight}}"></popup>
+  <warnBox id="myComponent" title="{{title}}" warnFlash="{{warnFlash}}" hideModal="{{hideModal}}"></warnBox>

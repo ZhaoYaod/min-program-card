@@ -1,0 +1,18 @@
+<view wx:if="{{activity}}" class="activity_box">
+    <view wx:if="{{!share}}">
+        <image class="activity1" src="{{imgurl+'activity1.png'}}"></image>
+        <!-- <image class="close" src="{{imgurl+'close.png'}}" bindtap="hidden"></image> -->
+        <image class="close" src="{{imgurl+'close.png'}}" bindtap="hidden"></image>
+    </view>
+    <image wx:if="{{ share}}" class="activity2" src="{{imgurl+'activity2.png'}}" bindtap="creat"></image>
+    <view class="shade" bindtap="hidden"></view>
+    
+    <button wx:if="{{!share}}" open-type="{{isClick ? 'share' : '' }}" data-name="activity" class="sharebtn" bindtap="buttonClick" bindgetRedPacket="getRedPacket">分享</button>
+    <!-- 组件 -->
+    <!-- <official-account></official-account> -->
+    <login bind:myevent="onMyEvent" loginState="{{loginState}}"  link="{{link}}"></login>
+</view>
+
+  <scan wx:if="{{scan}}" showModal="{{scan}}" bindtap="onscan"></scan>
+
+

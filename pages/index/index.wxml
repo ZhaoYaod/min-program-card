@@ -1,0 +1,114 @@
+<view wx:if="{{!lodeShow}}">
+  <view class="bigB" id="bigB" style="width:100%;height:{{windowHeight}}px" catchtap="menuClick">
+    <!-- ltt -->
+    <login bind:compontpass="compontpass" bind:myevent="myEvent" loginState ='{{loginState}}'  link="{{link}}"></login>
+    <scroll-view class="land"  catchtap="menuClick" scroll-y style="height:{{windowHeight-48}}px" scroll-with-animation="{{scrollAnimation}}" scroll-into-view="{{letter}}">
+      <view id="scrollH">
+        <view id="topC" class="topC">
+          <!-- 搜索框 -->
+          <view class="search">
+            <view class="searchC" catchtap="searchFocus">
+            <view class="searchIcon iconfont icon-sousuo"></view>
+            姓名/公司名/手机号/标签</view>
+          </view>
+          <view class="addMp" catchtap="addCard">+添加</view>
+
+          <!-- 微信好友，手机通讯录，名片雷达  -->
+          <view class="menuBox" bindtap="menuClick">
+            <view class="eachMenu" catchtap="loadClick">
+              <button class="shareButton {{isload?'':'isShowDOM'}}" data-name="shareBtn" open-type="share"></button>
+              <view class="menuImg1">
+                <image mode="aspectFill" style="width:100%;height:100%" src="{{imgArr[0]}}"></image>
+              </view>
+              <view class="menuText">邀请微信好友创建名片</view>
+              <!-- <view class="more iconfont icon-arr-right"></view> -->
+              <view class="more">
+                <image mode="aspectFill" class="pointI" src="{{imgArr[3]}}"></image>
+              </view>
+            </view>
+
+            <view class="eachMenu radar" catchtap="toRadar">
+              <view class="menuImg3">
+                <image mode="aspectFill" class="pointI" src="{{imgArr[1]}}"></image>
+              </view>
+              <view class="menuText">名片雷达</view>
+            </view>
+
+          </view>
+        </view>
+        <!-- 按首字母拼音排序 -->
+        <view class="allList {{forMarkList.length>0?'':'allList2'}}" catchtap="menuClick">
+          <!-- 没有数据时 -->
+          <view class="lineAll" wx:if="{{forMarkList.length==0}}"></view>
+          <view class="pointAll" wx:if="{{forMarkList.length==0}}">
+            <image mode="aspectFill" class="pointI" src="{{imgArr[2]}}"></image>
+          </view>
+          <view class="textAll" wx:if="{{forMarkList.length==0}}">您目前没有收藏任何名片！</view>
+
+          <!--有数据时 按首字母拼音排序 -->
+          <scroll-view class="ziMuList">
+            <view class="ziMuEachList {{index==(forMarkList.length-1)?'last-ele':''}}" wx:for="{{forMarkList}}" wx:key="index">
+              <view class="letterC {{item.letter}}" id="{{item.letter=='#'?'lastOne':item.letter}}" catchtap="cardLetterClick">{{item.letter}}</view>
+              <view class="eachDetail {{item2.bgs?'longClickBGC':''}}" wx:for="{{item.data}}" wx:for-item="item2" wx:key-index="id" wx:key="id" data-ele="{{item2}}" catchlongpress="cardLongtap" catchtap="cardClick" data-index="{{index}}" data-letter="{{item.letter}}" data-phone="{{item2.fOtherId}}" data-fnum="{{item2.fNum}}">
+                <view class="imgBox2">
+                  <image mode="aspectFill" class="realImg pClass1" src="{{item2.fCardPics[2]}}"></image>
+                  <image mode="aspectFill" class="realImg pClass2" src="{{item2.fCardPics[1]}}"></image>
+                  <image mode="aspectFill" class="realImg pClass3" src="{{item2.fCardPics[0]}}"></image>
+                </view>
+                <view class="TextBox2 {{item2.bgs?'noBorder':''}}">
+                  <view class="TextBox2T1"><text style="color:#000">{{item2.fCardName}}</text><text class="textC2">有{{item2.fNum}}张名片</text></view>
+                  <view class="TextBox2T2">{{item2.fCardTags}}</view>
+                </view>
+                <!-- 弹出框1 -->
+                <!-- <view class="dialog1" wx:if="{{dialogObj.box1Show==index&&dialogObj.letter==item.letter&&!dialogObj.box2Show&&item2.fNum==1}}"> -->
+                <view class="dialog1 {{isChange?'dT':'dT2'}}" id="dialog1" wx:if="{{dialogObj.box1Show==index&&dialogObj.letter==item.letter}}">
+                  <view class="dialog1T1 {{colorChange.colorShow&&colorChange.index==0?'dialogC':''}}" data-index="0" data-ele="{{item2}}" data-letter="{{item.letter}}" data-phone="{{item2.fOtherId}}" data-fcardid="{{item2.fCardId}}" catchtap="deleteCard">移除名片</view>
+                  <view class="dialog1T2 {{colorChange.colorShow&&colorChange.index==1?'dialogC':''}}" data-index="1" data-ele="{{item2}}" data-letter="{{item.letter}}" catchtap="deleteCard">转发</view> 
+                  <button class="shareButton2" data-name="shareBtn2" open-type="share"></button>
+                </view>
+              </view>
+            </view>
+            <!-- 为了给公众号标签腾出位置 -->
+            <view class="{{showPublic? 'marB100' : ''}}"></view>
+          </scroll-view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class="lettersLine" wx:if="{{forMarkList.length!=0}}" id="lettersLine" catchtouchstart="touch1Start"  catchtouchend ="touch1Cancel" style="margin-top:-{{letterH/2}}px">
+
+    <!-- <view class="eachLetters" wx:for="{{lettersArr}}" wx:key="{{index}}" data-letter="{{item.letter}}" data-index="{{index}}" catchtap="letterClick"> -->
+    <view class="eachLetters" wx:for="{{lettersArr}}" wx:key="index" data-letter="{{item.letter}}" data-index="{{index}}">
+      <view class="pointLetter {{item.isShow||letter2==item.letter?'pointClick':''}}">{{item.letter}}</view>
+      <!-- <view wx:if="{{letter2==item.letter}}" class="otherPoint">{{item.letter}}</view> -->
+    </view>
+  </view>
+    <!-- <tabbar></tabbar>  -->
+</view>
+
+  <view class="dialogBox" wx:if="{{dialogObj.box2Show}}" catchtap="cancelS">
+    <view class="dialog2">
+      <view class="deleteBox">
+        <view class="deleteT1" catchtap="nothing">确定要从名片夹中移除么？</view>
+        <view class="deleteT2">
+          <view class="item" data-index="0" catchtap="isCancelOrNot">取消</view>
+          <view class="item" data-index="1" catchtap="isCancelOrNot">移除</view>
+        </view>
+      </view>
+    </view>
+  
+  </view>
+  <!-- mh -->
+  <activity activityStatus="{{activityStatus}}" bindcustomevent="getActivityStatus"></activity>
+  <!-- mh -->
+  <discount activityStatus="{{activityStatus}}"></discount>
+  <!-- flh关注公众号模版 -->
+  <wxpublic wx:if="{{showPublic}}" class="{{model == 1? 'wxPublicIPhone' : 'wxPublic'}}"></wxpublic>
+</view>
+<view class="onlode" wx:if="{{lodeShow}}">
+  <image mode="aspectFill" class="seachPoint" src="{{lodingUrl}}"></image>
+</view>
+<!-- flh -->
+<tabbar scanback='{{scanBack}}'></tabbar>
+
+

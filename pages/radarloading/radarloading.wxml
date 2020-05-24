@@ -1,0 +1,38 @@
+<!--pages/radarloading/radarloading.wxml-->
+<view class="bg" style="background:url({{bg}})">
+  <view  class="circle-box">
+    <image src="{{quan}}" class="quan"></image> 
+    <image src="{{yuan}}" class="yuan" />
+    <image src="{{zhuan}}" class="zhuan" wx:if="{{!pointerIsShow && status}}"></image>
+    <image mode='aspectFill' wx:if="{{list[0].isShow}}" class="photo-1 photo" src="{{list[0].fPhotoUrl}}" />
+    <image mode='aspectFill' wx:if="{{list[1].isShow}}" class="photo-2  photo" src="{{list[1].fPhotoUrl}}" />
+    <image mode='aspectFill' wx:if="{{list[2].isShow}}" class="photo-3  photo" src="{{list[2].fPhotoUrl}}" />
+    <image mode='aspectFill' wx:if="{{list[3].isShow}}" class="photo-4  photo" src="{{list[3].fPhotoUrl}}" />
+    <image mode='aspectFill' wx:if="{{list[4].isShow}}" class="photo-5  photo" src="{{list[4].fPhotoUrl}}" />
+    <image mode='aspectFill' wx:if="{{list[5].isShow}}" class="photo-6  photo" src="{{list[5].fPhotoUrl}}" />
+    <image mode='aspectFill' wx:if="{{list[6].isShow}}" class="photo-7  photo" src="{{list[6].fPhotoUrl}}" />
+    <image mode='aspectFill' wx:if="{{list[7].isShow}}" class="photo-8  photo" src="{{list[7].fPhotoUrl}}" />
+  </view>
+  <view wx:if="{{pointerIsShow && lengthNum}}"  class="button-box {{pointerIsShow ? 'animation-button-y' :''}}" bindtap="clickToSearch" >
+    <view style="background-image:url({{buttonImg}})" class="button-img">
+      <text class="button-text" selectable="false" space="false" decode="false">点击进入</text>
+    </view>
+    <view style="background-image:url({{loaddingImg}})" class="loading-img">
+    </view>  
+  </view>
+  <view class="search-noone"  wx:if="{{pointerIsShow && !lengthNum}}">
+    <view class="serach-no-text-box  {{pointerIsShow ? 'animation-text' :''}}">
+      <text class="serach-no-text" selectable="false" space="false" decode="false">暂未搜索到相关名片</text>
+    </view>
+    <view class="search-no-button  {{pointerIsShow ? 'animation-button-n' :''}}" >
+      <view class="button-img button-img-margin" style="background-image:url({{buttonImg}})" bindtap="searchAgain">
+        <text class="button-text" selectable="false" space="false" decode="false">重新搜索</text> 
+      </view>
+      <view class=" button-img" style="background-image:url({{buttonImg}})" bindtap="clickToAllList">
+        <text class="button-text" selectable="false" space="false" decode="false">附近的人</text>
+      </view>
+    </view>
+  </view>
+</view>
+<popup wx:if="{{showPop}}" bind:leftBtn="cancel" bind:rightBtn="confirm" contentTit="{{contentTit}}"  leftBtnTit="{{leftBtnTit}}" rightBtnTit='{{rightBtnTit}}' leftcolor='{{leftcolor}}' rightcolor='{{rightcolor}}' direction="{{direction}}" contColor="{{contColor}}" textAlign="{{textAlign}}" leftWeight="{{leftWeight}}" btnFsize="{{btnFsize}}" rightWeight="{{rightWeight}}"></popup>
+<login bind:myevent="onMyEvent" loginState='{{loginState}}'  link="{{link}}"></login>

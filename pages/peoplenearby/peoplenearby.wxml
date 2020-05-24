@@ -1,0 +1,24 @@
+<!--pages/peoplenearby/peoplenearby.wxml-->
+<view class="list-box">
+  <view wx:for="{{renderList}}" wx:key="{{fId}}"  data-index="{{index}}" bindlongpress="personalMsg" 
+  class="personal {{selectedIndex == index ? 'personalSelected' : ''}}">
+    <view class="personal-box" catchtap="linkTo"  data-index="{{index}}">
+        <image mode='aspectFill' class="personal-img" src="{{item.fPhotoUrl}}"></image>
+      <view class="personal-name">{{item.fUserName}}</view>
+      <view class="personal-certified" wx:if="{{item.fAuthen}}">已认证</view>
+      <view class="personal-certified1" wx:if="{{!item.fAuthen}}">未认证</view>
+      <view class="personal-distance">{{item.distance}}</view>
+      <view class="personal-introduction">{{item.fCardTag}}</view>
+    </view>  
+    <button class="forward-box" wx:if="{{selectedIndex == index}}" open-type="share"  hover-class="operatSelected">
+      转发
+    </button>
+  </view>
+  <view class="loading-more" wx:if="{{showLoading}}">
+    <view class='loading-more-img'>
+    </view>
+     <view class="loading-more-text">
+       数据加载中...
+     </view>
+</view>
+</view>

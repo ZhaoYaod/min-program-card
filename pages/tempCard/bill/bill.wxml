@@ -1,0 +1,19 @@
+<!--pages/tempCard/bill/bill.wxml-->
+<view wx:if="{{isHasBill}}" class="billStyle {{isHasBill?'billEnter':'billHide'}}" style="position:absolute;top:{{propB.status+propB.navHeight}}px">
+  <!-- 生成海报图 -->
+
+    <view   class="billWrapper" catchtap="hideImg">
+     <view  style="height:{{propB.canvasWidth*512}}px;width:{{propB.canvasWidth*280}}px;margin-bottom:10rpx;">
+        <canvas canvas-id='myBill' class="myBill" style="height:{{propB.canvasWidth*512}}px;left:{{showbillCanvas?-9999:47.5}}px;width:{{propB.canvasWidth*280}}px;z-index:1000;position:absolute;border:1rpx solid #f2f2f2;box-sizing:border-box;" ></canvas>
+     </view>
+      <!-- <image hidden="{{!isCanvasShow}}" class="canvaC" style="height:{{propB.canvasWidth*512}}px;width:{{propB.canvasWidth*280}}px;z-index:9999;border-radius:11rpx;" src="{{sharebillImgSrc}}" ></image>  -->
+      <view  wx:if="{{img_status&& !showbillCanvas}}"  catchtap="createImg" class="saveImg">保存图片</view>
+      <button wx:if="{{!img_status}}" open-type='openSetting' bindopensetting='bind_load' class="saveImg">保存图片</button> 
+    </view>
+    <!--  -->
+</view>
+
+ <!-- 警告公用弹框 -->
+      <!-- <cover-view class="overCanvas" wx:if="{{hideModal}}"><warnBox  wx:if="{{hideModal}}" warnFlash="{{warnFlash}}" title="{{title}}" hiddenmodalput="{{hiddenmodalput}}" ></warnBox></cover-view> -->
+
+

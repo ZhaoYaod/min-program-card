@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "warnBox": "/pages/component/warnBox/warnBox",
+    "login": "/pages/component/login/login"
+  },
+  "navigationBarTitleText": "选择网站",
+  "navigationBarBackgroundColor": "#1081FF"
+}

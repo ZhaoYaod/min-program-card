@@ -1,0 +1,186 @@
+/* pages/service/component/subjectManage/subjectManage.wxss */
+.subject{
+    position:relative;
+}
+.subject-head{
+    width:100%;
+    height:325.26rpx;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:81.9rpx;
+}
+.head-box{
+    height:88.92rpx;
+    margin-right:46.8rpx;
+    overflow:hidden;
+    margin:0 46.8rpx;
+}
+.avatarUrl{
+    width:88.92rpx;
+    height:88.92rpx;
+    border-radius:50%;
+    vertical-align: middle;
+    float:left;
+    margin-right:11.7rpx;
+}
+.nickName{
+    font-size:37.44rpx;
+    color:#fff;
+    font-weight:bold;
+    vertical-align: middle;
+     white-space:nowrap;
+     overflow:hidden;
+     text-overflow:ellipsis;
+     word-break: break-word;
+     float:left;
+     width:100%;
+  
+}
+.subject-body{
+    position:absolute;
+    top:219.96rpx;
+    left:calc(50% - 343.98rpx);
+    width:687.96rpx;
+    background:#FFF;
+    border-radius:23.4rpx ;
+    min-height:234rpx;
+}
+.body-title{
+    height:117.rpx;
+    overflow:hidden;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.title-text{
+    font-size:37.44rpx;
+    font-weight:bold;
+    line-height:117rpx;
+    padding-left:42.12rpx;
+
+}
+.subject-list{
+    width:641.16rpx;
+    height:131.04rpx;
+    margin:18.72rpx;
+    border-radius:4.68rpx;
+   box-shadow: rgba(98, 146, 166, 0.157) 0px 0px 46.8rpx;
+    overflow:hidden;
+    position:relative;
+}
+.subject-box{
+    width:100%;
+    height:100%;
+     overflow:hidden;
+     position:relative;
+}
+.list-img{
+    width:88.92rpx;
+    height:88.92rpx;
+    float:left;
+    margin-left:23.4rpx;
+    margin-right:23.4rpx;
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover; */
+    position:relative;
+    top:calc(50% - 44.46rpx);
+}
+.list-text{
+    float:left;
+    width:439.92rpx;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    padding:23.4rpx 0;
+    box-sizing:border-box;
+
+}
+.subject-name {
+    font-size:28.08rpx;
+    color:#202020;
+    width:100%;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden
+
+}
+.subject-preson{
+    padding-top:9.72rpx;
+    font-size:23.4rpx;
+    color:#999999;
+}
+.list-icon{
+     position: absolute;
+     right: 23.4rpx;
+     transform: translateY(-50%);
+     top: 50%;
+     width: 32.76rpx;
+     height: 32.76rpx;
+}
+.icon-jiantou2-img{
+    width:100%;
+    height:100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+}
+.subject-button{
+    width:100%;
+    height:84.24rpx;
+    margin-top:70.2rpx;
+    padding-left:23.4rpx;
+    padding-right:23.4rpx;
+    box-sizing:border-box;
+    margin-bottom:46.8rpx;
+
+}
+.add-subject{
+    background:#1081ff;
+    font-size:28.08rpx;
+    color:#fff;
+    font-weight:bold;
+    height:100%;
+    margin:0 auto;
+    line-height:84.24rpx;
+}
+.not-subject{
+    width:100%;
+    /* height:180.2rpx; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top:140.4rpx;
+
+}
+.nickName-info{
+    font-size:23.4rpx;
+    color:#fff;
+}
+.list-box{
+    height:100%;
+    width: calc(100% - 100.62rpx);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+.not-subject image{
+    width:145.08rpx;
+    height:145.08rpx;
+}
+.not-subject text:first-of-type{
+    font-size:23.4rpx;
+    color:#666;
+    text-align:center;
+    line-height:46.8rpx;
+}
+.not-subject text:last-of-type{
+    font-size: 23.4rpx;
+    color: #999999;
+    text-align: center;
+     line-height:46.8rpx;
+}

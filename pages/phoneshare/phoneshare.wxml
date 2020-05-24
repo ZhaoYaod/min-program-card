@@ -1,0 +1,8 @@
+<canvas canvas-id='share' class="canvaC" style="height:{{canvasHeight}}px"></canvas>
+<view class="phoneshare">
+  <text>手机号：</text>
+  <input placeholder=" 请输入正确的手机号" type="number" maxlength="11" bindinput="checknumber" placeholder-class="placeholder" bindblur="checknumber"></input>
+</view>
+<button class="send1" wx:if="{{check}}">发送</button>
+<button class="send2" wx:else catchtap="sendMessge">发送</button>
+<warningB warnFlash="{{num}}" title="{{warnTitle}}" hideModal="{{isShow}}"></warningB>

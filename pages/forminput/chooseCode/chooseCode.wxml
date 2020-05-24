@@ -1,0 +1,53 @@
+<view class="scroll tb">
+  <scroll-view scroll-with-animation scroll-top="{{to}}" scroll-y bindscroll="whenScroll">
+    <view>
+        <view class="border-line h55 common-tit">常用</view>
+        <view class="h55 common" bindtap="choiceCode" data-code="+86中国" data-rule="^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[189])\\d{8}$">
+          <text class="font14">中国</text>
+          <text class="code font10">86</text>
+        </view>
+        <view class="h55 common" bindtap="choiceCode" data-code="+852_中国-香港" data-rule="[0-9]{5,11}">
+          <text class="font14">中国-香港</text>
+          <text class="code font10">852</text>
+        </view>
+        <view class="h55 common"  bindtap="choiceCode" data-code="+886_中国-台湾" data-rule="[0-9]{5,11}">
+          <text class="font14">中国-台湾</text>
+          <text class="code font10">886</text>
+        </view>
+        <view class="h55 common"  bindtap="choiceCode"  data-code="+853_中国-澳门" data-rule="[0-9]{5,11}">
+          <text class="font14">中国-澳门</text>
+          <text class="code font10">853</text>
+        </view>
+    </view>
+    <block wx:for="{{code}}" wx:key="{{item.letter}}" wx:if="{{item.data.length!=0}}">
+      <view id="{{item.letter === '#' ? 'all' : item.letter}}">
+        <view class='category-title border-line'>{{item.letter}}</view>
+        <view class='list lr wrap'>
+          <view
+            class='item center h55'
+            wx:for="{{item.data}}"
+            wx:for-item="avatar"
+            wx:key="{{avatar.fEnName}}"
+            data-id="{{avatar.fEnName}}"
+            data-code="{{'+'+avatar.fAreaCode+'_'+avatar.fCnName}}"
+            data-rule="{{avatar.fRegular}}"
+            catchtap='choiceCode'>
+            <text class="country font14">{{avatar.fCnName}}</text>
+            <text class="code font10">{{avatar.fAreaCode}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class='letters tb'>
+    <text class="item flex tb center" bindtap="up"> ↑ </text>
+    <text class="item flex tb center">☆</text>
+    <text
+      wx:for="{{code}}"
+      wx:key="{{item.letter}}"
+      class="item flex tb center {{item.data.length===0 ? 'disabled' :''}} {{item.letter === current ? 'hight-light' : ''}}"
+      data-id="{{item.letter}}"
+      catchtap='switchLetter'>{{item.letter}}</text>
+  </view>
+</view>

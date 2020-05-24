@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "login": "/pages/component/login/login",
+    "scan": "/pages/component/component-scan/component-scan",
+    "warningB": "/pages/component/warnBox/warnBox"
+  }
+}

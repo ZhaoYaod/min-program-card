@@ -1,0 +1,6 @@
+<!--tempcard/bgm/bgm.wxml-->
+ <custom-component class="bgm-class">
+  <view animation="{{animationData}}" wx:if="{{type === 'single' || type === 'global'}}" class='bgm {{playing && rotate ? "rotate" : ""}}' bindtap='bgmControl'>
+    <image src='{{bgmSrc}}' mode='widthFix'></image>
+  </view>
+</custom-component>

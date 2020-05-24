@@ -1,0 +1,332 @@
+<!--tempcard/public/public.wxml-->
+
+
+
+
+<view catchtap="hidePop" class="hidePop">
+
+
+<!-- 二维码 -->
+<view bindtap='previewImgCanvas' class="canvasQR" >
+ <canvas  style="width:320rpx;height:320rpx;" canvas-id="mycanvas" />
+</view>
+     
+
+<view class="qrodeWrapper">
+    <canvas class="qrodeContent" style="width: 290px;height: 380px;" canvas-id="mycanvas2" />
+</view> 
+
+
+<view fCode="{{fCode}}">
+</view>
+<!-- 自定义标题栏 状态栏 + 标题栏-->
+<view class='cnav' style='height: {{status + navHeight}}px' v-if="{{navData.ifsetNav}}">
+  <view class='cstatus' style='height: {{status}}px;{{navData.navStyle1}}'></view>
+  <view class='cnavbar' style='height:{{navHeight}}px;{{navData.navStyle}}'>
+    <view wx:if="{{isshare}}" class='back-icon' bindtap='backtohome'>
+      <text class='iconfont icon-fanhui'></text>
+    </view>
+    <view wx:else class='back-icon' bindtap='back'>
+      <text class='iconfont icon-fanhui'></text>
+    </view>
+
+    <!-- <view class='home-icon' wx:if="{{homeIcon}}" bindtap='home'>
+      <image src='{{homeIcon}}'></image>
+    </view> 
+    <view class='nav-icon' wx:if="{{titleImg}}">            
+      <image src='{{titleImg}}' style='{{iconStyle}}'></image>       
+    </view> -->
+
+    <view class='nav-title'>
+      <!-- wx:if="{{titleText}}"  style='{{textStyle}}'-->
+      <text class='nav-titleText'>{{navData.title}}</text>
+    </view>
+  </view>
+</view>
+<!-- 头部 -->
+<view class="cheader">
+  <!-- //音乐 -->
+  <!-- <view wx:if="{{mymusic.hasMusic}}">
+    <image class="cmusic {{playmusic?'playmusic':''}}" ontouchstart="pmusic" src="{{mymusic.imgSrc}}"></image>
+  </view> -->
+  <!-- <bgm mymusic="{{mymusic}}" class="cmusic {{mymusic.hasMusic?'playmusic':''}}"></bgm> -->
+  <!-- <bgm mymusic="{{mymusic}}" class="bgm-class"></bgm> -->
+
+   <bgm wx:if="{{mymusic.hasMusic}}" src="{{mymusic.src}}" playicon='{{mymusic.imgSrc}}' pauseicon="{{mymusic.imgSrc}}" class="cmusic" autoplay></bgm>
+  <!-- //头像 -->
+  <view class="cavatarimg comCavatar">
+
+      <image class="cavatar" src="{{cavatarSrc}}" mode="aspectFill"  data-src="{{cavatarSrc}}" catchtap="showBigImg"></image>
+
+  </view>
+  <!-- // 姓名 + 职位 + 公司 cmessage1 -->
+  <view class="tempowner">
+    <view class="cname">
+      <text class="cmessage1tit">{{cmessage1.cname.cnameTit}}</text>
+      <view class="cmessage1cont cmessage1cont1">{{cmessage1.cname.cnameCont}}</view>
+    </view>
+    <view class="cpost">
+      <text class="cmessage1tit">{{cmessage1.cpost.cpostTit}}</text>
+      <!-- <rich-text class="cmessage1cont cmessage1cont2" space="nbsp" nodes="{{cmessage1.cpost.cpostCont}}"></rich-text> -->
+      <view class="cmessage1cont cmessage1cont2">{{cmessage1.cpost.cpostCont}}</view>
+    </view>
+    <view class="ctitle">
+      <text class="cmessage1tit">{{cmessage1.ctitle.ctitleTit}}</text>
+      <!-- <rich-text class="cmessage1cont cmessage1cont3" space="nbsp" nodes="{{cmessage1.ctitle.ctitleCont}}"></rich-text> -->
+      <view class="cmessage1cont cmessage1cont3">{{cmessage1.ctitle.ctitleCont}}</view>
+    </view>
+  </view>
+ 
+</view>
+
+<view class="cmainbody newStyle">
+  <!-- 电话 + 邮箱 + 微信 + 位置 -->
+  <view class="cmessage1box">
+    <view class="cnumber" hover-class="chooseing">
+        <text class='iconfont icon-dianhua'></text>
+        <text>{{cmessage2[0].cnumber}}</text>
+      </view>
+      <view class="cwx">
+        <text class='iconfont icon-weixin'></text>
+        <text>{{cmessage2[1].cwx}}</text>
+      </view>
+      <view class="cmail">
+        <text class='iconfont icon-youxiang'></text>
+        <text>{{cmessage2[2].cmail}}</text>
+      </view>
+      <view class="clocation comclocation">
+        <text class='iconfont icon-dizhi'></text>
+        <text class="clocationtxt">{{cmessage2[3].clocation}}</text>
+      </view>
+  </view>
+  <!-- 打电话 + 加微信 + 发邮件 + 看地图 -->
+  <!-- <slot name="cmessage2Icon"></slot> -->
+  <view class="cmessage2box">
+    <view class="ccall" ontouchstart="callphone">
+      <slot name="cmessage2Icon1"></slot>{{cmessage2[0].ccall}}</view>
+    <view class="ccopywx" data-number="{{cmessage2[1].cwx}}" ontouchstart="copytext">
+      <slot name="cmessage2Icon2"></slot>{{cmessage2[1].ccopywx}} </view>
+    <view class="ccopymail" data-number="{{cmessage2[2].cmail}}" ontouchstart="copyemail">
+      <slot name="cmessage2Icon3"></slot>{{cmessage2[2].ccopymail}}</view>
+    <view class="cfixed" bindtap="cfixed">
+      <slot name="cmessage2Icon4"></slot>{{cmessage2[3].cfixed}}</view>
+
+  </view>
+</view>
+
+<!-- 点赞 + 收藏 cfunc1 -->
+<view class="thumb_collect">
+  <view class="cthumb comthumb">
+    <view class="iconbox">
+     <!-- 第三种切换方式 -->
+      <!-- <view wx:if="{{cfunc1[0].iconStyle==3}}" data-method="3" catchtap="onZanTap">
+        <image class="iconfont2 iconthumb"  src="{{cfunc1[0].thumbsstatus ? cfunc1[0].selectIcon : cfunc1[0].icon}}" mode="aspectFill"></image>
+      </view> -->
+      <!-- 第二种切换方式 -->
+      <view wx:if="{{cfunc1[0].iconStyle==2}}" data-method="2" catchtap="onZanTap">
+        <image class="iconfont2 iconthumb"  src="{{cfunc1[0].thumbsstatus ? cfunc1[0].selectIcon : cfunc1[0].icon}}" mode="aspectFill"></image>
+      </view>
+      <!-- 第一种切换方式 -->
+      <view wx:else bindtap="onZanTap" data-method="1">
+        <text wx:if="{{!cfunc1[0].thumbsstatus}}" class=" iconfont icon-weidianzan iconfont3"></text>
+        <image wx:if="{{cfunc1[0].thumbsstatus}}" class="iconchange {{cthumbflag ? 'myactive':''}}" src="{{urls+'dianzan.png'}}" mode="widthFix" style="width:40rpx"></image>
+      </view>
+    </view>
+    <view class="thumbinfo">
+      <text>{{cfunc1[0].cthumb}}</text>
+      <text class="thumbtext">{{cfunc1[0].txt}}</text>
+    </view>
+  </view>
+
+  <view class="ccollection comcollect">
+    <view class="iconbox">
+    <!--  <view wx:if="{{cfunc1[1].iconStyle==3}}" data-method="3" catchtap="onCollect" class="collectIcon">
+            <image src="{{cfunc1[1].collectionstatus?cfunc1[1].selectIcon:cfunc1[1].icon}}" class="pickimg" animation="{{animation}}"></image>
+          </view> -->
+
+      <view wx:if="{{cfunc1[1].iconStyle==2}}">
+        <image class="iconfont2 iconcollect iconfont3" data-method="2" catchtap="onCollectTap" src="{{cfunc1[1].collectionstatus ? cfunc1[1].selectIcon : cfunc1[1].icon}}" mode="aspectFill"></image>
+      </view>
+      <view wx:else data-method="1" bindtap="onCollectTap">
+
+        <text wx:if="{{!cfunc1[1].collectionstatus}}"  class="iconfont icon-weishoucang iconfont4"></text>
+        <image wx:else class="iconchange {{ccollectionflag ? 'myactive' :''}}" src="{{urls+'shoucang.png'}}" mode="widthFix" style="width:40rpx;"></image>
+
+      </view>
+
+    </view>
+
+
+    <view class="ccollectioninfo">
+      <text>{{cfunc1[1].ccollection}}</text>
+      <text class="collecttext">{{cfunc1[1].txt}}</text>
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 修改点赞收藏 -->
+<!-- 
+<view class="ccollection" >
+    <view class="collectIcon" catchtap="onCollect">
+      <image src="{{cfunc1[1].collectionstatus?icon_collect:icon_uncollect}}" class="pickimg" animation="{{animation}}"></image>
+    </view>
+    
+    <view class="ccollectioninfo">
+      <text>{{cfunc1[1].ccollection}}</text>
+      <text class="collecttext">{{cfunc1[1].txt}}</text>
+    </view>
+</view> -->
+
+
+
+<!-- 给自己制作 + 帮好友制作 cfunc2-->
+<!-- <view class="csave" bindtap="csave" wx:if="">{{csave}}</view> -->
+<view class="cmyself" bindtap="toMakeCard" data-index="1">
+  <slot name="cmyself"></slot>{{cfunc2[0].txt}}</view>
+<view class="cother" bindtap="toMakeCard" data-index="2">
+  <slot name="cother" bindtap="toMakeOtherCard"></slot>{{cfunc2[1].txt}}</view>
+
+
+
+
+
+
+<!-- 导航组件 -->
+<view wx:if="{{hasWebsite}}" class="tab-bar cbottom" style="color:{{tabBar.color}};background:{{tabBar.backgroundColor}};padding:{{tabBar.padding}}" >
+    <!-- 存在官网 -->
+    <block wx:for="{{tabBar.mytab}}" wx:key="{{index}}">
+      <view class="tabbarStyle ctabar" catchtap='cnavigateTo' data-num="{{index}}" data-statu="{{currentStatu}}">
+            <image wx:if="{{!item.flag}}" data-num="{{index}}" class="cicon" src="{{item.img}}" mode="aspectFit"></image>
+            <image wx:else="{{item.flag}}" data-num="{{index}}" class="cselcticon" src="{{item.selectImg}}" mode="aspectFit"></image>
+            <text>{{item.txt}}</text>
+            <button wx:if="{{index == 1}}" open-type="share" class="cToshare" data-sharemodel="{{sharemodel}}">分享</button>
+            <!-- 生成分享图 这里的操作是把canvas绘制的图预览出来  -->
+            <!-- <button wx:if="{{index == 2}}"class='shareMake' type='primary' bindtap='shareMake'></button> -->
+        </view>
+        
+    </block>
+    <view   wx:if="{{hideAbout}}" class="barborder"></view>
+</view>
+<view wx:else class="tab-bar cbottom" style="color:{{tabBar1.color}};background:{{tabBar1.backgroundColor}};border-top:{{tabBar1.borderTop}};padding:{{tabBar.padding}}">
+    <!-- 不存在官网 -->
+    <block wx:for="{{tabBar1.mytab}}" wx:key="{{index}}" >
+        <view class="tabbarStyle ctabar" catchtap='cnavigateTo' data-num="{{index}}" data-statu="{{currentStatu}}">
+            <image wx:if="{{!item.flag}}" class="cicon" src="{{item.img}}" mode="aspectFit"></image>
+            <image wx:else="{{item.flag}}" class="cselcticon" src="{{item.selectImg}}" mode="aspectFit"></image>
+            <text>{{item.txt}}</text>
+            <button wx:if="{{index == 1}}" open-type="share" class="cToshare" data-sharemodel="{{sharemodel}}">分享</button>
+        </view>
+    </block>
+</view>
+
+
+
+
+
+<!-- 底部导航更多菜单 -->
+  <view wx:if="{{hasModeMemu}}" class="aboutMenu">
+      <view animation="{{animationtab}}" class="caboutUs geabout"  wx:if="{{hideAbout}}" style="color:{{tabBar.color}};background:{{tabBar.backgroundColor}};box-shadow:{{tabBar.boxShow}};">
+          <view capture-catch:touchstart='cnavigateTo2' data-index="1" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>产品</text>
+          </view>
+          <view  capture-catch:touchstart='cnavigateTo2' data-index="2" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>服务</text>
+          </view>
+          <view capture-catch:touchstart='cnavigateTo2' data-index="3" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>文章</text>
+          </view>
+          
+          <view capture-catch:touchstart='cnavigateTo2' data-index="4" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>公众号</text>
+          </view>
+          <view capture-catch:touchstart='cnavigateTo2' data-index="5" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>小程序</text>
+          </view>
+          <view capture-catch:touchstart='cnavigateTo2' data-index="6" >
+            <text>生成海报</text>
+          </view>
+      </view>
+   </view>
+
+  <view wx:else class="detailMemu">
+      <view animation="{{animationtab}}" class="caboutUs geabout"  wx:if="{{hideAbout}}" style="color:{{tabBar.color}};background:{{tabBar.backgroundColor}};box-shadow:{{tabBar.boxShow}};">
+
+        <view wx:if="{{list.fProductIds&& list.fProductIds.length>0}}" capture-catch:touchstart='cnavigateTo2' data-index="1" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>产品</text>
+          </view>
+          <view  wx:if="{{list.fServiceIds&& list.fServiceIds.length>0}}" capture-catch:touchstart='cnavigateTo2' data-index="2" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>服务</text>
+          </view>
+          <view wx:if="{{list.fAticleIds&& list.fAticleIds.length>0}}" capture-catch:touchstart='cnavigateTo2' data-index="3" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>文章</text>
+          </view>
+          <view  wx:if="{{list.fWxpublicLink&&list.fWxpublicLink.length>0}}" capture-catch:touchstart='cnavigateTo2' data-index="4" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>公众号</text>
+          </view>
+          <view wx:if="{{list.fSprogramLink&& list.fSprogramLink.length>0}}" capture-catch:touchstart='cnavigateTo2' data-index="5" style="border-bottom:{{tabBar.borderBottom}};">
+            <text>小程序</text>
+          </view>
+          <view wx:if="{{isShowBill}}" capture-catch:touchstart='cnavigateTo2' data-index="6" >
+            <text>生成海报</text>
+          </view>
+    </view>
+ </view>
+
+
+
+
+<!-- 遮罩创建名片引导弹框 -->
+<view class="modals modals-bottom-dialog" hidden="{{hidempModal}}">
+  <view class="modals-cancel" bindtap="hideModal"></view>
+  <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+    <navigator url='/pages/scan/scan' hover-class="text-hover">扫一扫创建名片</navigator>
+    <navigator url='/pages/addLable/addLable' hover-class="text-hover">手动录入名片</navigator>
+  </view>
+</view>
+
+
+<!-- 公用弹框2 -->
+<popUp wx:if="{{hideComPop}}" id="myComponent" bind:leftBtn="modalLeft" bind:rightBtn='modalRight' leftBtnTit='{{leftBtnTit}}' rightBtnTit='{{rightBtnTit}}' contentTit='{{contentTit}}' direction='{{direction}}' boxHeight='{{boxHeight}}' contBoxPadLR='{{contBoxPadLR}}'></popUp>
+
+
+
+
+<!-- 警告公用弹框 -->
+<warnBox  hideModal="{{hideModal}}" warnFlash="{{warnFlash}}" title="{{title}}" hiddenmodalput="{{hiddenmodalput}}" ></warnBox>
+
+
+<!--族蚂生成的二维码 -->
+<view class='qrodeMakeWrapper' hidden="{{siteHidden}}" catchtap="closeQR">
+  <view class="qrodeCon" data-value="{{canvasType}}" catchtap="saveQR">
+    <view class="qrchaDiv" hover-stop-propagation catchtap="closeQR" >
+        <!-- <view class="qrcha"><image  src="{{urls+'cha.png'}}" mode="aspectFill" ></image></view> -->
+        <view class="qrcha"><image  src="{{urls+'cha.png'}}" mode="aspectFill" ></image></view>
+    </view>
+    <image data-value="{{canvasType}}"  catchtap="saveQR" mode="scaleToFill" src="{{canvasImgPath}}"></image>
+  </view>
+</view>
+
+<!--授权弹框 -->
+<view class="author-toast-box {{isShowAuthor==true?'isgetting':''}}" >
+  <view class="author-toast-content">
+    <view class="author-content">
+      <view class="author-info">您关闭了访问相册的权限，无法保存图片，请允许访问相册。</view>
+    </view>
+    <view class="author-btn">
+        <button class="wxAuthor-btn wxAuthor-cancelbtn" catchtap="hideAuthorBox">取消</button>
+        <button class="wxAuthor-btn wxAuthor-goAuthorbtn" open-type="openSetting" bindopensetting="getSetting">去授权</button>
+    </view>
+    
+  </view>
+</view>
+
+</view>
+   
+<!-- 子组件：引入登录组件 -->
+<login bind:compontpass="compontpass" bind:myevent="onMyEvent" loginState='{{loginState}}' data-index="1" link="{{link}}"></login>
+
+<!-- 子组件：模板海报图 -->
+<bill id="bill" hidden="{{showbillCanvas}}" prop-a="{{defaultModel}}" prop-b="{{billData}}" prop-c="{{list}}"></bill>
+

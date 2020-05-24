@@ -1,0 +1,403 @@
+/* addCardFromIndex.wxss */
+@import "../index/indexIcon.wxss";
+.allBox{
+  width: 100%;
+  height:100%;
+}
+.closeDl{
+  /* position: relative; */
+}
+.search{
+  width: 100%;
+  height:108.64rpx;
+  /* background-color: orange; */
+  position: relative;
+  border-bottom: 1px solid #f2f2f2;
+}
+.allCli{
+  width:140.4rpx;
+  height:60.84rpx;
+  /* background-color: #2FB7EC; */
+  border-radius: 9.36rpx;
+  text-align: center;
+  line-height: 60.84rpx;
+  font-size: 28.08rpx;
+  /* color: #fff; */
+  position: absolute;
+  right: 3%;
+  top:50%;
+  margin-top: -30.42rpx;
+}
+.rightColor{
+  background-color: #1081FF;
+  color: #fff;
+}
+.wrongColor{
+  background-color: #f2f2f2;
+  color: #bdbdbd;
+}
+/* .searchIcon{
+  position: absolute;
+  left: 28.08rpx;
+  top:36rpx;
+  font-size: 28.08rpx;
+  vertical-align: top;
+} */
+.searchIcon{
+  position: absolute;
+  height: 33.08rpx;
+  width: 33.08rpx;
+  left: 51.48rpx;
+  top:32rpx;
+  font-size: 33.08rpx;
+  color: #8a8a8a
+}
+.search-input{
+  position: absolute;
+  height: 40rpx;
+  width: 462rpx;
+  left: 97rpx;
+  top:36rpx;
+  font-size: 28.08rpx;
+
+}
+
+.scBox{
+  position: absolute;
+  left: 0;
+  top:97rpx;
+  width: 100%;
+  height: auto;
+  /* background-color: rebeccapurple; */
+}
+.mpTitle{
+  width: 678.6rpx;
+  height:70.2rpx;
+  margin: 0 auto;
+  color: #a1a1a1;
+  font-size: 28.32rpx;
+  line-height: 70.2rpx;
+  border-bottom:1px solid #f2f2f2;
+}
+.ecSC{
+  /* width: 678.6rpx; */
+  width: 100%;
+  height:135.72rpx;
+  /* margin: 0 auto; */
+  /* background-color: rosybrown; */
+  border-bottom:2.34rpx solid #f2f2f2;
+  padding-top: 18.72rpx;
+  padding-bottom: 18.72rpx;
+  padding-left: 27.4rpx;
+  box-sizing: border-box;
+}
+.imgBox{
+  display: inline-block;
+  width: 93.6rpx;
+  height: 93.6rpx;
+  /* margin-left: 37.44rpx; */
+  box-sizing: content-box;
+  background-color: #f2f2f2;
+  position: relative;
+}
+.nowImg,.nowImg2,.nowImg3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4.68rpx;
+  border:2.34rpx solid transparent;
+  font-size: 53rpx;
+  /* background-color: #f2f2f2; */
+  color: #BFBFBF;
+}
+.nowImg{ 
+  left:0rpx;
+  top:0rpx;
+}
+.nowImg2{ 
+  left:-5rpx;
+  top:5rpx;
+}
+.nowImg3{ 
+  left:-10rpx;
+  top:10rpx;
+}
+.textBox{
+  display: inline-block;
+  vertical-align: top;
+  width: 504rpx;
+  height: 93.6rpx;
+  margin-left: 23.4rpx;
+  /* background-color: orangered; */
+  position: relative;
+}
+.textC1Box,.textC2Box{
+   /* display: inline-block; */
+   position: absolute;
+}
+.textC1Box{
+  left: 0rpx;
+  top:-8rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 538rpx;
+}
+.textC2Box{
+  margin-left: 23.4rpx;
+}
+.textC3Box{
+  position: absolute;
+  left: 0rpx;
+  bottom: -4rpx;
+  width: 100%;
+  /* 隐藏 */
+  overflow: hidden;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 最后以...结尾 */
+  text-overflow: ellipsis;
+}
+.textC1,.textC2,.textC3{
+  width:100%;
+}
+.textC1{
+  color: #000;
+  font-size: 32.76rpx;
+  vertical-align: top;
+}
+.textC2{
+  color: #a1a1a1;
+  font-size: 28.32rpx;
+  vertical-align: top;
+  margin-left: 23.4rpx;
+}
+.textC3{
+  color: #F22C2C;
+  font-size: 23.4rpx;
+}
+/* 搜索关键字高亮样式 */
+.highlight {
+  color: red;
+}
+.normal {
+  color: #484848;
+}
+
+.searcNo{
+  width: 100%;
+  height:117rpx;
+  /* background-color: rebeccapurple; */
+  position: relative;
+  box-shadow: 0 0 4.68rpx rgba(0, 0, 0, .35)
+}
+.leidaIcon{
+  position: absolute;
+  width: 53.82rpx;
+  height:53.82rpx;
+  left: 5%;
+  top:50%;
+  margin-top:-26.91rpx;
+  /* background-color: red; */
+  color: #2FB7EC;
+  font-size: 53.82rpx;
+
+}
+.leidaText{
+  position: absolute;
+  width: 70%;
+  height:70.2rpx;
+  left: 14%;
+  top:50%;
+  margin-top:-35.1rpx;
+  /* background-color: rgb(55, 0, 255); */
+}
+.leidaText1{
+  color: #000;
+  font-size: 28.08rpx;
+}
+.leidaText2{
+  color: #BCBCBC;
+  font-size: 23.4rpx;
+}
+.menuBox{
+  width: 100%;
+  height:auto;
+}
+.lineSpace{
+  width:100%;
+  height: 14.04rpx;
+  background-color: #F8FAFB;
+}
+.noText{
+  width:230rpx;
+  height: 42.12rpx;
+  color: #BBBBBB;
+  font-size: 28.08rpx;
+  margin:0 auto;
+  margin-top:23.4rpx;
+}
+.seachIng{
+  width:100%;
+  height: 234rpx;
+  margin-top: 80rpx;
+  /* background-color: red; */
+}
+.seachPoint{
+  width:70.2rpx;
+  height: 70.2rpx;
+  /* background-color: greenyellow; */
+  margin: 0 auto;
+  border-radius: 50%;
+  color: rebeccapurple;
+  font-size: 70.2rpx;
+  /* transform-origin: center; */
+  animation: headRotate 1s linear infinite;
+  display: block;
+}
+.addAnimation{
+  animation: headRotate 6s linear infinite
+}
+/* 头像旋转效果  */
+@keyframes headRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+.seachText{
+  width:180rpx;
+  height: 42.12rpx;
+  color: #868686;
+  font-size: 28.08rpx;
+  margin:0 auto;
+  margin-top:23.4rpx;
+}
+.eachMenu{
+  width: 100%;
+  height:135.72rpx;
+  position: relative;
+  border-bottom: 2.34rpx solid #f2f2f2;
+
+}
+/* .eachMenu:nth-child(n+1){
+  border-top: 2.34rpx solid #f2f2f2;
+} */
+.menuImg1,.menuImg2,.menuImg3{
+  border-radius: 9.36rpx;
+  position: absolute;
+  left: 6%;
+  top:50%;
+  margin-top: -46.8rpx;
+  width:93.6rpx;
+  height:93.6rpx;
+  /* background-color: rebeccapurple; */
+
+}
+.menuImg1{
+  background-color: #6633FF;
+}
+.menuImg2{
+  background-color: #FF9900;
+}
+.menuImg3{
+  background-color: #2FB7EC;
+}
+/* .iconImg1{
+  width:100%;
+  height:100%;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-top: -50%;
+  margin-left: -50%;
+  font-size: 93.6rpx;
+  color: #009900;
+} */
+.iconImg2,.iconImg1{
+  width:56.16rpx;
+  height:56.16rpx;
+  position: absolute;
+  left: 50%;
+  /* top:50%; */
+  margin-top: 6.08rpx;
+  margin-left: -28.08rpx;
+  font-size: 56.16rpx;
+  color: #fff;
+}
+.iconImg3{
+  width:60.84rpx;
+  height:60.84rpx;
+  position: absolute;
+  left: 50%;
+  /* top:50%; */
+  margin-top: 2.34rpx;
+  margin-left: -30.42rpx;
+  font-size: 60.84rpx;
+  color: #fff;
+}
+.menuText{
+  position: absolute;
+  color: #000;
+  font-size: 32.76rpx;
+  margin-top: -16.38rpx;
+  left: 21%;
+  top:23%;
+}
+.menuText2{
+  position: absolute;
+  color: #BCBCBC;
+  font-size: 28.08rpx;
+  height:32.76rpx;
+  margin-top: -16.38rpx;
+  left: 21%;
+  top:68%;
+}
+
+/* 弹出框2样式 */
+.dialog2{
+  width:100%;
+  height:100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top:0;
+  /* margin-left: -50%;
+  margin-top: -196.56rpx; */
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 5;
+}
+.deleteBox{
+  width:736rpx;
+  height:271.44rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom:0rpx;
+  transform: translateX(-50%);
+  /* margin-left: -290.16rpx;
+  margin-top: -135.75rpx; */
+  background-color: #fff;
+  /* border-radius: 11.7rpx; */
+  border-top-left-radius: 11.7rpx;
+  border-top-right-radius: 11.7rpx;
+  box-shadow: 0 0 11.7rpx rgba(0, 0, 0, .35);
+}
+.addAn{
+  animation: showB .3s linear 1;
+}
+/* 头像旋转效果  */
+@keyframes showB{
+  0% {bottom:-500rpx;}
+  100% {bottom:0rpx;}
+}
+.deleteT1{
+  height: 50%;
+  width: auto;
+  color: #000;
+  font-size: 32.76rpx;
+  line-height: 135.72rpx;
+  margin-left: 45rpx;
+}
+.dialogC{
+  color: #0252DB;
+}

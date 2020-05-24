@@ -1,0 +1,38 @@
+<!--pages/selecttemp/selecttemp.wxml-->
+<view class="temp-container">
+  <!-- <view class="temp-selcet">
+    <text wx:for="{{priceList}}" wx:key="i" wx:for-index="i" data-index="{{i}}" class="{{isCheck==i ?'isCheck':'noCheck'}} temp-text" bindtap="isCheckPic">{{item.fAmount==0?'免费':item.fAmount +'元'}}</text>
+  </view> -->
+  <!-- <view class="paddingHeiht"></view> -->
+  <view class="selecttemp-box" style="height:{{screenH}}px">
+    <view class="selecttemp-warp" style="width:{{warpW}}px;left:{{moveLeft}};transition:0.3s all;">
+      <scroll-view class="selecttemp" scroll-y="{{scrollState}}" wx:for="{{priceList}}" wx:key="j" wx:for-index="j" style="width:{{screenW}}px;height:{{isprice==item.fAmount?'100%':'0'}};overflow: {{isprice==item.fAmount?'':'hidden'}};" scroll-top="0" bindscroll="bindscroll">
+        <view class="templist" wx:for="{{item.list}}" wx:key="index" data-id="{{item.fCode}}" bindtap="selecttemp">
+          <image class="tempimg {{selectid==item.fCode?'active':''}}" src="{{item.fImgUrl}}"></image>
+          <view class="tempname">
+            <text>{{item.fName}}</text>
+            <text>{{item.fPrice}}</text>
+          </view>
+          <!-- <image wx:if="{{selectid==item.fCode?true:false}}" class="tempactive" src="{{checkImg}}"></image> -->
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="tempbottom">
+    <view bindtap="tempView">
+      <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACJUlEQVRIicWWT4hOYRTGf+NPaUwJMU0ZxSBKKUxNpGQ3KysrKzsUs7BmYYpSFlJDNpRpyEpYmFLTZDb+lFhQmlEsNIZGhFhMP4t7vub65s69c7/vm/HU6dx7e8553ue+73vvC/8JTQBqEa8d2Ad0AeuAz8ATYAR4W1q0qSm5UGeLJWqP+sVs/FHPqy05PWZEkeNjQF9cCwwCw8B7oA3YA3QDzcHpBc7U6/hWOPqtHilw0K1+Cv7juTrOEr4eTYbUpSVe4UDUDdcifKLMyDOiP+rPlRFeHkVTZRdLVYxFn+15wotSc34ycg/wYy6LZBaciny8kKl2qB9jpIvrcFuJ8ehV6HgXyRa5C0zV4baCgchdsxHSwpB8jRqB55E7ioTbI79rkPBk5BVFwh8ib2yQ8LLIv4qEX0Te2SDhHZHHclnqNnUy9nC9Kzq9lwtX9RvgatwfrtPtXpIpu1zIjJGsjVGO1+l2JPpsynOcFkY9G0X9NYr2Rv3pPF6WMOr9KL5ZUvSC03hUizAmvzbVUbWzQLBDfepMDOUJ551ALjH945gArgAvgW9AC7AVOApsCM41ku24O9VjGNhf3XguZ6429XaGmzQeqpuD3+r0aaSCwbKOq7EF6ARWAz+BZ8CrDF4r8BpYlXp2DzhYxnGtsUadqHJ+J+14voQr01T92m+o6+dbGHVlhvOL8O/RZz7wlWRtTMT9d2B0IRxX4oD6QD2kNmcMcOHwFw1jxrpPpYgFAAAAAElFTkSuQmCC"></image>
+      <text>预览</text>
+    </view>
+    <button bindtap="addphone">
+      <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABLUlEQVRIie2Tvy4FQRTGvxGJXFeF6IVX8Aj+FP4VKp0apcdQSG4j4h2EZ6BGjUIisnsrT/DT3Ik1e2bt3JiG/ZJNNjPnnN/59pyVOnX6a3L+BcjF2Je0LOlM0odz7vstkOPZ4Us3wEqtrQzQLeo697yJTJ93V9J1cPZknP2q4w3D6TMwZ+5Rhpl6FUDPx8TAi8AlcAq4ROi6AX0BZqtxFnhv1J3XfQJ024CWVadN4BMj+a4FdM3Iew2dNoH7wIFR5LEBumnED4GpWE7Tch0bxW6NIqtG3Buj7R0HLODQKPpQubd+mSHGTFPBAo6M4lfYM30H5n+CtgXHnIcqgek20BRwzLlXASy0haaCY/ACmEmBjgMO4clOQ/BkvYWoBpJ6kpYkXUgqE3I7dfoH+gR7cgd0HJJDOQAAAABJRU5ErkJggg=="></image>
+      <text>使用</text>
+    </button>
+    <!-- <button wx:else open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+      <image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABLUlEQVRIie2Tvy4FQRTGvxGJXFeF6IVX8Aj+FP4VKp0apcdQSG4j4h2EZ6BGjUIisnsrT/DT3Ik1e2bt3JiG/ZJNNjPnnN/59pyVOnX6a3L+BcjF2Je0LOlM0odz7vstkOPZ4Us3wEqtrQzQLeo697yJTJ93V9J1cPZknP2q4w3D6TMwZ+5Rhpl6FUDPx8TAi8AlcAq4ROi6AX0BZqtxFnhv1J3XfQJ024CWVadN4BMj+a4FdM3Iew2dNoH7wIFR5LEBumnED4GpWE7Tch0bxW6NIqtG3Buj7R0HLODQKPpQubd+mSHGTFPBAo6M4lfYM30H5n+CtgXHnIcqgek20BRwzLlXASy0haaCY/ACmEmBjgMO4clOQ/BkvYWoBpJ6kpYkXUgqE3I7dfoH+gR7cgd0HJJDOQAAAABJRU5ErkJggg=="></image>
+      <text>使用</text>
+    </button> -->
+  </view>
+  <warnBox title='{{warnTit}}' wx:if="{{hideModal}}" warnFlash="{{warnFlash}}"></warnBox>
+</view>
+<login bind:myevent="onMyEvent" loginState='{{loginState}}'></login>
+<componentScan showModal="{{showModal}}" showCreat="{{showCreat}}" selectid="{{selectid}}"></componentScan>

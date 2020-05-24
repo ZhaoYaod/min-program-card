@@ -1,0 +1,83 @@
+<!--abountService.wxml-->
+<login bind:myevent="onMyEvent" loginState='{{loginState}}' link="{{link}}"></login>
+<view class="build-banner">
+  <view class="build-banner-h1">专为垂直细分服务市场打造</view>
+  <view class="build-banner-h2">28万种裂变式服务交易流程，满足全行业交易属性，我们承诺，不能交易，包退款！</view>
+  <view class="build-banner-h3" bindtap="pubProduct">添加服务</view>
+  <image class="build-banner-img" src="{{productImg1}}"></image>
+  <!-- <image src="/static/关于服务功能1.png" class="build-banner-img"></image> -->
+</view>
+<view class="bodyP1">
+  <view class="bodyP1T1">全行业线上交易解决方案</view>
+  <!-- <view class="bodyP1T2">不能交易，我们承诺包退款！</view> -->
+  <view class="bodyP1List1">
+    <view class="bpl">
+      <view class="eachL" wx:for="{{myList1}}" wx:key="index">
+        <!-- <view class="imgBox"></view> -->
+        <image src="{{item.url}}" class="imgBox"></image>
+        <view class="boxT">{{item.text}}</view>
+      </view>
+    </view>
+    <!-- <view class="bpl2">
+      <view class="eachL2" wx:for="{{myList2}}" wx:key="index">
+        <view class="imgBox"></view>
+        <view class="boxT">{{item.text}}</view>
+      </view>
+    </view> -->
+  </view>
+</view>
+<view class="build-banner">
+  <view class="build-banner-h1">智能订单管理工具</view>
+  <view class="build-banner-h2">为商家打造智能订单管理终端，会员管理工具，满足广泛业务需求</view>
+  <view class="build-banner-h3" bindtap="pubProduct">添加服务</view>
+  <!-- <image class="build-banner-img" src="/static/关于服务功能2.png"></image> -->
+  <image class="build-banner-img" src="{{productImg2}}"></image>
+
+</view>
+<view class="bodyP1f">
+  <view class="bodyP1T1f">多样化交易流程</view>
+  <view class="bodyP1List1f">
+    <view class="bplf">
+      <view class="eachLf" wx:for="{{myList3}}" wx:key="index">
+        <image class="imgBoxf" src="{{item.url}}"></image>
+        <view class="boxTf">{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="build-banner-h4" bindtap="pubProduct">发布服务</view>
+</view>
+<view class="build-banner">
+  <view class="build-banner-h1">商城版网站自带交易收款功能</view>
+  <view class="build-banner-h2">支持微信，支付宝，网银收款，无需任何操作，输入收款银行信息即刻完成</view>
+  <view class="build-banner-h3" bindtap="pubProduct">添加服务</view>
+  <image class="build-banner-img" src="{{productImg3}}"></image>
+  <!-- <image class="build-banner-img" src="/static/关于服务功能3.png"></image> -->
+</view>
+
+<view class="stepC">
+  <view class="stepCtitle">简单3步，完成服务发布</view>
+  <view class="eachStep">
+    <view class="eachS">创建经营主体</view>
+    <view class=" eachS eachS-1">添加服务</view>
+    <view class=" eachS eachS-2">发布服务</view>
+    <!-- <image class="imgL" src="/static/line.png"></image> -->
+    <image src="{{lineImg}}" class="imgL"></image>
+  </view>
+</view>
+<view class="build-banner">
+  <view class="build-banner-h1">族蚂网同步展示销售</view>
+  <view class="build-banner-h2">优选精美商品进入族蚂商城，为商家网站提供快速入口，打造商业生态圈</view>
+  <view class="build-banner-h3" bindtap="pubProduct">添加服务</view>
+  <!-- <image class="build-banner-img" src="/static/关于服务功能4.png"></image> -->
+  <image class="build-banner-img" src="{{productImg4}}"></image>
+</view>
+
+<view class="about_e">
+<view class="about_e_h1">Copyright ? 2017 www.zuma.com  版权所有 </view>
+<view class="about_e_h2">上海族蚂信息科技有限公司  沪ICP备18007337号-2</view>
+</view>
+ <view class="build-bottom-client">
+  <view class="build-bottom-radius" bindtap="onlineService">
+    <text>在线客服</text>
+  </view>
+</view> 

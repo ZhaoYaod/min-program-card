@@ -1,0 +1,107 @@
+var lable = function (lable) {
+  if(lable){
+    var arr = lable.split(',');
+    var str = '';
+    for (var i = 0; i < arr.length; i++) {
+      str +=  arr[i] + ' '
+    }
+    return str;
+  }else{
+    return '';
+  }
+}
+var code = function(code){
+  var arr = code.split('_');
+  return arr.join('')
+}
+var headType = function(n,type){
+  if(n==1){    //小头像
+    if(type == 'H'){
+      return '491.4';
+    }else{
+      return '491.4';
+    }
+  }else if(n==2){          //大头像
+    if (type == 'H'){
+      return '304.2';
+    } else{
+      return '491.4';
+    }
+  }else {
+    if (type == 'H') {
+      return '491.4';
+    } else {
+      return '491.4';
+    }
+  }
+}
+var fee = function(type,price){
+  switch(type){
+    case 0:
+      return '模板费用'+price/100+'元！'
+      break;
+    case 1:
+      return '族蚂二级站直接跳转付费'+price/100+'元！'
+      break;
+    case 2:
+      return 'URL网址展示二维码付费' + price/100 + '元！'
+      break;
+    case 3:
+      return '添加小程序二维码付费' + price/100 + '元！'
+      break;
+    case 4:
+      return '添加公众号二维码付费' + price/100 + '元！'
+      break;
+    case 50:
+      return '首件产品链接免费'
+      break;
+    case 5:
+      return '非首件产品每个5元！合计费用' + price/100 + '元！'
+      break;
+    case 60:
+      return '首件服务链接免费'
+      break;
+    case 6:
+      return '非首件服务每个5元！合计费用' + price/100 + '元！'
+      break;
+    case 70:
+      return '首篇文章链接免费'
+      break;
+    case 7:
+      return '非首篇文章每个5元！合计费用' + price/100 + '元！'
+      break;
+  }
+}
+var Totalfee = function(arr){
+  var price = 0;
+  for(var i=0; i<arr.length; i++){
+    price+=arr[i].price
+  }
+  return price/100;
+}
+var disCount = function(disCount,fee){
+  console.log(disCount,fee)
+  var d = disCount-fee;
+  if(d>=0){    //优惠额度大于付款金额
+    return '本次抵扣' + fee/100 + '元，仍余'+ d/100 + '元抵扣金额'
+  }else{
+    return '本次抵扣' + disCount/100 + '元，仍需支付' + (-d)/100 + '元'
+  }
+}
+var payText = function (disCount, fee){
+  var d = disCount - fee;
+  if (d >= 0) {    //优惠额度大于付款金额
+    return '确认'
+  } else {
+    return '付款'
+  }
+}
+module.exports = {
+  lable:lable,
+  code:code,
+  headType:headType,
+  fee:fee,
+  Totalfee: Totalfee,
+  disCount: disCount,
+  payText:payText
+}

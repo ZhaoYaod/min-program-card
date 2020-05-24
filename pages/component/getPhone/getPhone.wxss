@@ -1,0 +1,84 @@
+/* pages/scan/scan.wxss */
+
+.scan-container {
+  /* background-color: rgba(red, green, blue, alpha); *//* padding-left: 4.68rpx;
+  padding-right: 4.68rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  position: relative; */
+}
+
+.mask {
+  padding-left: 4.68rpx;
+  padding-right: 4.68rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: #678290;
+  z-index: 10;
+}
+
+.scan-box {
+  background-color: white;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  border-radius: 23.4rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32.76rpx;
+  color: #797979;
+  text-align: left;
+  box-sizing: border-box;
+  padding-top: 117rpx;
+  transform: translate(-50%, -50%);
+  padding-bottom: 74.88rpx;
+  width: 678.6rpx;
+  height: 608.4rpx;
+  z-index: 11;
+  /* animation: myflash 0.5s linear both; */
+}
+
+.scan-imgae {
+  width: 140.4rpx;
+  height: 140.4rpx;
+  border-radius: 46.8rpx;
+}
+
+.scan-text {
+  font-size: 37.44rpx;
+  color: #333;
+  padding-top: 20rpx;
+  padding-bottom: 70.2rpx;
+}
+
+.scan-createcards {
+  width: 585rpx;
+  padding-left: 126.36rpx;
+  height: 93.6rpx;
+  color: #fff;
+  font-size: 37.44rpx;
+  line-height: 93.6rpx;
+  box-sizing: border-box;
+  border-bottom-right-radius: 14.04rpx;
+  border-bottom-left-radius: 14.04rpx;
+  border-radius: 80rpx;
+  background-color: #19ac18;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.selectClass {
+  color: #2fb7ec;
+  /* transition: 1s all; */
+}
+
+.scan-weimage {
+  width: 70.2rpx;
+  height: 60.84rpx;
+}

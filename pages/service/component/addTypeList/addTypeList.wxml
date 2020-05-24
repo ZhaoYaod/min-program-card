@@ -1,0 +1,37 @@
+<!--pages/my_product/my_product.wxml-->
+
+<view class="search">
+  <button class="check-type"  bindtap="selectType"
+   >选择{{type}}</button>
+    
+</view>
+
+<view scroll-y="true" wx:if="{{!upRoadingRotate}}" class="scroll-item" bindtap="notSelect" >
+  <view wx:if="{{list.length == 0&&!upRoadingRotate}}" class="no-more">
+    <image wx:if="{{type=='产品'}}" class="noMoreProduct-img" src="{{imgUrl+'noproduct.png'}}" />
+    <image wx:if="{{type=='服务'}}" class="noMoreProduct-img" src="{{imgUrl+'noservice.png'}}" />
+    <image wx:if="{{type=='文章'}}" class="noMoreProduct-img" src="{{imgUrl+'noartical.png'}}" />
+    <text class="noMoreProduct" >暂时没有{{type}}</text>
+  </view>
+  <view  wx:for="{{list}}" wx:key="*this" data-index = "{{index}}" bindtap="uncheck"
+     class="product-item {{proSelected == index ?'product-item-selected':''}}"  
+bindlongpress="productSelect">
+    <image mode='aspectFill' src="{{item.fGoodsImgUrl}}" class="product-item-image" wx:if="{{item.fGoodsImgUrl}}"></image>
+    <rich-text class='product-item-title' nodes="{{item.fGoodsName}}" style="left:{{item.fGoodsImgUrl ? '155.44rpx' :'0'}};width:{{item.fGoodsImgUrl ?'538.2rpx':'678.6rpx'}}"></rich-text>
+    <view class="product-item-price" style="left:{{item.fGoodsImgUrl ? '155.44rpx' :'0'}};">
+     <text wx:if="{{type=='产品' || type=='服务'}}" style="font-size:23.4rpx">¥</text>
+      <text wx:if="{{type=='产品' || type=='服务'}}" class="product-item-price-text">{{item.fGoodsPrice/100}}</text>
+      <text  wx:if="{{type=='文章'}}" class="product-item-price-text" style="color:#bbbbbb">{{item.fCreateTime}}</text> 
+    </view>
+    <text class="product-item-subName">来自{{item.fEntrepName}}</text>
+    <view class="product-item-box" wx:if="{{proSelected == index}}" style="height:{{items.length*101.4}}rpx">
+        <button wx:for="{{items}}" wx:key="{{item.name}}" data-index="{{item.name}}" catchtap="operating"  hover-class="operatSelected"
+        class="product-item-text" open-type="{{item.name=='转发' ? 'share' : ''}}">
+          {{item.name}}
+        </button>
+    </view>
+  </view>
+  
+</view>
+ <warnBox id="myComponent" title="{{title}}" warnFlash="{{warnFlash}}" hideModal="{{hideModal}}"></warnBox>
+ <login bind:myevent="onMyEvent" loginState='{{loginState}}' link="{{link}}"></login>

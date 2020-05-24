@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar":"/custom-tab-bar/index",
+     "wxpublic": "/pages/component/wxPublic/wxPublic",
+     "login": "/pages/component/login/login"
+  },
+  "navigationBarTitleText":"发现"
+}

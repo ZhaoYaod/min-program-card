@@ -1,0 +1,38 @@
+<!--pages/scan/searchScan/searchScan.wxml-->
+<view class="search-scan-container">
+  <view class="search-scan-head">
+    <!-- <input type="number" placeholder="重新扫" confirm-type="search" bindconfirm='btn_search' bindinput='input_txt' value="{{fPhone}}" /> -->
+    <navigator class="search-scan-add" hover-class="none" style="background-image:url({{addImage}})" open-type="navigate" url="../addLable/addLable"></navigator>
+    <navigator class="btn_search" hover-class="none" open-type="navigate" url="../addLable/addLable">都不是，继续添加</navigator >
+  </view>
+  <view class="search-scan-title">检测到{{fPhone}}手机号名片：</view>
+  <view class="search-scan-box">
+    <view class="search-scan-list" wx:for="{{setlist}}" wx:for-index="i" bindtap="addlink"  wx:key="i" data-url="{{item.fCardTemplateUrl}}" data-id="{{item.fId}}">
+      <image class="search-img" src="{{item.fPhotoUrl}}" mode="aspectFill"></image>
+      <view class="search-scan-information">
+        <view class="search-scan-name">
+          <text class="search-name">{{item.fUserName}}</text>
+          <view class="search-table" wx:if="{{item.fPosition!=''}}">{{item.fPosition}}</view>
+          <text class="search-ischeck" wx:if="{{item.fAuthen == 1}}">已认证</text>
+          <text class="search-nocheck" wx:else>未认证</text>
+        </view>
+        <view class="search-scan-definite">
+          <view class="search-scan-definite-text">
+            <view class="search-scan-company">{{item.fCorpName}}</view>
+            <view class="search-scan-founder" wx:if="{{fCreateType}}">由{{item.fCreateName}}本人创建</view>
+            <view class="search-scan-founder" wx:else>由{{item.fCreateName}}创建</view>
+          </view>
+          <view class="search-scan-definite-btn {{item.fIsCollection>=1?'search-scan-nocollect':'search-scan-iscollect'}}" data-type="{{item.fIsCollection}}" data-index="{{i}}" catchtap="checkCollect">
+            <view class="search-scan-isbtn"wx:if="{{!item.flahScan}}"></view>
+            <view class="search-scan-nobtn" wx:else></view>
+            <view class="search-scan-collect" wx:if="{{item.fIsCollection>=1 && item.flahScan}}">已收藏</view>
+            <view class="search-scan-none" wx:elif="{{item.fIsCollection>=1 && !item.flahScan}}">已收藏</view>
+            <view class="search-scan-none" wx:else>收藏</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+<warnBox hideModal="{{isLoading}}" title="数据加载中" warnFlash="1"></warnBox>
+</view>
+<login bind:myevent="onMyEvent" loginState="{{loginState}}" link="{{link}}"></login>

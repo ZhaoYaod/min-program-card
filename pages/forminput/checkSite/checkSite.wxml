@@ -1,0 +1,43 @@
+<!--pages/checkSite.wxml-->
+<login  bind:myevent="onMyEvent" loginState='{{loginStatus}}'></login>
+<view class="checkSiteContainer">
+  <view class="noCheckSite" wx:if="{{siteList.length==0 && !getData}}">
+    <view class="checkSiteIcon">
+      <image class="checkSiteImg" src="{{imgUrl+'u688.png'}}" />
+    </view>
+    <!-- <image class="checkSiteIcon" src="/static/noLoading.png" /> -->
+    <view class="checkSiteText">您目前没有任何网站！</view>
+    <view class="checkSiteBtn" bindtap="createSite">现在建站</view>
+  </view>
+  <view class="checkSite" wx:else="{{siteList.length!=0}}">
+    <view class="checkSiteBox" wx:for="{{siteList}}" wx:for-index="idx" bindtap="selectSite" data-status="{{item.fWebsiteStatus}}" data-url="{{item.fInUrl}}" wx:key="{{itme.fInUrl}}">
+      <view class="siteIconBox">
+        <image class="siteIcon" src="{{item.fLogo}}" mode="aspectFit" />
+      </view>
+      <view class="siteTitleBox">
+        <view class="siteName">{{item.fWebSiteName}}</view>
+        <view class="siteTitle">{{item.fInUrl}}</view>
+      </view>
+      <view class="right">
+        <image src="{{imgUrl+'right2.png'}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="siteProup" wx:if="{{isCheck}}">
+    <view class="siteProupBox">
+      <view class="siteAdmin_a"></view>
+      <view class="siteAdmin_b"></view>
+      <view class="siteAdmin_c"></view>
+    </view>
+  </view>
+  <view class="isPublish" wx:if="{{isPublish}}">
+    <text>该网站尚未发布无法选择！</text>
+  </view>
+  <view class="siteProupBox" wx:if="{{getData}}">
+    <warnBox
+      id="myComponent"
+      title="数据加载中"
+      warnFlash="1"
+    ></warnBox>
+  </view>
+</view>

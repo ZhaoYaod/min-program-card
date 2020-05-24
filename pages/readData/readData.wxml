@@ -1,0 +1,10 @@
+<!--pages/scan/readData/readData.wxml-->
+<view class="readdata-container">
+  <view class="readdata-box">
+    <!-- <image class="readdata-img" src="{{flashImg}}" style="width:72.54rpx;height:72.54rpx;" mode="aspectFit"></image> -->
+    <!-- <loading wx:if="{{isLoading}}">正在读取数据</loading> -->
+    <warnBox hideModal="{{isLoading}}" title="正在读取数据" warnFlash="1"></warnBox>
+    <!-- <text class="readdata-text">正在读取数据</text> -->
+  </view>
+</view>
+<popUp bind:leftBtn="cancel" bind:rightBtn="confirm" contentTit="{{contentTit}}" direction="{{direction}}" wx:if="{{showPop}}" leftBtnTit="{{leftBtnTit}}" rightBtnTit="{{rightBtnTit}}" leftcolor="{{leftcolor}}"></popUp>

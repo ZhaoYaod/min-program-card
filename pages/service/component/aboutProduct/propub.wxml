@@ -1,0 +1,68 @@
+<!--pages/propub/propub.wxml-->
+<login bind:myevent="onMyEvent" loginState='{{loginState}}' link="{{link}}"></login>
+<view class="propub-banner">
+  <view class="propub-banner-h1">快速线上发布产品，打造私域新零售</view>
+  <view class="propub-banner-h2">赋能线下实体经济! 打造私域智能线上零售体系我们承诺,不能交易,包退款!</view>
+  <view class="propub-banner-h3" bindtap="pubProduct">发布产品</view>
+  <image src="{{productImg1}}"></image>
+</view>
+<view class="propub-shop">
+  <view class="propub-shop-h1">不仅仅是一键式购物</view>
+  <view class="propub-shop-h2">我们提供28万种交易流程组合</view>
+  <view class="propub-shop-h3">
+    <view class="propub-shopList" wx:for="{{list}}" wx:key="{{title}}">
+      <image src="{{item.url}}" class="propub-rec"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+</view>
+<view class="propub-order">
+  <view class="propub-order-h1">智能订单管理工具</view>
+  <view class="propub-order-h2">量身打造商家智能订单管理终端,会员管理系统,满足广泛业务需求</view>
+  <view class="propub-order-h3"  bindtap="pubProduct">发布产品</view>
+  <image src="{{productImg2}}"></image>
+</view>
+<view class="propub-resolve">
+  <view class="propub-resolve-h1">全行业线上交易解决方案</view>
+  <view class="propub-resolve-h2">不能交易,我们承诺包退款！</view>
+  <view class="propub-resolve-img">
+    <view class="propub-resolve-item" wx:for="{{items}}" wx:key="{{title}}">
+      <image src="{{item.url}}" class="propub-resolve-radius"></image>
+      <text>{{item.title}}</text>
+    </view> 
+  </view>
+  <view class="propub-resolve-advisory"  bindtap="pubProduct">发布产品</view>
+</view>
+<view class="propub-receipt">
+  <view class="propub-receipt-h1">商城版自带交易收款功能</view>
+  <text class="propub-receipt-h2">支持微信，支付宝，网银收款，无需任何操作，输入收款银行信息即刻完成</text>
+  <view class="propub-receipt-h3" bindtap="pubProduct">添加产品</view>
+  <image src="{{productImg3}}"></image>
+</view>
+<view class="propub-pub">
+  <view class="propub-pub-h1">简单3步，完成产品发布</view>
+  <view class="propub-pub-box">
+    <!-- <image src="/static/line.png" class="propub-pub-line"></image> -->
+    <image src="{{lineImg}}" class="propub-pub-line"></image>
+  </view>
+  <text class="propub-pub-h2">创建经营主体</text>
+  <text class="propub-pub-h2">添加产品</text>
+  <text class="propub-pub-h2">发布完成</text>
+</view>
+<view class="propub-sale">
+  <view class="propub-sale-h1">族蚂网同步展示销售</view>
+  <view class="propub-sale-h2">精选站点商品，族蚂商城同步销售，创领平台-商家同步销售新局面</view>
+  <view class="propub-sale-h3" bindtap="pubProduct" >添加产品</view>
+  <image src="{{productImg4}}"></image>
+</view>
+<view class="propub-bottom">
+  <view class="propub-bottom-outSide">
+    <text>Copyright © 2017 www.zuma.com  版权所有</text>
+    <text>上海族蚂信息科技有限公司  沪ICP备18007337号-2</text>
+  </view>
+  <view class="build-bottom-client">
+    <view class="build-bottom-radius" bindtap="onlineService">
+      <text>在线客服</text>
+    </view>
+  </view> 
+</view>

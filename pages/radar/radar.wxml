@@ -1,0 +1,21 @@
+<login bind:myevent="onMyEvent" loginState='{{loginState}}' link="{{link}}"></login>
+<view class="lable-container">
+ <view class='lable-input-box'>
+   <label class="input-text" for="keyword">
+  关键字
+     <input   bindinput="bindReplaceInput" placeholder-class="place-text" name="keyword" type="text" placeholder="  行业标签、手机号码" />
+   </label>
+ </view>
+  <view class="input-info">
+    <text class="info-text" selectable="false" space="false" decode="false">
+      输入手机号、行业关键字，即可开启雷达。
+    </text>
+    <text class="info-text" selectable="false" space="false" decode="false">
+      如：想要找搬家服务，输入关键字【搬家】或【搬家公司】开启雷达搜索。
+    </text>
+        
+  </view>
+     
+</view>
+ <button  class="openledar" catchtap="openRadar">开启雷达</button>
+  <tabbar></tabbar> 

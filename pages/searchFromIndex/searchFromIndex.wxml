@@ -1,0 +1,69 @@
+<!-- 已登录样式 -->
+<!-- <view class="land" style="height:{{windowHeight}}px"> -->
+<view class="land">
+    <!-- 搜索框 -->
+    <view class="serBox">
+      <view class="search">
+          <!-- <icon class="searchIcon" type="search" size="28.08rpx" color="#8a8a8a"/> -->
+        <view class="searchIcon iconfont icon-sousuo">
+            <input type="text" placeholder=" 姓名/公司名/手机号/标签" placeholder-style="color:#DFDDDE" class="search-input" name="searchKeyword" confirm-type="search" bindinput="searchInputAction" bindfocus="searchFocus" bindblur="searchBlur" focus="{{focus}}" value="{{inputValut}}"/> 
+
+        </view>
+        <view class="deleteIcon" catchtap="deleteValue">
+          <image src="{{img1Url}}" style="width:100%;height:100%"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 搜索关键字时展示有关关键字列表 -->
+    <scroll-view class="scBox" wx:if="{{searchArray.length>0}}" scroll-y="true" style="height:{{windowHeight}}px">
+      <view class="mpTitle" wx:if="{{searchArray.length>0}}">名片</view>
+      <view class="ecSC" wx:for="{{searchArray}}" wx:key="index" data-ele="{{item}}" catchtap="searchClick" catchlongpress="cardLongtap" data-phone="{{item.fOtherId}}">
+        <view class="imgBox">
+          <image mode="aspectFill" class="nowImg" src="{{item.fCardPics[2]}}"></image>
+          <image mode="aspectFill" class="nowImg2" src="{{item.fCardPics[1]}}"></image>
+          <image mode="aspectFill" class="nowImg3" src="{{item.fCardPics[0]}}"></image>
+        </view>
+        <view class="textBox">
+          <view class="textC1Box">
+            <text class=" {{item1.isKey ? 'highlight' : '' }}" wx:for="{{item.keyArr}}" wx:for-item="item1"  wx:key="index1">{{item1.value}}</text>
+            <!-- <text class="textC1" wx:if="{{!item.keyArr||item.keyArr.length==0}}">{{item.fCardName}}<text class="textC2">有{{item.fNum}}张名片</text></text> -->
+            <text class="textC1" wx:if="{{!item.keyArr||item.keyArr.length==0}}">{{item.fCardName}}</text>
+            <text class="textC2">有{{item.fNum}}张名片</text>
+          </view>
+          <!-- <view class="textC2Box"> -->
+            <!-- <text wx:if="{{item.keyArr2.length>0}}" class="textC2 {{item2.isKey ? 'highlight' : '' }}" wx:for="{{item.keyArr2}}" wx:for-item="item2" wx:key="id2" wx:key="{{index2}}">{{item2.value}}</text> -->
+            <!-- <text class="textC2" wx:if="{{!item.keyArr2||item.keyArr2.length==0}}">{{item.fOtherId}}</text> -->
+            <!-- <text class="textC2">有{{item.cardNum}}张名片</text> -->
+          <!-- </view> -->
+          <view class="textC3Box">
+            <!-- 公司名称 -->
+            <!-- <text wx:if="{{item.keyArr3.length>0}}" class="textC3 {{item3.isKey ? 'highlight' : '' }}" wx:for="{{item.keyArr3}}" wx:for-item="item3" wx:key="id3" wx:key="{{index3}}">{{item3.value}}</text>
+            <text class="textC3" wx:if="{{!item.keyArr3||item.keyArr3.length==0}}">{{item.fCorpName}}</text> -->
+
+            <!-- 标签 -->
+            <text wx:if="{{item.realShow.length>0}}" class="textC3 {{item3.isKey ? 'highlight' : '' }}" wx:for="{{item.realShow}}" wx:for-item="item3" wx:key-index="id3" wx:key="index3">{{item3.value}}</text>
+            <text class="textC3" wx:if="{{!item.realShow||item.realShow.length==0}}">{{item.fCardTags}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 搜索关键字时无任何匹配数据时展示雷达列表 -->
+    <view class="searcNo" wx:if="{{searchArray.length==0&&isFocus&&inputValut.length>0}}" catchtap="toRadar">
+      <!-- <view class="leidaIcon iconfont icon-tongxinjizhan"></view> -->
+      <view class="leidaIcon">
+        <image mode="aspectFill" style="width:100%;height:100%" src="{{leidaUrl}}"></image>
+      </view>
+      <view class="leidaText">
+        <view class="leidaText1">雷达搜</view>
+        <view class="leidaText2">标签、行业名、手机号码搜附近的名片</view>
+      </view>
+    </view>
+
+    <!-- 按首字母拼音排序 -->
+    <!-- <view class="allList {{forMarkList.length>0?'':'allList2'}}" wx:if="{{!isFocus&&!isValue}}">
+
+      <view class="textAll" wx:if="{{forMarkList.length==0}}">您目前没有收藏任何名片！</view>
+
+    </view> -->
+</view>

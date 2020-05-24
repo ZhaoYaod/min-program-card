@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#F1E1C6",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "名片海报",
+  "usingComponents": {
+    "warnBox": "/pages/component/warnBox/warnBox"
+  }
+}

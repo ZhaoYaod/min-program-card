@@ -1,0 +1,16 @@
+<!--pages/PreviewTemplate/PreviewTemplate.wxml-->
+
+<view class="pretemp-wrap">
+  <!-- 页面内容区 -->
+  <block wx:key="{{index}}" wx:for="{{pretemplist}}">
+      <view class="pretemp_list"><image src="{{item.fImgUrl}}"></image></view>
+  </block>
+   <!--遮罩层  -->
+  <view class="shade" wx:if="{{shows}}" bindtap="close"> 
+    <view class="pic">
+      <image src="../../static/gesture.png" ></image>
+    </view>
+    <view class="text"><text>上下滑动，查看下一个模板</text></view>
+
+  </view>    
+</view>

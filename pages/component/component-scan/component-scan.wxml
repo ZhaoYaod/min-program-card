@@ -1,0 +1,9 @@
+<!--pages/component/scan/scan.wxml-->
+<component-scan wx:if="{{showModal}}" class="scan-container" bindtap="closeHid">
+  <view class="mask" catchtouchmove="preventTouchMove"></view>
+  <view class="scan-box {{isCheck?'closeImgS':''}}">
+    <view class="scan-createcards" catchtap="createcards" style="color:{{index==0?'#1081FF':'#202020'}}">为他人建名片</view>
+    <view class="scan-mycards" catchtap="mycards" style="color:{{index==1?'#1081FF':'#202020'}}">为自己建名片</view>
+  </view>
+</component-scan>
+<popUp wx:if="{{showPop}}" bind:leftBtn="cancel" bind:rightBtn="confirm"></popUp>

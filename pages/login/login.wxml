@@ -1,0 +1,13 @@
+<!--pages/component/login/login.wxml-->
+<login>
+  <view class="login-container {{loginState?'login-is-container':'login-no-container'}}" style="visibility:{{!loginState&&login?'hidden':'show'}}">
+    <view class="login-body">
+      <view class="login-img"></view>
+      <view class="login-text">族蚂名片</view>
+      <button class="login-uplogin login-button" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信用户快捷登录</button>
+      <view class="login-nologin login-button" bindtap="addAnimation">暂不登录</view>
+    </view>
+  </view>
+</login>
+<popUp direction="0" contentTit="{{contentTit}}" wx:if="{{showPop}}" bindleftBtn="cancel"></popUp>
+<warnBox title='{{warnTit}}' wx:if="{{hideModal}}" warnFlash="{{warnFlash}}"></warnBox>

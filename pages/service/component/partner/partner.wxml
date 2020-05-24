@@ -1,0 +1,42 @@
+<!--pages/service/component/subjectManage/subjectManage.wxml-->
+<view wx:if="{{isLoading}}">
+    <scroll-view class="partner" scroll-y='true'>
+        <view class="list">
+            <image mode='aspectFill' class="subject-img" src="{{fLogo}}" />
+            <text class="subjec-name">{{fName}}</text>
+            <button wx:if="{{buttonBlue}}" class="partner-button blue-button" bindtap="quit">退出</button>
+        </view>
+        <view class="info-list">
+            <image mode='aspectFill' class="user-info-img" src='{{ownerData.fHeadLogo}}' />
+            <view class="user-info">
+                <view class="user-info-name">
+                    <text class="user-name max-name">{{ownerData.fNickName}}</text>
+                    <text class="user-suo">所有者</text>
+                </view>
+                <view class="user-info-phone">{{ownerData.fUserPhone}}</view>
+            </view>
+            <!--<button class=" partner-button set-button">权限设置</button>-->
+        </view>
+        <view class="info-list" wx:for="{{partnerData}}" wx:key="{{index}}">
+            <image mode='aspectFill' class="user-info-img" src='{{item.fHeadLogo}}' />
+            <view class="user-info">
+                <view class="user-info-name">
+                    <text class="user-name">{{item.fNickName}}</text>
+                    <text class="user-new" wx:if="{{item.isNew}}">新</text>
+                    <text class="user-suo">合伙人</text>
+                </view>
+                <view class="user-info-phone">{{item.fUserPhone}}</view>
+            </view>
+            <!--<button class=" partner-button sets-buttons" bindtap="setLimit">权限设置</button>-->
+        </view>
+    </scroll-view>
+    <view class="invite-box">
+        <button class="invite-button" open-type="share" >邀请合伙人</button>
+    </view>
+</view>
+<popup wx:if="{{showPop}}" bind:leftBtn="cancel" bind:rightBtn="confirm" contentTit="{{contentTit}}"
+    leftBtnTit="{{leftBtnTit}}" rightBtnTit='{{rightBtnTit}}' leftcolor='{{leftcolor}}' rightcolor='{{rightcolor}}'
+    direction="{{direction}}" contColor="{{contColor}}" textAlign="{{textAlign}}" leftWeight="{{leftWeight}}"
+    btnFsize="{{btnFsize}}" rightWeight="{{rightWeight}}"></popup>
+<warnBox id="myComponent" title="{{title}}" warnFlash="{{warnFlash}}" hideModal="{{hideModal}}"></warnBox>
+<login bind:myevent="onMyEvent" loginState='{{loginState}}'  link="{{link}}"></login>

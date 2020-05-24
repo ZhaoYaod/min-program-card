@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cscan": "/pages/component/component-scan/component-scan"
+  }
+}

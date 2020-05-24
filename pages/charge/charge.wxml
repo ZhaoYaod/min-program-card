@@ -1,0 +1,58 @@
+<!--pages/my_product/my_product.wxml-->
+
+<view class="charge_h weui-flex margin_b_8" bindtap="goBack">
+    <image mode='aspectFill' class="charge_h_l" src="{{titleList.photolist}}"></image>
+    <view class="charge_h_box weui-flex-2">
+      <view class="charge_h_boxTop weui-flex">
+          <view class="charge_h_m weui-flex-2">
+            <view><text>{{titleList.cname}}</text></view>
+            <view ><text decode="true">{{titleList.ctitle}}&ensp;</text></view>
+          
+          </view>
+          <view class="charge_h_r weui-flex-2">
+            <block wx:if="{{titleList.cpost}}"><text>{{titleList.cpost}}</text></block> 
+             
+          </view>
+      </view>
+      <view class="charge_h_boxBot weui-flex">
+        <view><text>{{titleList.tag}}</text></view>
+        <!-- <text class='meiyou' >未认证 </text>    -->
+        <block wx:if="{{!noAuthen}}">
+              <text class="you" wx:if="{{titleList.fAuthen}}">已认证</text>
+              <text class='meiyou' wx:if="{{!titleList.fAuthen}}">未认证 </text>
+        </block> 
+      </view>  
+
+             
+    </view>
+    
+
+</view>
+
+<view class="charge_tit margin_b_8 weui-flex weui-flexVCen weui-flexCen"><view class="charge_tit_line"></view><text>{{type}}列表</text><view class="charge_tit_line"></view></view>
+
+<image src="{{upLoading}}" class="uploading {{upRoadingRotate?'loadRotate':''}}" wx:if="{{upRoadingRotate}}"></image>
+<!--<text class="noMoreProduct" wx:if="{{list.length == 0&&!upRoadingRotate}}">暂时没有{{type}}</text>-->
+<view scroll-y="true" wx:if="{{!upRoadingRotate}}" class="scroll-item" catchtap="operating">
+  <view  wx:for="{{list}}" wx:key="{{item.image}}" data-index = "{{index}}" bindtap="goDetail"
+     class="product-item line {{proSelected == index ?'product-item-selected':''}} "  
+bindlongpress="productSelect">
+    <image mode='aspectFill' src="{{item.fGoodsImgUrl}}" class="product-item-image" wx:if="{{item.fGoodsImgUrl}}"></image>
+    <rich-text class='product-item-title' nodes="{{item.fGoodsName}}" style="left:{{item.fGoodsImgUrl ? '194.22rpx' :'39.78rpx'}};width:{{item.fGoodsImgUrl ?'500.76rpx':'641.16rpx'}}"></rich-text>
+    <view class="product-item-price {{proSelected == index ?'product-item-selected':''}}" style="left:{{item.fGoodsImgUrl ? '194.22rpx' :'39.78rpx'}};">
+      <text wx:if="{{type=='产品' || type=='服务'}}" style="font-size:23.4rpx">¥</text>
+      <text wx:if="{{type=='产品' || type=='服务'}}" class="product-item-price-text">{{item.fGoodsPrice/100}}</text>
+      <text  wx:if="{{type=='文章'}}" class="product-item-price-text" style="color:#bbbbbb">{{item.fCreateTime}}</text> 
+    </view>
+    <text class="product-item-subName">来自{{item.fEntrepName}}</text>
+    <view class="product-item-box" wx:if="{{proSelected == index}}">
+        <button wx:for="{{items}}" wx:key="{{name}}" data-index="{{index}}" catchtap="operating"  hover-class="operatSelected"
+        class="product-item-text" open-type="share">
+          {{item.name}}
+        </button>
+    </view>
+  </view>
+</view>
+
+<login bind:myevent="onMyEvent" loginState='{{loginState}}' ></login>
+<!-- <view wx:if="{{chargeType === 'chanpin品'}}" class="charge_btn"><button  bindtap="primary">立即付款</button></view> -->

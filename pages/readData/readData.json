@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "popUp": "/pages/component/popUp/popUp",
+    "warnBox": "../component/warnBox/warnBox"
+  }
+}

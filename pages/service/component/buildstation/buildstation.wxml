@@ -1,0 +1,82 @@
+<!--pages/buildstation/buildstation.wxml-->
+<swiper autoplay="autoplay" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" 
+    indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" class="build-banner">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.url}}" class="build-banner-img"></image>
+        <view class="build-banner-h1">{{item.title}}</view>
+        <view class="build-banner-h2">{{item.introduce}}</view>
+        <view class="build-banner-h3" bindtap="onlineService">{{item.chat}}</view>
+      </swiper-item>
+    </block>
+</swiper>
+<view class="build-banner1">
+  <view class="build-banner1-h1">建站30分钟轻松搞定</view>
+  <view class="build-banner1-text">
+    <view class="build-banner1-h2">第一步：登陆族蚂网创建经营主体</view>
+    <view class="build-banner1-h3">第二步：选择模板,编辑并发布</view>
+    <view class="build-banner1-h4">第三步：域名绑定及ICP备案</view>
+  </view>
+</view>
+<view class="build-module">
+  <view class="build-module-h1">近千精美网站模板任意选</view>
+  <view class="build-module-img">
+    <image class="build-module-img1" src="{{perfectModel1}}"></image>
+    <image class="build-module-img2" src="{{perfectModel2}}"></image>
+    <image class="build-module-img3" src="{{perfectModel3}}"></image>
+    <image class="build-module-img4" src="{{perfectModel4}}"></image>
+  </view>
+  <view class="build-module-h2" bindtap="linkToModel">查看模板</view>
+</view>
+<view class="build-site">
+  <view class="build-site-h1">支持多主体类型</view>
+  <view class="build-site-h2">支持单一用户，管理多类型主体</view>
+  <view class="build-site-img">
+    <view class="build-site-img1" wx:for="{{items}}" wx:key="{{name}}">
+      <image src="{{item.url}}"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  <view class="build-site-h3" bindtap="onlineService">免费咨询</view>
+</view>
+<view class="build-money">
+  <image src="{{site_img_banner}}"></image>
+  <view class="build-money-h1">低至0元,新用户更能享受优惠套餐</view>
+  <view class="build-money-h2">
+    <text>免费版：0 元</text>
+    <text>领航版：398 元/年（支持自主域名）</text>
+    <text>旗舰版：698 元/年</text>
+    <text>尊享版：998 元/年</text>
+  </view>
+</view>
+<view class="build-people">
+  <view class="build-people-h1">建网站不求人！</view>
+  <view class="build-people-h2">
+    <view class="build-people-text">
+      <view class="build-people-dot"></view><text>拖拽式操作，全流程可视化，一键式发布</text>
+    </view>
+    <view class="build-people-text1">
+      <view class="build-people-dot"></view><text>全行业覆盖，我们承诺不能交易包退款</text>
+    </view>
+    <view class="build-people-text2">
+      <view class="build-people-dot"></view><text>直配微信、支付宝、银联支付功能</text>
+    </view>
+    <view class="build-people-text3">
+      <view class="build-people-dot"></view><text>H5模板，10分钟完成网站搭建</text>
+    </view>
+    <view class="build-people-text4">
+      <view class="build-people-dot"></view><text>性能稳定，收费低廉，性价比高</text>
+    </view>
+  </view>
+</view>
+<view class="build-bottom">
+  <view class="build-bottom-outSide">
+    <text>Copyright © 2017 www.zuma.com  版权所有</text>
+    <text>上海族蚂信息科技有限公司  沪ICP备18007337号-2</text>
+  </view>
+ <view class="build-bottom-client">
+  <view class="build-bottom-radius" bindtap="onlineService">
+    <text>在线客服</text>
+  </view>
+  </view>
+</view>

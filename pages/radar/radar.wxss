@@ -1,0 +1,58 @@
+/* pages/scan/addLable/addLable.wxss */
+
+.lable-container {
+  padding-left:46.8rpx;
+  padding-right: 46.8rpx;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 140.4rpx;
+}
+.lable-input-box{
+ 
+  padding-bottom:23.4rpx;
+  border-bottom:2.34rpx solid #c0e9f9;
+}
+.input-text{
+   padding-left: 4.68rpx;
+  display:flex;
+   justify-content:row;
+   /*x轴对齐方式*/
+   align-items:center;
+   color:#161616;
+   font-size:32.76rpx;
+   font-weight: bold;
+}
+.input-text input{
+  margin-left:28.08rpx;
+   color:#202020;
+   font-size:28.08rpx;
+   font-weight: 100;
+   width:472.68rpx;
+   height:79.56rpx;
+}
+.place-text{
+  color:#c4c4c4;
+  font-size:28.08rpx;
+  font-weight: 100;
+
+}
+.input-info{
+  padding-left:28.08rpx;
+  color:#c4c4c4;
+  font-size:28.08rpx;
+}
+/* 开启雷达按钮 */
+.openledar {
+  width: 655.2rpx;
+  margin-left: 46.8rpx;
+  background: #1081FF;
+  color: #fff;
+  font-size: 28.08rpx;
+  height: 84.24rpx;
+  line-height: 84.24rpx;
+  margin-top: 93.6rpx;
+}
+
+.openledar::after {
+  border: none;
+}

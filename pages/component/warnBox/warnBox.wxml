@@ -1,0 +1,13 @@
+<!--pages/component/warnBox/warnBox.wxml-->
+<view class="modal-mask i-mask" wx:if="{{hideModal}}"></view>
+<view class="modal-dialog" wx:if="{{warnFlash && hideModal}}">
+  <mp-loading type="circle" tips="" style="margin-bottom: 10px;" wx:if="{{warnFlash==1}}"></mp-loading>
+  <view wx:if="{{warnFlash==2}}" class="checkBox">
+    <view class="check iconfont icon-duigou-check"></view>
+  </view>
+  <view class="modal-title">{{title}}</view>
+</view>
+<view class="modal-dialog" wx:elif="{{hideModal && !warnFlash}}">
+  <image class="modal-content" src="{{warnImg}}"></image>
+  <view class="modal-title">{{title}}</view>
+</view>

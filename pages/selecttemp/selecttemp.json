@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "login": "../component/login/login",
+    "warnBox":"../component/warnBox/warnBox",
+    "componentScan":"../component/component-scan/component-scan"
+  },
+  "navigationBarTitleText": "选择名片模板"
+}

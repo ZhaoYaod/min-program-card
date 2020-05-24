@@ -1,0 +1,227 @@
+/* pages/my_product/my_product.wxss */
+/* 搜索 */
+.search{
+  height:105.3rpx;
+  border-bottom:2.34rpx solid #F2F2F2;
+  width: 100%;
+  position: relative;
+}
+.search .iconfont{
+  left:37.44rpx;
+  width:37.44rpx;
+  height:37.44rpx;
+  display: inline-block;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  font-size:56.16rpx;
+}
+.search-ipt{
+  color:#474747;
+  font-size:28.08rpx;
+  display: inline-block;
+  height:100%;
+  position: absolute;
+  left:98.28rpx;
+  width:561.6rpx;
+}
+/* 添加产品 */
+.add-product{
+  position: relative;
+  height:114.66rpx;
+  border-bottom:16.38rpx solid #F2F2F2;
+}
+
+.add-product .tianjia{
+  position: absolute;
+  width:42.12rpx;
+  height:42.12rpx;
+  left:37.44rpx;
+  top:39.78rpx;
+  color:#1296db;
+}
+ .tianjia image{
+   width:100%;
+   height:100%;
+ }
+.add-product text{
+  position: absolute;
+  line-height: 112.36rpx;
+  color:#122F46;
+  font-size:32.76rpx;
+  left:95.94rpx;
+  padding-top:7.02rpx;
+}
+.add-product .icon-jiantou2 {
+  position: absolute;
+  right: 46.8rpx;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 32.76rpx;
+  height: 32.76rpx;
+  font-size: 30.42rpx;
+}
+
+.icon-jiantou2-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.icon-sousuo{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
+/* 加载中 */
+.uploading{
+  width:72.54rpx;
+  height:72.54rpx;
+  display: flex;
+  margin:39.78rpx auto 0;
+}
+/* 载入中 */
+.loadRotate{
+  animation: headRotate .8s linear infinite;
+}
+@keyframes headRotate{
+  0%{transform: rotate(0)}
+  50%{transform: rotate(180deg)}
+  100%{transform: rotate(360deg)}
+}
+.product-item-content {
+  position: absolute;
+  font-size: 23.4rpx;
+  color: #bbbbbb;
+  width: 100%;
+  height: 42.12rpx;
+  overflow: hidden;
+  line-height: 1.7;
+}
+/* 没有产品 */
+.noMoreProduct{
+  color:#BCBCBC;
+  font-size:28.08rpx;
+  display: block;
+  text-align: center;
+  margin:81.9rpx auto 0;
+  overflow:hidden;
+}
+.noMoreProduct-img{
+  width:140.4rpx;
+  height:140.4rpx;
+}
+.noMoreProduct-text{
+  width:100%;
+  display:block;
+
+}
+/* 产品列表 */
+/* .scroll-item{
+  padding-bottom:46.8rpx;
+} */
+.product-item{
+  height:187.2rpx;
+  position: relative;
+  padding:0 35.1rpx;
+  border-bottom: 2.34rpx solid #f2f2f2;
+  box-sizing: border-box;
+}
+/* 选中效果 */
+.product-item-selected{
+  background:#F2F2F2;
+}
+/* 图片 */
+.product-item-image{
+  position: absolute;
+  width:140.4rpx;
+  height:140.4rpx;
+  left:35.1rpx;
+  top:25.74rpx;
+  border-radius:9.36rpx;
+}
+/* 标题 */
+.product-item-title{
+  position: absolute;
+  font-size:28.08rpx;
+  color:#161616;
+  width:500.76rpx;
+  left:152.1rpx;
+  top:23.4rpx;
+  height:79.56rpx;
+  overflow:hidden;
+
+}
+/* 价格 */
+.product-item-price{
+  position: absolute;
+  left:152.1rpx;
+  bottom:32.76rpx;
+  color:#FF0066;
+}
+.product-item-price-text{
+  font-size:28.08rpx;
+}
+/*  主体名称*/
+.product-item-subName{
+  position: absolute;
+  right:35.1rpx;
+  bottom:32.76rpx;
+  font-size:23.4rpx;
+  color:#BCBCBC;
+  background:#E4E4E4;
+  border-radius:4.68rpx;
+  padding:0 9.36rpx;
+  white-space: nowrap;
+  /*强制在一行显示*/
+  text-overflow:ellipsis;
+  /*设置超出内容显示...*/
+  overflow: hidden;
+  max-width:374.4rpx;
+}
+/* 点击弹出框 */
+.product-item-box{
+  width:248.04rpx;
+  height:304.2rpx;
+  border-radius: 4.68rpx;
+  box-shadow: 0 0 11.7rpx #d2d2d2;
+  position: absolute;
+  left:367.38rpx;
+  top:58.5rpx;
+  background:#fff;
+  z-index:1;
+}
+.product-item-text{
+  display: block;
+  color:#1E1E1E;
+  font-size:28.08rpx;
+  height:98.28rpx;
+  margin-left:21.06rpx;
+  padding-top:4.68rpx;
+}
+.operatSelected{
+  color:#1081FF!important;
+}
+.product-item-text {
+  color: #474747;
+  font-size: 32.76rpx;
+  height: 98.28rpx;
+  padding-top: 4.68rpx;
+  display: block;
+  margin-left: 21.06rpx;
+  margin-right: auto;
+  box-sizing: border-box;
+  text-align: left;
+  text-decoration: none;
+  line-height: 98.28rpx;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  background-color: #fff;
+}
+button::after {
+  border: none;
+}

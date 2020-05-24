@@ -1,0 +1,11 @@
+<view class="mark" style="height:100%">
+    <view class="box1">
+        <view class="contnet" style="text-align:{{textAlign}}">
+          <text>{{content}}</text>
+        </view>
+        <view class="btn">
+          <text class="l {{clickColorL?'clickColor' : ''}}" bindtap="_leftBtn" style="color:{{leftcolor}};font-weight:{{fweight}};">{{leftBtn}}</text>
+          <text class="r {{clickColorR?'clickColor' : ''}}" bindtap="_rightBtn" style="color:{{rightcolor}};font-weight:{{fweight}};">{{rightBtn}}</text>
+        </view>
+    </view>
+</view>

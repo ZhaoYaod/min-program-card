@@ -1,0 +1,37 @@
+<login bind:myevent="onMyEvent" loginState='{{loginState}}'  link="{{link}}"></login>
+<view class="absoutContainer">
+  <view class="about_a">
+    <view class="about_h1">支持跳转公众号，小程序，企业官网</view>
+    <view class="about_h2">
+    <view class="about_h2_cont">微信转发精品文章实现引流，提升销量，提升品牌公信力</view>
+    </view>
+    <!-- <navigator class="about_btn" open-type="navigate" url="../index/index">添加文章</navigator> -->
+    <view class="about_btn" bindtap="pubProduct">添加文章</view>
+    <image class="about_a-banner" src="{{messageImg}}"></image>
+    <!-- <image class="about_a" src="/static/关于资讯博客banner.png"></image> -->
+  </view>
+  <view class="message_a">
+    <view class="message_a_h1">支持多类型文章上传</view>
+    <view class="message_a_imgBox">
+      <view class="message_a_imgCont" wx:for="{{list}}">
+        <!-- <view class="message_a_img"></view> -->
+        <image src="{{item.img}}" class="message_a_img"></image>
+        <view class="message_a_text">{{item.text}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="message_b">
+    <view class="message_b_h1">简单快速发布文章</view>
+    <view class="eachStep">
+    <view class="eachS">创建经营主体</view>
+    <view class="eachS">编辑文章</view>
+    <view class="eachS">发布文章</view>
+    <!-- <image class="imgL" src="/static/line.png"></image> -->
+    <image src="{{lineImg}}" class="imgL"></image>
+  </view>
+  </view>
+  <view class="about_e">
+  <view class="about_e_h1">Copyright © 2017 www.zuma.com  版权所有 </view>
+  <view class="about_e_h2">上海族蚂信息科技有限公司  沪ICP备18007337号-2</view>
+  </view>
+</view>

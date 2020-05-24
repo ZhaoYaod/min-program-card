@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "warnBox": "/pages/component/warnBox/warnBox",
+    "login": "/pages/component/login/login"
+    
+  }
+}

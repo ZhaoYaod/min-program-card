@@ -1,0 +1,8 @@
+<!--pages/component/scan/scan.wxml-->
+<component-scan wx:if="{{showModal}}" class="scan-container">
+  <view class="mask" catchtouchmove="preventTouchMove"></view>
+  <view class="scan-box">
+    <view class="scan-createcards" catchtap="scan" style="color:{{index==0?'#0252DB':'#161616'}}">扫描我的名片</view>
+    <view class="scan-mycards" catchtap="man" style="color:{{index==1?'#0252DB':'#161616'}}">手动输入</view>
+  </view>
+</component-scan>

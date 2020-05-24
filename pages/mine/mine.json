@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "tabbar": "/custom-tab-bar/index",
+    "login": "/pages/component/login/login",
+    "modal": "/pages/component/modal/modal",
+    "scan": "/pages/component/addLable/component-scan",
+    "wxpublic": "/pages/component/wxPublic/wxPublic",
+    "warningB": "/pages/component/warnBox/warnBox"
+  },
+  "navigationBarTitleText": "我的名片",
+  "enablePullDownRefresh": true
+}

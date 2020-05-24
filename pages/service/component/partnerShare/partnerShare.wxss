@@ -1,0 +1,152 @@
+/* pages/service/component/partnerShare/partnerShare.wxss */
+.share-bg{
+    width:100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color:#D7412B;
+  
+}
+.custom-title{
+
+}
+.cnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    color: #fff;
+}
+.cnavbar {
+    position: relative;
+     display:flex;
+     justify-content: flex-start;
+     align-items: center;
+}
+.back-icon{
+    /* width:152.1rpx; */
+    height:65.52rpx;
+    background-color:#084180;
+    border-radius:234rpx;
+    margin-left:23.4rpx;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:0 23.4rpx;
+}
+.back-icon image{
+    width:39.78rpx;
+    height:39.78rpx;
+}
+.back-icon text{
+    font-size:28.08rpx;
+}
+.nav-title{
+    margin-left:46.8rpx;
+    font-size:42.12rpx;
+}
+.share-head{
+    position: absolute;
+    top:30.35%;
+    width:100%;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+
+
+}
+.share-head text:nth-child(1){
+    font-size:46.8rpx;
+    color:#FFCE37;
+    font-weight:bold;
+}
+.share-head text:nth-child(2) {
+    font-size: 37.44rpx;
+    color: #FFCE37;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+.share-content{
+    position: absolute;
+    top:45.79%;
+    width:100%;
+
+}
+.share-info{
+    display:flex;
+    flex-direction: row;
+
+}
+.share-info image{
+    width:84.24rpx;
+    height:84.24rpx;
+    border-radius:50%;
+    margin-left:109.98rpx;
+
+
+
+}
+.infor-text{
+    margin-left:23.4rpx;
+    display:flex;
+    flex-direction: column;
+    font-size:28.08rpx;
+    color:#7B7656;
+}
+.share-text{
+    display:flex;
+    flex-direction: column;
+    color:#7B7656;
+    text-align:left;
+    padding-left:117rpx;
+    margin-top:35.1rpx;
+
+}
+.share-text view image{
+    width:56.16rpx;
+    height:46.8rpx;
+}
+.share-text view text{
+    font-size:28.08rpx;
+    padding-left:23.4rpx;
+}
+.share-text text{
+    font-size:30.42rpx;
+    color:#7B7656;
+    line-height:65.52rpx;
+}
+.share-button{
+    width:100%;
+    height:105.3rpx;
+    padding-top:18.72rpx;
+    display:flex;
+    justify-content: center;
+}
+.share-button image{
+    width:510.1rpx;
+    height:100%;
+}
+.animation-img{
+    animation:scale .5s both infinite;
+}
+@keyframes scale {
+    0%{transform:scale(1)}
+    20% {
+        transform: scale(1.05)
+    }
+    40% {
+        transform: scale(1.06)
+    }
+    60% {
+        transform: scale(1)
+    }
+    80% {
+        transform: scale(.96)
+    }
+    100% {
+        transform: scale(.95)
+    }
+}

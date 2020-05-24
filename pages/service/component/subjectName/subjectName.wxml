@@ -1,0 +1,44 @@
+<!--pages/service/component/subjectManage/subjectManage.wxml-->
+<view class="subject-name">
+    <view class="my-product partent" bindtap="partner">
+        <view class="lists-friends-box">
+            <!--<image class="lists-img" src="{{imgUrl+'friends.png'}}" />-->
+            <image class="lists-img" src="{{friends}}" />
+        </view>
+        <text class="radar-h1">合伙人管理</text>
+        <text class="radar-h2">合伙人邀请、合伙人管理权限限制</text>
+        <view class="iconfont icon-jiantou2">
+            <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+        </view>
+    </view>
+    <view class="my-product" data-type='product_1' data-fID='{{fId}}' catchtap="linkToAddPage">
+        <view class="img-box">
+            <image class="lists-img" src="{{imgUrl+'s-chanpin.png'}}" />
+        </view>
+        <text class="radar-h1">我的产品</text>
+        <text class="radar-h2">添加产品链接，用于微信转发</text>
+        <view class="iconfont icon-jiantou2">
+            <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+        </view>
+    </view>
+    <view class="my-product" data-type='service_1' data-fID='{{fId}}' catchtap="linkToAddPage">
+        <view class="img-box">
+            <image class="lists-img" src="{{imgUrl+'s-fuwu.png'}}" />
+        </view>
+        <text class="radar-h1">我的服务</text>
+        <text class="radar-h2">添加服务链接，用于微信转发</text>
+        <view class="iconfont icon-jiantou2">
+            <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+        </view>
+    </view>
+    <view class="my-product" data-type='artical_1' data-fID='{{fId}}' catchtap="linkToAddPage">
+        <view class="img-box">
+            <image class="lists-img" src="{{imgUrl+'s-wenzhang.png'}}" />
+        </view>
+        <text class="radar-h1">我的文章</text>
+        <text class="radar-h2">添加文章链接，用于微信转发</text>
+        <view class="iconfont icon-jiantou2">
+            <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+        </view>
+    </view>
+</view>

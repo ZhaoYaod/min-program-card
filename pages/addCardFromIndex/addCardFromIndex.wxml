@@ -1,0 +1,78 @@
+<!--addCardFromIndex.wxml-->
+<login bind:compontpass="compontpass" bind:myevent="myEvent" loginState ='{{loginState}}' link="{{link}}"></login>
+<!-- <view class="closeDl" catchtap="closeDl"> -->
+<view class="closeDl">
+    <!-- 搜索框 -->
+    <view class="search">
+      <!-- <icon class="searchIcon" type="search" size="28.08rpx" color="#8a8a8a"/> -->
+       <view class="searchIcon iconfont icon-sousuo"></view>
+       <input type="number" placeholder=" 输入对方完整手机号搜索" placeholder-style="color:#C4C4C4" class="search-input" name="searchKeyword" bindinput="searchInputAction" bindfocus="searchFocus" bindblur="searchBlur"/> 
+       <view class="allCli {{isPhone?'rightColor':'wrongColor'}}" wx:if="{{isFocus||phoneValue.length>0}}" catchtap="allSearch">搜索</view>
+    </view>
+
+    <!-- 搜索关键字时展示有关关键字列表 -->
+    <scroll-view class="scBox" scroll-y="true" wx:if="{{searchArray.length>0}}">
+      <view class="lineSpace"></view>
+      <!-- <view class="mpTitle" wx:if="{{searchArray.length>0}}">名片</view> -->
+      <view class="ecSC" wx:for="{{searchArray}}" wx:key="index" catchtap="detailC" data-index="{{index}}" data-fphone="{{item.fPhone}}">
+      <!-- <view class="ecSC" wx:for="{{cardlist}}" wx:key="{{index}}"> -->
+        <view class="imgBox">
+          <image mode="aspectFill" class="nowImg" src="{{item.fPhotoUrlArr[0]}}"></image>
+          <image mode="aspectFill" class="nowImg2" src="{{item.fPhotoUrlArr[1]}}"></image>
+          <image mode="aspectFill" class="nowImg3" src="{{item.fPhotoUrlArr[2]}}"></image>
+        </view>
+        <view class="textBox">
+          <view class="textC1Box">
+            <text class="textC1">{{item.fUserName}}<text class="textC2">有{{item.cardNum}}张名片</text></text>
+          </view>
+
+          <view class="textC3Box">
+            <text class="textC3">{{item.fPhone}}</text>
+          </view>
+
+        </view>
+ 
+      </view>
+    </scroll-view>
+    <view class="lineSpace" wx:if="{{!isFocus&&!isValue}}"></view>
+    
+    <view class="noText" wx:if="{{isValue&&searchArray.length<=0&&!seachIng&&isHas}}">未搜索到名片信息</view>
+    <view class="seachIng" wx:if="{{seachIng}}">
+      <!-- <view class="seachPoint">2</view> -->
+      <image mode="aspectFill" class="seachPoint" src="{{lodingUrl}}"></image>
+      <view class="seachText">正在读取数据</view>
+    </view>
+    <!-- 微信好友，手机通讯录，名片雷达 -->
+    <view class="menuBox" wx:if="{{!isFocus&&!isValue}}">
+      <view class="eachMenu" catchtap="menuClick" data-index="0">
+        <view class="menuImg1">
+          <view class="iconImg1 iconfont icon-scan_icon"></view>
+        </view>
+        <view class="menuText">扫名片</view>
+        <view class="menuText2">使用扫一扫功能，快速创建收藏</view>
+      </view>
+      <view class="eachMenu" catchtap="menuClick" data-index="1">
+        <view class="menuImg2">
+          <view class="iconImg2 iconfont icon-bianji"></view>
+        </view>
+        <view class="menuText">手动录入</view>
+        <view class="menuText2">为自己或他人制作电子名片</view>
+      </view>
+      <view class="eachMenu" catchtap="menuClick" data-index="2">
+        <view class="menuImg3">
+          <view class="iconImg3 iconfont icon-leida"></view>
+        </view>
+        <view class="menuText">雷达搜</view>
+        <view class="menuText2">找到附近的联系人名片</view>
+      </view>
+
+    </view>
+
+    <!-- 弹出框2 -->
+    <view class="dialog2" wx:if="{{dailogS}}" catchtap="dialog2C">
+      <view class="deleteBox {{dailogS?'addAn':''}}">
+        <view class="deleteT1 {{colorS&&(colorIndex==0)?'dialogC':''}}" data-index="0" catchtap="dailogClick">为他人建名片</view>
+        <view class="deleteT1 {{colorS&&(colorIndex==1)?'dialogC':''}}" data-index="1" catchtap="dailogClick">为自己建名片</view>
+      </view>
+    </view>
+</view>

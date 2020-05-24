@@ -1,0 +1,11 @@
+<!-- <view wx:if="{{!isShow}}"> -->
+<view>
+<!-- <scroll-view class="allBox" style="height:100%" scroll-y> -->
+  <image class="posterImg" src="{{shareImgSrc}}"></image>
+  <!-- <view wx:if="{{img_status&&!isShareIn&&showBtn}}" class="saveImg" catchtap="createImg">保存图片</view> -->
+  <!-- <button wx:if="{{!img_status&&!isShareIn&&showBtn}}" open-type='openSetting' bindopensetting='bind_load' class="saveImg">保存图片</button>  -->
+  <button wx:if="{{!isShareIn}}" class="saveImg" catchtap="createImg">保存图片</button>
+  <view wx:if="{{isShareIn}}" class="saveImg" catchtap="cardDetail">查看名片</view>
+<!-- </scroll-view> -->
+</view>
+<warningB warnFlash="{{num}}" title="{{warnTitle}}" hideModal="{{isShow}}"></warningB>

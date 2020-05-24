@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "login": "/pages/component/login/login",
+    "tabbar": "/custom-tab-bar/index"
+  },
+   "navigationBarTitleText": "雷达搜索"
+}

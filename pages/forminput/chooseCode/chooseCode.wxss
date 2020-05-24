@@ -1,0 +1,120 @@
+.scroll {
+  background-color: #F9F9F9;
+  font-size: 28rpx;
+  color: #303133;
+  padding-left: 24rpx;
+}
+
+.tb,
+.scroll.tb {
+  display: flex;
+  flex-direction: column;
+}
+
+scroll-view {
+  height: 100vh;
+}
+
+.lr {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.center {
+  align-items: center;
+}
+
+.flex {
+  flex: 1;
+}
+
+.category-title {
+  padding: 24rpx;
+  background-color: #F9F9F9;
+  color: #bbbbbb
+}
+
+.list {
+  background-color: #F9F9F9;
+  padding: 12rpx 60rpx 12rpx 12rpx;
+}
+
+.list .item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between
+}
+
+.list .item image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.list .item text {
+  margin-top: 8rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.letters {
+  position: fixed;
+  top: 198.9rpx;
+  right: 0;
+  bottom:163.8rpx;
+  width: 48rpx;
+}
+.letters text{
+  font-size: 23.4rpx;
+}
+.disabled {
+  opacity: .2;
+  pointer-events: none;
+}
+
+.hight-light {
+  color: #f40;
+  font-weight: bold;
+}
+.country{
+  word-break:break-all
+}
+.border-line{
+  border-bottom: solid 1px #D7D7D7
+}
+.h55{
+  height: 112.32rpx;
+  box-sizing: border-box
+}
+.code{
+  display: inline-block;
+  color: #333333;
+  padding: 0rpx 16rpx;
+  background: #E1E1E1;
+  border-radius: 9.36rpx;
+  text-align: center;
+  line-height: 39.78rpx;
+}
+.common{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12rpx 60rpx 12rpx 12rpx;
+}
+.font14{
+  font-size: 32.76rpx!important;
+}
+.font10{
+  font-size: 23.4rpx;
+}
+.common-tit{
+  line-height: 125rpx;
+}

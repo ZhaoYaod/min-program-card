@@ -1,0 +1,35 @@
+/* tempcard/bgm/bgm.wxss */
+.bgm-class{
+  width: 100%;
+  height: 100%;
+}
+.bgm{
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgm image{
+
+  width: 100%;
+height: 100%;
+
+}
+
+.rotate {
+  animation: music-rotate 4s linear infinite;
+}
+
+@keyframes music-rotate {
+  0% {
+  transform: rotateZ(0deg);
+  }
+  
+  100% {
+  transform: rotateZ(360deg);
+  }
+}

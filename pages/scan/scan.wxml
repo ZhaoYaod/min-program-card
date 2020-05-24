@@ -1,0 +1,67 @@
+<!--pages/scan/scan.wxml-->
+<view class="create-container">
+  <view class="create-box">
+    <camera class="create-take-card" wx:if="{{checkImg && camera}}"  binderror="binderror">
+      <!-- <cover-view class="create-take-box" style="border-image-source:url({{borderImg}});border-image-repeat:round;border-image-slice: 30;"></cover-view> -->
+      <cover-image class="create-take-box" src="{{borderImg}}" style="top:{{boxTop}}rpx;" />
+      <cover-view class="create-take-text" wx:if="{{checkImg}}">请将纸质名片置于上方框内，即可自动扫描</cover-view>
+      <cover-view class="btnBox" style="bottom:{{btnTop}}rpx;justify-content: center;">
+        <cover-view class="btn">
+          <cover-view class="text" bindtap="takePhoto">
+          </cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view class="create-footer">
+        <cover-view class="create-footer-box" wx:for="{{iconList}}" wx:key="i" wx:for-index="i" bindtap="changeIndex" data-index="{{i}}">
+          <cover-image class="create-img" src="{{item.selectTack}}" style="width:60.84rpx;height:42.12rpx;" wx:if="{{i==0}}" />
+          <cover-image class="create-img" src="{{item.takecard}}" style="width:60.84rpx;height:42.12rpx;" wx:elif="{{i!=0}}" />
+          <cover-view class="create-text {{i==0?'create-check':''}}">{{item.title}}</cover-view>
+        </cover-view>
+      </cover-view>
+      <cover-view class="box" wx:if="{{showPop2}}" style="width:{{contBoxW}}px;">
+        <cover-view class="content">
+          <cover-view>非法名片小程序码</cover-view>
+        </cover-view>
+        <cover-view class="contentBorder"></cover-view>
+        <cover-view class="btnff" catchtap="cancel">
+          <cover-view>我知道了</cover-view>
+        </cover-view>
+      </cover-view>
+    </camera>
+    <image class="create-take-card" wx:elif="{{!checkImg}}" src="{{src}}">
+    
+      <view class="btnBox" style="bottom:{{btnTop}}rpx;justify-content: space-between;">
+        <view class="takePhoto" bindtap="rePhoto">
+          <image src="{{xiangjiImg}}" class="takePhotoImg"/>
+          <view class="textPhoto">重新拍摄</view>
+        </view>
+        <view class="confirm" bindtap="takePhotoLink">
+          <view class="btn">
+            <view class="text">
+              <image src="{{flashImg}}" class="check"/>
+            </view>
+          </view>
+          <view class="textPhoto">确认</view>
+        </view>
+      </view>
+      <view class="create-footer">
+        <view class="create-footer-box" wx:for="{{iconList}}" wx:key="i" wx:for-index="i" bindtap="changeIndex" data-index="{{i}}">
+          <image class="create-img" src="{{item.selectTack}}" style="width:60.84rpx;height:42.12rpx;" wx:if="{{i==0}}" />
+          <image class="create-img" src="{{item.takecard}}" style="width:60.84rpx;height:42.12rpx;" wx:elif="{{i!=0}}" />
+          <view class="create-text {{i==0?'create-check':''}}">{{item.title}}</view>
+        </view>
+      </view>
+      <view class="box" wx:if="{{showPop2}}">
+        <view class="content">
+          <view>非法名片小程序码</view>
+        </view>
+        <view class="contentBorder"></view>
+        <view class="btnff">
+          <view bindtap="cancel">我知道了</view>
+        </view>
+      </view>
+    </image>
+    <warnBox hideModal="{{isLoading}}" title="{{warnBoxTit}}" warnFlash="1"></warnBox>
+    <popUp bind:leftBtn="cancel2" bind:rightBtn="confirm2" contentTit="{{contentTit}}" direction="{{direction}}" wx:if="{{showPop}}" leftBtnTit="{{leftBtnTit}}" rightBtnTit="{{rightBtnTit}}" leftcolor="{{leftcolor}}"></popUp>
+  </view>
+</view>

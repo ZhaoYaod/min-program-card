@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "showModal": "../component/showModal/showModal",
+    "warnBox": "../component/warnBox/warnBox",
+    "popUp": "/pages/component/popUp/popUp"
+  }
+}

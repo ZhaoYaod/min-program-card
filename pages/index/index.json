@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "tabbar":"/custom-tab-bar/index",
+    "login":"/pages/component/login/login",
+    "activity": "/pages/component/activity/activity",
+    "discount": "/pages/component/discount/discount",
+    "wxpublic": "/pages/component/wxPublic/wxPublic"
+  },
+  "navigationBarTitleText": "名片夹"
+  
+}

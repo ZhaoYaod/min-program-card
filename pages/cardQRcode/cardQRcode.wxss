@@ -1,0 +1,43 @@
+/* cardQRcode.wxss */
+/* 去掉滚动条 */
+.allBox{
+  /* width: 100%;
+  height: auto; */
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.canvaC{
+  /* background-color: #fff; */
+  margin:0 auto;
+  width: 280px;
+  /* height:550px; */
+  margin-top: 23.4rpx;
+  border-radius: 11.7rpx;
+  border: 4.68rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.saveImg{
+  width:468rpx;
+  height:84.24rpx;
+  background-color: #1081FF;
+  text-align: center;
+  line-height: 84.24rpx;
+  margin: 0 auto;
+  margin-top:56.16rpx;
+  color: #fff;
+  font-size: 30.42rpx;
+  border-radius: 42.12rpx;
+  margin-bottom: 30rpx;
+}
+.img{
+  width:468rpx;
+  height:84.24rpx;
+}
+.showCan{
+  visibility: visible;
+  border: 4.68rpx solid #f2f2f2;
+}

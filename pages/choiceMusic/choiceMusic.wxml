@@ -1,0 +1,83 @@
+<view wx:if="{{loading}}">
+  <warnBox
+    id="myComponent"
+    title="数据加载中"
+    warnFlash="1"
+  ></warnBox>
+</view>
+<view id="Devil"></view>
+<view wx:if="{{firstEnter}}">
+  <view class="music_head">
+    <view class="music-tit">
+      <text>为名片配乐</text>
+      <view class="onOff-choose {{!showMusic?'gray':''}}" bindtap="switchChange">
+        <text class="onOff-left {{showMusic?'hide':''}}">
+          <text></text>
+        </text>
+        <text class="onOff-right {{!showMusic?'hide':''}}">
+          <text></text>
+        </text>
+      </view>
+    </view>
+    <view class="music-type" wx:if="{{showMusic}}">
+      <text class="{{nowIndex==1 ? 'active' : ''}}" id="tit1" bindtap="chooseType" data-index="1">歌曲</text>
+      <text class="{{nowIndex==0 ? 'active' : ''}}" id="tit2" bindtap="chooseType" data-index="0">纯音乐</text>
+      <text class="{{nowIndex==2 ? 'active' : ''}}" id="tit3" bindtap="chooseType" data-index="2">搞笑</text>
+    </view>
+  </view>
+  <view-scroll wx:if="{{switchItem}}">
+    <view class="musicBox" wx:if="{{showMusic}}">
+      <view class="eachMusic" wx:for="{{musicList}}" wx:key="{{index}}">
+        <view class="imgBox" bindtap="playOrNot" data-play="{{item.isPlay}}" data-index="{{index}}" data-src="{{item.fMusicUrl}}">
+          <view class="imgb {{item.isPlay ? 'rotate1' :''}}" id="img-box">
+            <view class="bg-image {{item.isPlay ? 'rotate' :''}}">
+              <image class="myAudioC" src="{{item.fImgUrl}}"  name="{{item.fName}}" author="{{item.fCreaterName}}" id="myAudio" style="position:absolute;height:{{item.height}}px;width:{{item.width}}px;left:-{{item.left}}px;top:-{{item.top}}px;"> 
+              </image>
+            </view>
+            <view class="musicPlayBtn iconfont {{item.isPlay?'icon-icon-pause':'icon-play'}}" data-play="{{item.isPlay}}" data-index="{{index}}" data-src="{{item.fMusicUrl}}">
+              <image src="{{imgUrl+'music-pause.png'}}" class="music-pause" wx:if="{{!item.isPlay}}" mode="scaleToFill"></image>
+              <image src="{{imgUrl+'music-play.png'}}" class="music-play" wx:else mode="scaleToFill"></image>
+            </view>
+          </view>
+        </view>
+        <view class="titleBox" data-url="{{item.fImgUrl}}" data-name="{{item.fName}}" catchtap="selected" data-url="{{item.fMusicUrl}}" data-name="{{item.fName}}" data-index="{{index}}" data-id="{{item.fId}}" data-ok="{{item.ok}}">
+          <view class="musicTitle">{{item.fName}} ( {{item.musicType}} )</view>
+          <view class="musicAuthor">{{item.fCreaterName}}</view>
+          <view class="musicTime">
+            <text>{{item.fMusicTime}}</text>
+            <image src="{{imgUrl+'audio.svg'}}" wx:if="{{item.isPlay}}"></image>
+          </view>
+          <view class="play-icon" wx:if="{{item.isPlay}}" data-t="play"> 
+            <view class="icon-box" wx:if="{{item.confirm}}">
+              <!-- <image src="/static/2.gif"></image> -->
+              <image src="{{imgUrl+'2.gif'}}"></image>
+            </view>
+            <text wx:else>OK</text>
+          </view>
+          <view class="play-icon" wx:if="{{item.ok}}" data-t="ok"> 
+            <view class="icon-box" wx:if="{{item.confirm}}">
+              <!-- <image src="/static/2.gif"></image> -->
+              <image src="{{imgUrl+'2.gif'}}"></image>
+            </view>
+            <text>OK</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="noMore {{loadingHidden?'loadingOff':'loadingOn'}}" wx:if="{{loadmore}}">
+      <view class="pointBox" wx:if="{{loadmore1}}">
+        <view class="point1">
+          <view class="point point1Box"></view>
+        </view>
+        <view class="point2">
+          <view class="point point2Box"></view>
+        </view>
+        <view class="point3">
+          <view class="point point3Box"></view>
+        </view>
+      </view>
+      <view class="noMoreT" wx:else>没有更多了</view>
+    </view>
+  </view-scroll>
+</view>
+

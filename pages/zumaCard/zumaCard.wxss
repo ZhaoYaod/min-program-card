@@ -1,0 +1,351 @@
+/* 去掉滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.allBox{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.build-banner{
+  /* background:#434343; */
+  height:514.8rpx;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.build-banner:nth-child(n+2){
+  margin-top: 14.04rpx;
+}
+.build-banner-h1{
+  font-size:37rpx;
+  /* color:#fff; */
+  width:608rpx;
+  margin: 0 auto;
+  padding:70.2rpx 0 51.48rpx;
+}
+.build-banner-h2{
+  font-size:28rpx;
+  padding:0 44.46rpx 81.9rpx 58.5rpx;
+  /* color:#fff; */
+  width:608rpx;
+  margin: 0 auto;
+  display: inline-block; 
+  height:58.5rpx;
+}
+.bannerH2{
+  position: absolute;
+  left: 63rpx;
+  top:42%;
+  font-size:28rpx;
+  width:308.44rpx;
+  height:58.5rpx;
+  text-align: left;
+}
+.build-banner-h3{
+  font-size:28rpx;
+  /* color:#fff; */
+  border:2.34rpx dashed #fff;
+  width:187.2rpx;
+  height:60.84rpx;
+  display: inline-block;
+  line-height: 60.84rpx;  
+  margin: 0 auto;
+}
+.bannerH3{
+  position: absolute;
+  left: 63rpx;
+  top:72%;
+  font-size:28rpx;
+  border:2.34rpx dashed #fff;
+  width:187.2rpx;
+  height:60.84rpx;
+  line-height: 60.84rpx;  
+}
+.build-banner-h4{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  left: 0;
+  z-index:-1;
+}
+.propub-pub{
+  height:442.26rpx;
+  background:#F2F2F2;
+  position: relative;
+}
+.propub-pub-h1{
+  padding-top:18.72rpx;
+  margin-left:91.26rpx;
+  font-size:37rpx;
+  height:105.3rpx;
+  color:#000;
+  line-height: 105.3rpx;
+}
+.propub-pub-box{
+  position: absolute;
+  left:84.24rpx;
+  top:159.12rpx;
+}
+.propub-pub-line{
+  position: absolute;
+  width:16.38rpx;
+  height:210.6rpx;
+  left:8.19rpx;
+}
+.propub-pub-h2{
+  height:95.94rpx;
+  line-height: 95.94rpx;
+  display:block;
+  margin-left:128.7rpx;
+  font-size:28rpx;
+  color:#f00;
+}
+.lineSpace{
+  width: 100%;
+  height:56.16rpx;
+  background-color: #F2F2F2;
+}
+.templateC{
+  width: 100%;
+  height:auto;
+  background-color: #fff;
+  padding-bottom: 46.8rpx;
+}
+.tText{
+  width: 100%;
+  height:168.48rpx;
+  text-align: center;
+  line-height: 168.48rpx;
+  color:#000;
+  font-size: 37.44rpx;
+}
+.tBox{
+  width: 702rpx;
+  margin: 0 auto;
+  height:auto;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction:row;
+}
+.imgBox{
+  width: 166.14rpx;
+  height:294.84rpx;
+  background-color: rebeccapurple;
+}
+.realImg{
+  width: 100%;
+  height:100%;
+}
+.imgBox:nth-child(n+5){
+  margin-top: 23.4rpx;
+}
+.lineSpace2{
+  width: 100%;
+  height:14.04rpx;
+  background-color: #F2F2F2;
+}
+.bodyFoot{
+  width:100%;
+  height:auto;
+  box-shadow: 0rpx 0rpx 23.4rpx rgba(0, 0, 0, .2);
+  padding-bottom: 37.44rpx;
+}
+.bf3{
+  padding-top: 58.5rpx;
+  text-align: center;
+  color: #000;
+  font-size:37.44rpx;
+}
+.bf4{
+  width:678.6rpx;
+  margin:0 auto;
+  margin-top: 46.8rpx;
+}
+.bf4Li{
+  width:100%;
+  height:280.8rpx;
+  /* background-color: #6292A6; */
+  position: relative;
+}
+.bf4LiImg{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  left: 0;
+  z-index:-1;
+  top:0;
+}
+.bf4Li:nth-child(n+1){
+  margin-top: 23.4rpx;
+}
+.bf4Li:nth-child(1){
+  margin-top: 0rpx;
+}
+.moreF{
+  border:2.34rpx dashed #0066FF;
+  color: #0066FF;
+  text-align: center;
+  margin:0 auto;
+  margin-top: 46.8rpx;
+  margin-left: 280.7rpx;
+}
+.bf4Text{
+  text-align: center;
+  color: #fff;
+  width: 540.54rpx;
+  margin:0 auto;
+}
+.bf4Text1{
+  font-size: 37.44rpx;
+  padding-top: 51.48rpx;
+}
+.bf4Text2{
+  font-size: 28.08rpx;
+  margin-top: 23.4rpx;
+}
+.bodyC{
+  width: 100%;
+  height: 1118rpx;
+  /* background-color: #434343; */
+  position: relative;
+  padding-bottom:210.6rpx;
+}
+.bodyCImg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top:0;
+  z-index: -1;
+}
+.lineC{
+  width: 100%;
+  height: 1rpx;
+}
+.useNow{
+  width: 655.2rpx;
+  height: 86.58rpx;
+  background-color: #2FB7EC;
+  margin: 0 auto;
+  margin-top: 65rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32.76rpx;
+  border-radius: 4.68rpx;
+  line-height: 86.58rpx;
+}
+.allFunction{
+  width: 655.2rpx;
+  color: #fff;
+  font-size: 37.44rpx;
+  font-weight: bold; 
+  margin-top: 70rpx;
+  margin-left: 74rpx;
+}
+.eachBox{
+  margin-top: 46rpx;
+  width: 655.2rpx;
+  height: auto;
+  margin-left: 74rpx;
+  /* padding-bottom:65.52rpx; */
+  /* background-color: rebeccapurple; */
+}
+
+.otherC{
+  font-size:28rpx;
+  border:2.34rpx dashed #fff;
+  width:187.2rpx;
+  height:60.84rpx;
+  display: inline-block;
+  line-height: 60.84rpx;
+  margin-left: 74rpx;
+  margin-top: 74rpx !important;
+  color: #fff;
+  text-align: center;
+}
+.eachFunction{
+  width: 100%;
+  height: auto;
+  /* background-color: orange; */
+  font-size: 28.08rpx;
+  color: #fff;
+
+}
+.eachFunction:nth-child(n+1){
+  margin-top: 32.76rpx;
+}
+.point{
+  width: 14.04rpx;
+  height: 14.04rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.text{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 18rpx;
+}
+.about_e{
+  width:100%;
+  background-color:#1081FF;
+  color:white;
+  font-size: 23.4rpx;
+  padding-top: 58.5rpx;
+  padding-left: 32.76rpx;
+  padding-bottom: 79.56rpx;
+}
+
+/* 弹出框2样式 */
+.dialog2Zm{
+  width:100%;
+  height:100%;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  top:0;
+  /* margin-left: -50%;
+  margin-top: -196.56rpx; */
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 5;
+}
+.deleteBox{
+  width:736rpx;
+  height:271.44rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  bottom:0rpx;
+  transform: translateX(-50%);
+  /* margin-left: -290.16rpx;
+  margin-top: -135.75rpx; */
+  background-color: #fff;
+  /* border-radius: 11.7rpx; */
+  border-top-left-radius: 11.7rpx;
+  border-top-right-radius: 11.7rpx;
+  box-shadow: 0 0 11.7rpx rgba(0, 0, 0, .35);
+}
+.addAn{
+  animation: showB .3s linear 1;
+}
+/* 头像旋转效果  */
+@keyframes showB{
+  0% {bottom:-500rpx;}
+  100% {bottom:0rpx;}
+}
+.deleteT1{
+  height: 50%;
+  width: auto;
+  color: #000;
+  font-size: 32.76rpx;
+  line-height: 135.72rpx;
+  margin-left: 45rpx;
+}
+.dialogC{
+  color: #0252DB;
+}

@@ -1,0 +1,70 @@
+<image wx:if="{{loading}}" class="seachPoint" src="{{imgurl+'uploading.png'}}"></image>
+<view class="b_box {{showPublic? 'marB100' : ''}}" wx:else>
+<view>
+  <image src="{{imgurl+'plus.png'}}" class="plus" bindtap="addcard"></image>
+  <!-- <button wx:else class="numbtn" open-type="getPhoneNumber" bindgetphonenumber="onGotPhoneNumber"><image src="{{imgurl+'plus.png'}}" class="plus"></image></button> -->
+</view>
+
+<!-- 我的名片 -->
+<view wx:if="{{carddata.length>0}}" class="cardlist">
+  <view class="cardcount">您当前有{{carddata.length}}张名片</view>
+  <!-- <view wx:for="{{carddata}}" class="mycard {{item.functab?'functabshow':''}}" data-cardid="{{item.cardid}}" data-bgm="{{item.bgmUrl}}" data-path="{{item.tempUrl}}" data-index="{{index}}" wx:key="index" bindlongtap="showfunc" bindtouchend="closetouch" bindtap="cardview"> -->
+  <view wx:for="{{carddata}}" class="mycard {{item.functab?'functabshow':''}}" data-cardid="{{item.cardid}}" data-bgm="{{item.bgmUrl}}" data-path="{{item.tempUrl}}" data-index="{{index}}" wx:key="index" bindtap="cardview">
+    <image src="{{item.photolist}}" class="cavatar" mode="aspectFill"></image>
+    <text wx:if="{{item.fIsRead==0}}" class="new">新</text>
+    <text class="cn">
+      <text class="cname">{{item.cname}}</text>
+      <text class="ctag">{{item.fPosition}}</text>
+    </text>
+    <view class="ctitle" wx:if="{{item.ctitle}}">{{item.ctitle}}</view>
+    <view class="ctitle" wx:else><text decode='true'>&nbsp;</text></view>
+    <view class="cother" wx:if="{{item.ccreatetype==1}}">{{item.tempname}} - 本人创建</view>
+    <view class="cother" wx:else>{{item.tempname}} - 由{{item.fCreateName}}创建</view>
+    <view class="sendcard">
+      <view wx:if="{{item.fAuthen==1}}" class="sendbtn" data-fid="{{item.id}}" data-set="{{item}}" catchtap="clickshare" data-cardid="{{item.cardid}}">操作</view>
+      <view wx:if="{{item.fAuthen==0}}" data-num="{{index}}" data-cardid="{{item.cardid}}" catchtap="functoggle">认证</view>
+      <view wx:if="{{item.fAuthen==2}}"><view class="animbox"><view class="anim"><image src="{{imgurl+'right.png'}}"></image></view></view></view>
+    </view>
+    <view class="functab" wx:if="{{item.functab}}" data-index="{{index}}" catchtap="closetap">
+      <view bindtap="bindtop" data-cardid="{{item.cardid}}">置顶</view>
+      <view bindtap="deletecard" data-cardid="{{item.cardid}}">删除名片</view>
+      <view bindtap="navigatorto" data-cardid="{{item.cardid}}">编辑</view>
+      <view bindtap="preview"  data-ele="{{item}}">生成海报</view>
+    </view>
+    <view class="shade" wx:if="{{item.functab}}" data-index="{{index}}" catchtouchstart="hiddenfunc"></view>
+  </view>
+</view>
+<view wx:else class="hiddenblock">
+  <view><image src="{{imgurl+'files.png'}}" class="cfiles"></image></view>
+  <view class="hiddentext">您目前没有任何名片！</view>
+</view>
+<view class="cme" bindtap="addcard">添加新名片</view>
+<!-- <button wx:else class="numbtn" open-type="getPhoneNumber" bindgetphonenumber="onGotPhoneNumber"><view class="cme">添加新名片</view></button> -->
+<!-- <navigator wx:else class="numbtn" url="../component/getPhone/getPhone"><view class="cme">添加新名片</view></navigator> -->
+
+<!-- <view wx:if="{{share}}" bindtap="clickshare"> -->
+<view wx:if="{{share}}">
+  <view class="mask" catchtap="isShare"></view>
+  <view class="scan-box">
+    <button bindtap="bindtop" style="color:{{index==2?'#0252DB':'#161616'}}">置顶</button>
+    <button bindtap="navigatorto" style="color:{{index==3?'#0252DB':'#161616'}}">编辑名片</button>
+    <button bindtap="deletecard" style="color:{{index==4?'#0252DB':'#161616'}}">删除名片</button>
+    <button bindtap="forPoster" style="color:{{index==5?'#0252DB':'#161616'}}">生成海报</button>
+    <!-- <button bindtap="preview">生成海报</button> -->
+    <button class="scan-createcards" data-name="shareBtn" open-type="share" style="color:{{index==0?'#0252DB':'#161616'}}" bindtap="fShare">发送名片到微信</button>
+    <button class="scan-mycards" bindtap="phoneshare" style="color:{{index==1?'#0252DB':'#161616'}}">发送名片到手机号</button>
+  </view>
+</view>
+</view>
+
+<!-- 组件 -->
+<!-- <loading hidden="{{loadingHidden}}">
+        {{dofor}}中
+</loading> -->
+<warningB warnFlash="{{num}}" title="{{warnTitle}}" hideModal="{{isShow}}"></warningB>
+<wxpublic wx:if="{{showPublic}}" class="{{model == 1? 'wxPublicIPhone' : 'wxPublic'}}"></wxpublic>
+<!-- <official-account wx:if="{{showPublic}}" class="wxPublic"></official-account> -->
+<tabbar scanback='{{scanBack}}'></tabbar>
+<scan wx:if="{{scan}}" showModal="{{scan}}" bindtap="onscan"></scan>
+<login bind:myevent="onMyEvent" bind:compontpass="compontpass" loginState="{{loginState}}" link="{{link}}"></login>
+<modal class="box" wx:if="{{modal}}" leftBtn="取消" rightBtn="删除" leftcolor="#202020" rightcolor="#202020" fweight="900" content="删除后无法恢复且所有人无法查看！" bind:leftBtn="leftBtn" bind:rightBtn="rightBtn"></modal>

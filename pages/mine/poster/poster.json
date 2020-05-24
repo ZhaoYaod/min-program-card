@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+      "warningB": "../../component/warnBox/warnBox"
+    },
+    "navigationBarTitleText": "名片海报"
+  }

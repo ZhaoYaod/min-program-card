@@ -1,0 +1,55 @@
+<!--cardListFromAdd.wxml-->
+<login bind:compontpass="compontpass" bind:myevent="myEvent" loginState ='{{loginState}}' link="{{link}}"></login>
+<view class="title" wx:if="{{cardlist.length>0}}">
+  <view class="imgBox">
+    <image mode="aspectFill" class="realImg" style="left:{{index*20}}rpx" wx:for="{{cardlist}}" wx:key="index" src="{{item.fPhotoUrl}}"></image>
+    <!-- <image class="realImg Img2" src="https://api.hibai.cn/music/Music/Music?id=22737627&type=pic"></image> -->
+    <!-- <image class="realImg Img3" src="https://api.hibai.cn/music/Music/Music?id=174956&type=pic"></image> -->
+    <!-- <image class="realImg Img4" src="https://api.hibai.cn/music/Music/Music?id=344442&type=pic"></image> -->
+    <view class="titleT" style="left:{{(cardlist.length-1)*(20)+85}}rpx;width:calc(100% - {{(cardlist.length-1)*(20)+85}}rpx)">{{strName}}的名片</view>
+  </view>
+  <view class="allCli" catchtap="allCollection">全部收藏</view>
+  <view class="allCli" wx:if="{{isDone}}" style="background-color:rgba(0,0,0,0)"></view>
+</view>
+<view class="lineSpace" wx:if="{{cardlist.length>0}}"></view>
+<view class="listBox">
+  <view class="eachList" wx:for="{{cardlist}}" wx:key="index" catchlongpress="cardLongpress" catchtap="cardClick" data-fid="{{item.fId}}" data-fstate="{{item.fState}}" data-fbgmid="{{item.fBgmId}}" data-fcardtemplateurl="{{item.fCardTemplateUrl}}" >
+    <view class="contentBox">
+      <view class="eachImgBox">
+        <image mode="aspectFill" class="eachImg" src="{{item.fPhotoUrl}}"></image>
+      </view>
+      <view class="eachTitleBox">
+        <view class="eachTitle1">
+          <view class="T {{item.fUserName.length<=0?'isShow':''}}">{{item.fUserName?item.fUserName:'空字符'}}</view>
+          <view class="T eachType">{{item.fCardTemplateName}}</view>
+          <view class="T eachStatus {{item.fAuthen==1?'isSure':'noSure'}}">{{item.fAuthen==1?'已认证':'未认证'}}</view>
+        </view>
+        <view class="eachTitle2 {{item.fCorpName.length<=0?'isShow':''}}">{{item.fCorpName?item.fCorpName:'空字符'}}</view>
+        <view wx:if="{{item.fCreateName.length>0}}" class="eachTitle3 {{item.fCreateName.length<=0?'isShow':''}}">由{{item.fCreateName?item.fCreateName:'空字符'}}创建</view>
+      </view>
+      <view wx:if="{{!item.isCollection}}" class="eachCli eachCli1" catchtap="isCollecF" data-index="{{index}}" data-fphone="{{item.fPhone}}" data-iscollect="{{isCollectionArr[index]}}">
+      {{isCollectionArr[index]?'':'收藏'}}
+          <view class="isRight iconfont icon-success_no_circle-copy {{isCollectionArr[index]?'aniC':''}}"></view>
+      </view>
+      <!-- <view wx:if="{{isDone&&!item.isCollection}}" class="eachCli eachCli1" style="background-color:rgba(0,0,0,.3)">
+      </view> -->
+      <view wx:if="{{item.isCollection}}" class="eachCli isCollection">已收藏</view>
+      <!-- <view wx:if="{{item.isCollection}}" class="eachCli">
+        <view class="isRight iconfont icon-success_no_circle-copy {{(colorChange.colorShow&&colorChange.index)?'aniC':''}}"></view>
+      </view> -->
+    </view>
+  </view>
+</view>
+<view class="help" wx:if="{{cardlist.length>0}}" catchtap="helpClick">帮忙做一个</view>
+
+<!-- 弹出框 -->
+<view class="dialogBox" wx:if="{{dailogS}}" catchtap="dailogClick" style="height:{{windowHeight}}px">
+  <view class="dialog2">
+    <view class="deleteBox">
+      <view class="deleteT1" catchtap="dailogClick2">已达到个人5张名片上限！</view>
+      <view class="deleteT1 deleteT"  catchtap="dailogClick">我知道了</view>
+    </view>
+  </view>
+</view>
+
+<warningB warnFlash="{{num}}" title="{{warnTitle}}" hideModal="{{isShow}}"></warningB>

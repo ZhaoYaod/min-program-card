@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "popup": "/pages/component/popUp/popUp",
+     "login": "/pages/component/login/login"
+  }
+}

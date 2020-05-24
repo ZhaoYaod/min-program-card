@@ -1,0 +1,236 @@
+/* pages/scan/searchScan/searchScan.wxss */
+
+.search-scan-container {
+  width: 100%;
+}
+
+.search-scan-head {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 32.76rpx;
+  padding-right: 32.76rpx;
+  padding-top: 30.42rpx;
+  padding-bottom: 30.42rpx;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.btn_search {
+  color: #474747;
+  font-size: 32.76rpx;
+  padding-left: 23.4rpx;
+  line-height: 28.08rpx;
+  height: 28.08rpx;
+  width: 90%;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.search-scan-add {
+  /* font-size: 37.44rpx;
+  font-weight: bold;
+  border-radius: 50%;
+  color: #1296DB;
+  border:1px solid #1296DB; */
+  width: 42.12rpx;
+  height: 42.12rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* line-height: 42.12rpx; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-scan-title {
+  font-size: 23.4rpx;
+  color: #999;
+  padding-left: 35.1rpx;
+  padding-right: 35.1rpx;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 11.7rpx;
+  background-color: #f2f2f2;
+  height: 53.82rpx;
+  line-height: 53.82rpx;
+}
+
+.search-scan-box {
+  width: 100%;
+  padding-left: 23.4rpx;
+  padding-right: 23.4rpx;
+  box-sizing: border-box;
+}
+
+.search-scan-list {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-bottom: 11.7rpx;
+  border-top: 1px solid #f2f2f2;
+}
+
+.search-scan-list:first-child {
+  border-top: none;
+}
+
+.search-img {
+  height: 80.6rpx;
+  border-radius: 9.36rpx;
+}
+
+.search-scan-information {
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+  padding-left: 32.76rpx;
+  display: inline-block;
+}
+
+.search-scan-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search-name {
+  font-size: 32.76rpx;
+}
+
+.search-table {
+  display: inline-block;
+  font-size: 23.4rpx;
+  background-color: #f2f2f2;
+  color: #999999;
+  padding-left: 7.1rpx;
+  padding-right: 7.18rpx;
+  padding-top:7.18rpx;
+  padding-bottom: 7.18rpx;
+  box-sizing: border-box;
+  margin-left: 21.06rpx;
+  max-width:124rpx;
+  height: 34rpx;
+  line-height: 24rpx;
+  overflow: hidden;
+  word-break: break-all;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  border-radius: 4.68rpx;
+}
+
+.search-ischeck {
+  color: #F22C2C;
+  font-size: 23.4rpx;
+  margin-left: 14.04rpx;
+}
+
+.search-nocheck {
+  font-size: 23.4rpx;
+  color: #bcbcbc;
+}
+
+.search-scan-definite {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-scan-definite-text {
+  width: 491.4rpx;
+}
+
+.search-scan-company {
+  font-size: 28.08rpx;
+  color: #999;
+  height: 37.44rpx;
+  line-height: 37.44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-scan-founder {
+  font-size: 23.4rpx;
+  color: #bbb;
+}
+
+.search-scan-definite-btn {
+  font-size: 28.08rpx;
+  width: 163.8rpx;
+  height: 60.84rpx;
+  line-height: 60.84rpx;
+  border-radius: 9.36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  flex-direction: row;
+}
+
+.search-scan-iscollect {
+  color: white;
+  background-color: #1081ff;
+}
+
+.search-scan-nocollect {
+  color: #a1a1a1;
+  padding-left: 14.04rpx;
+  padding-right: 14.04rpx;
+  box-sizing: border-box;
+  text-align: right;
+  background-color: white;
+}
+
+.search-scan-isbtn {
+  transition: none;
+  display: none;
+}
+
+.search-scan-nobtn {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAB1SURBVDhPY/hPIRiiBlz7+hTKIsMA9oMJYPzn/18wnyQDYJpBGAbgBmx8fRbKwg6waQYBsAFvf3/BKgkDuDSDANwFuBThEocBlDBAV4zOxwYwAhFZEyHNIIBhAAgQqxkEsBoAAofe34Cy8AOcBhALBtqA//8BjrW+PikFsQgAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 37.44rpx;
+  height: 37.44rpx;
+  animation: myflash 2.5s linear both;
+  /* transition: 0.3s all; */
+}
+
+@keyframes myflash {
+  0% {
+    width: 37.44rpx;
+    opacity: 0;
+  }
+
+  50% {
+    width: 37.44rpx;
+    opacity: 1;
+  }
+
+  51% {
+    opacity: 0;
+    width: 0;
+  }
+
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.search-scan-collect {
+  width: 86.81rpx;
+  animation: mytext 1s linear 2.5s ease;
+  display: inline-block;
+}
+
+@keyframes mytext {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,389 @@
+/* choiceMusic.wxss */
+page{
+  background: #F8FAFB;
+}
+.emptySpace{
+    width: 100%;
+}
+.musicBox{
+  position: relative;
+  width: 100%;
+  height:auto;
+  padding-right: 35.1rpx;
+  box-sizing: border-box;
+  margin-top: 205.92rpx;
+}
+.eachMusic{
+  width: 100%;
+  height:163.8rpx;
+  /* background-color: red; */
+  
+}
+.imgBox{
+  width: 163.8rpx;
+  height:100%;
+  /* background-color: green; */
+  display: inline-block;
+  padding: 23.4rpx 23.4rpx;
+  box-sizing: border-box;
+}  
+.imgb{
+  width: 117rpx;
+  height: 117rpx;
+  text-align: center;
+  position: relative;
+  border-radius: 50%; 
+  overflow: hidden;
+}
+.bg-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden
+}
+.myAudioC{
+  border-radius: 50%;
+}
+#Devil{
+  width: 117rpx;
+  height: 117rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -100
+}
+.musicPlayBtn{
+  width:56.16rpx;
+  height:56.16rpx;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  font-size: 56.16rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.musicPlayBtn .music-play,.music-pause{
+  height: 100%;
+  width: 100%;
+}
+.titleBox{
+  width: 545rpx;
+  height:100%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 15.4rpx 0rpx;
+  box-sizing: border-box;
+  border-bottom: solid 2.34rpx  #F2F2F2;
+  position: relative;
+}
+.musicTitle{
+  font-size: 28.08rpx;
+  color:#000;
+  /* 隐藏 */
+  overflow: hidden;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 最后以...结尾 */
+  text-overflow: ellipsis;
+}
+
+.musicAuthor,.musicTime{
+  font-size: 23.4rpx;
+  color:rgba(51, 122, 183, .5);
+  margin-top: 15.4rpx;
+  display: flex;
+  height: 35.1rpx;
+}
+.musicTime image{
+  width: 46.8rpx;
+  height: 35.1rpx;
+}
+.musicTime text{
+  align-self: flex-end;
+  margin-bottom: -11.7rpx
+}
+.noMore{
+  width: 100%;
+  height: 100rpx;
+  margin-top: 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.pointBox{
+  width: 120rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+.point1,.point2,.point3{
+  width: 32.76rpx;
+  height: 32.76rpx;
+  display: inline-block;
+  line-height: 100%;
+
+}
+.point1{
+  /* background-color: rgb(233, 61, 61); */
+}
+.point2{
+  /* background-color: rgb(150, 61, 233); */
+  margin-left:12rpx;
+}
+.point3{
+  /* background-color: rgb(18, 92, 27); */
+  margin-left:12rpx;
+}
+.point{
+  /* width: 23.4rpx;
+  height: 23.4rpx; */
+  border-radius: 50%;
+  background-color: #3D9BE9;
+  line-height: 32.76rpx;
+  /* margin: 0 auto; */
+}
+.point1Box{
+  width: 32.76rpx;
+  height: 32.76rpx;
+  /* animation: point1BoxAnM .5s linear .5s infinite alternate; */
+  /* 动画的名称。 */
+  animation-name:point1BoxAnM;
+  /* 规定动画完成一个周期所花费的秒或毫秒 */
+  animation-duration:.4s;
+  /* 规定动画何时开始 */
+  animation-delay:0.01s;
+  /* 规定动画被播放的次数 */
+  animation-iteration-count:infinite;
+  /* 规定动画是否在下一周期逆向地播放 */
+  animation-direction:alternate;
+
+}
+.point2Box{
+  width: 23.4rpx;
+  height: 23.4rpx;
+  /* animation: point2BoxAnM .5s linear .5s infinite alternate; */
+  /* 动画的名称。 */
+  animation-name:point2BoxAnM;
+  /* 规定动画完成一个周期所花费的秒或毫秒 */
+  animation-duration:.4s;
+  /* 规定动画何时开始 */
+  animation-delay:0.02s;
+  /* 规定动画被播放的次数 */
+  animation-iteration-count:infinite;
+  /* 规定动画是否在下一周期逆向地播放 */
+  animation-direction:alternate;
+}
+.point3Box{
+  width: 32.76rpx;
+  height: 32.76rpx;
+  /* animation: point3BoxAnM .5s linear .5s infinite alternate; */
+  /* 动画的名称。 */
+  animation-name:point3BoxAnM;
+  /* 规定动画完成一个周期所花费的秒或毫秒 */
+  animation-duration:.4s;
+  /* 规定动画何时开始 */
+  animation-delay:0.45s;
+  /* 规定动画被播放的次数 */
+  animation-iteration-count:infinite;
+  /* 规定动画是否在下一周期逆向地播放 */
+  animation-direction:alternate;
+  
+}
+@keyframes point1BoxAnM
+{
+from {
+  width: 32.76rpx;
+  height: 32.76rpx;
+  }
+to {
+  width: 23.4rpx;
+  height: 23.4rpx;
+  }
+}
+@keyframes point2BoxAnM
+{
+from {
+  width: 23.4rpx;
+  height: 23.4rpx;
+  }
+to {
+  width: 32.76rpx;
+  height: 32.76rpx;
+  }
+}
+@keyframes point3BoxAnM
+{
+from {
+  width: 32.76rpx;
+  height: 32.76rpx;
+  }
+to {
+  width: 23.4rpx;
+  height: 23.4rpx;
+  }
+}
+.noMoreT{
+  color: #6292A6;
+  font-size: 28.08rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 100%
+}
+.loadingOff{
+  display: none;
+}
+.music-tit{
+  height:117rpx;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 35.1rpx;
+  border-bottom: solid 1px #F2F2F2;
+}
+.music-tit text{
+  font-size: 32.76rpx;
+  color: #474747;
+}
+.music-type{
+  padding: 0 35.1rpx;
+  display: flex;
+  height: 88.92rpx;
+  align-items: center;
+  position: relative;
+}
+.music-type text{
+  height: 100%;
+  font-size: 28.08rpx;
+  color: #999999;
+  text-align: center;
+  line-height: 88.92rpx;
+}
+.music-type text:nth-child(2){
+  margin: 0rpx 46.8rpx; 
+}
+.music-type .active{
+  color: #1081FF;
+  font-size: 37.44rpx;
+  box-sizing: border-box;
+  border-bottom: solid 4px #1081FF;
+}
+.music-type .line{
+  height: 9.36rpx;
+  background: #1081FF;
+  position: absolute;
+  bottom: 0;
+}
+
+.play-icon{
+  position: absolute;
+  width: 53.82rpx;
+  height: 53.82rpx;
+  background: #1081FF;
+  right: 0;
+  top: 50%;
+  transform: translateY(-45%);
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-appearance : none ;
+}
+.play-icon text{
+  font-size: 28.08rpx;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: center;
+  line-height: 53.82rpx
+}
+.play-icon image{
+  height: 40rpx;
+  width:40rpx;
+}
+.play-icon .icon-box{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rotate{
+  animation:haha1 10s linear infinite;
+  transform-origin: center center;
+}
+.rotate1{
+  border: solid 4.68rpx #1081FF;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+ @keyframes haha1 {
+
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        25% {
+            -webkit-transform: rotate(90deg);
+        }
+
+        50% {
+            -webkit-transform: rotate(180deg);
+        }
+
+        75% {
+            -webkit-transform: rotate(270deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+@keyframes changewidth
+{
+  0% {width:0rpx;}
+  100% {width:53.82rpx;}
+}
+.onOff-choose{
+    width: 93.6rpx;
+    height: 46.8rpx;
+    background: #1081FF;
+    border: solid 2.34rpx #1081FF;
+    border-radius: 23.4rpx;
+    box-sizing: border-box;
+    margin-right: 23.4rpx;
+    margin-left: 23.4rpx;
+}
+.gray{
+  background: #E4E4E4;
+  border-color: #E4E4E4;
+}
+.onOff-left{
+    float: left;
+}
+.onOff-choose>text{
+    width: 44.46rpx;
+    height: 42.12rpx;
+    border-radius: 23.4rpx;
+    background: #fff;
+}
+.onOff-choose .onOff-right{
+    float: right;
+}
+.onOff-choose.off{
+    background: rgba(48,137,213,.5);
+    border: solid 2.34rpx rgba(48,137,213,.5);
+}
+.hide{
+    display: none!important;
+}
+.music_head{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  z-index: 99
+}

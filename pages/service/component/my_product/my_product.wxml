@@ -1,0 +1,72 @@
+<!--pages/my_product/my_product.wxml-->
+<!-- 登录页面 -->
+<view style="min-height:100vh" bindtap="selectClick">
+  <view class="search">
+    <view class="iconfont">
+      <image class="icon-sousuo" src="{{fangdajing}}" />
+    </view>
+    <input bindinput="searchKey" data-type='product' bindtap='inputSrechData' wx:if="{{type=='产品'}}"
+      placeholder='  产品名称搜索' placeholder-style="color:#C4C4C4" class="search-ipt"></input>
+    <input bindinput="searchKey" data-type='product' bindtap='inputSrechData' wx:if="{{type=='服务'}}"
+      placeholder='  服务名称搜索' placeholder-style="color:#C4C4C4" class="search-ipt"></input>
+    <input bindinput="searchKey" data-type='product' bindtap='inputSrechData' wx:if="{{type=='文章'}}" placeholder=' 文章名称搜索'
+      placeholder-style="color:#C4C4C4" class="search-ipt"></input>
+  </view>
+  <view class="add-product" bindtap='addClick'>
+    <view class="tianjia">
+      <image class="" src="{{imgUrl+'tianjia.png'}}" />
+    </view>
+    <text >添加{{type}}</text>
+    <view class="iconfont icon-jiantou2">
+      <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+    </view>
+
+
+  </view>
+  <image src="{{upLoading}}" class="uploading {{upRoadingRotate?'loadRotate':''}}" wx:if="{{upRoadingRotate}}"></image>
+  <view class="noMoreProduct" wx:if="{{list.length == 0 && !upRoadingRotate}}">
+    <image wx:if="{{type=='产品'}}" class="noMoreProduct-img" src="{{imgUrl+'noproduct.png'}}" />
+    <image wx:if="{{type=='服务'}}" class="noMoreProduct-img" src="{{imgUrl+'noservice.png'}}" />
+    <image wx:if="{{type=='文章'}}" class="noMoreProduct-img" src="{{imgUrl+'noartical.png'}}" />
+    <text class="noMoreProduct-text">暂时没有{{type}}</text>
+  </view>
+
+
+  <view scroll-y="true" wx:if="{{!upRoadingRotate}}" class="scroll-item">
+    <view wx:for="{{list}}" wx:key="*this" data-index="{{index}}" bindtap="uncheck"
+      data-url="{{item.fDetailUrl}}" class="product-item {{proSelected == index ?'product-item-selected':''}}"
+      bindlongpress="productSelect" wx:if="{{item.isShow}}">
+      <image mode='aspectFill' src="{{item.fGoodsImgUrl}}" class="product-item-image" wx:if="{{item.fGoodsImgUrl}}">
+      </image>
+      <rich-text wx:if="{{type=='文章'}}" class='product-item-title' nodes="<div style='overflow:hidden;white-space:nowrap;text-overflow:ellipsis;'>{{item.fGoodsName}}</div>"
+        style="left:{{item.fGoodsImgUrl ? '187.2rpx':'35.1rpx' }};width:{{item.fGoodsImgUrl ? '500.76rpx':'641.16rpx'}};height:'81.9rpx'">
+      </rich-text>
+      <rich-text wx:else class='product-item-title' nodes="{{item.fGoodsName}}"
+        style="left:{{item.fGoodsImgUrl ? '187.2rpx':'35.1rpx' }};width:{{item.fGoodsImgUrl ? '500.76rpx':'641.16rpx'}};height: '81.9rpx'">
+      </rich-text>
+      <rich-text wx:if="{{item.fGoodsContentShow}}" class='product-item-content' nodes="<div style='overflow:hidden;white-space:nowrap;text-overflow:ellipsis;'>{{item.fGoodsContent}}</div>"
+        style="top:{{item.fGoodsImgUrl ?'65.52rpx': '75.52rpx'}};height:{{type=='文章' ? '42.12rpx' : '81.9rpx'}};width:{{item.fGoodsImgUrl ? '500.76rpx':'641.16rpx'}};left:{{item.fGoodsImgUrl ? '187.2rpx':'35.1rpx' }};">
+      </rich-text>
+      <view class="product-item-price"
+        style="left:{{item.fGoodsImgUrl ? '187.2rpx':'35.1rpx' }};width:{{item.fGoodsImgUrl ? '500.76rpx':'641.16rpx'}}">
+        <text wx:if="{{type=='产品' || type=='服务'}}" style="font-size:23.4rpx">¥</text>
+        <text wx:if="{{type=='产品' || type=='服务'}}" class="product-item-price-text">{{item.fGoodsPrice/100}}</text>
+        <text wx:if="{{type=='文章'}}" class="product-item-price-text" style="color:#bbbbbb">{{item.fCreateTime}}</text>
+      </view>
+      <text class="product-item-subName">{{item.fEntrepName}}</text>
+      <view class="product-item-box" wx:if="{{proSelected == index}}" style="height:{{items.length*101.4}}rpx">
+        <button wx:for="{{items}}" wx:key="{{item.name}}" data-index="{{item.name}}" catchtap="operating"
+          hover-class="operatSelected" class="product-item-text" open-type="{{item.name=='转发' ? 'share' : ''}}">
+          {{item.name}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<popup wx:if="{{showPop}}" bind:leftBtn="cancel" bind:rightBtn="confirm" contentTit="{{contentTit}}"
+  leftBtnTit="{{leftBtnTit}}" rightBtnTit='{{rightBtnTit}}' leftcolor='{{leftcolor}}' rightcolor='{{rightcolor}}'
+  direction="{{direction}}" contColor="{{contColor}}" textAlign="{{textAlign}}" leftWeight="{{leftWeight}}"
+  btnFsize="{{btnFsize}}" rightWeight="{{rightWeight}}"></popup>
+  <warnBox id="myComponent" title="{{title}}" warnFlash="{{warnFlash}}" hideModal="{{hideModal}}"></warnBox>
+  <login bind:myevent="onMyEvent" loginState='{{loginState}}'  link="{{link}}"></login>

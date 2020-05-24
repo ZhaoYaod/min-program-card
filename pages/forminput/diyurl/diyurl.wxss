@@ -1,0 +1,140 @@
+.diy-tip{
+  margin: 0rpx 0rpx 46.8rpx 0rpx;
+  border-radius: 2.34rpx;
+  width: 100%;
+  height: 65.52rpx;
+  position: relative;
+}
+.diy-tip text{
+  display: block;
+  background: rgba(255,102,0, 0.7);
+  font-size: 28.08rpx;
+  height: 65.52rpx;
+  line-height: 65.52rpx;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  transition: all 0.8s linear;
+}
+.diy-mode {
+  padding: 0 35.1rpx;
+  display: flex;
+  font-size: 32.76rpx;
+  margin-bottom: 23.4rpx;
+}
+.choose-mode{
+  display: flex
+}
+.choose-mode .code,.link{
+  display: flex;
+  align-items: center;
+  margin-right: 46.8rpx;
+}
+.choose-mode .radio{
+  margin-right: 11.7rpx;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: solid 2.34rpx #D7D7D7;
+  position: relative;
+  box-sizing: border-box;
+}
+.choose-mode .active{
+  border-color: #1081FF;
+}
+.radio text{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #1081FF;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.diyurl{
+  height: 121.68rpx;
+  padding: 0 35.1rpx;
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  overflow: hidden
+}
+.diyurl text{
+  width: 105.3rpx;
+  font-size: 32.76rpx;
+  line-height: 121.68rpx;
+}
+.iptBox{
+  flex: 1;
+  position: relative;
+}
+.diyurl input {
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 28.08rpx;
+}
+.diyurl .ipt-rig{
+  border-bottom: solid 2px #C0E9F9;
+}
+.diyurl .ipt-err{
+  border-bottom: solid 2px #FF0000;
+}
+.diyurl .line{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: solid 1px #2FB7EC;
+    box-shadow: 0 0 11.7rpx #2FB7EC;
+}
+.diyurl .red-line{
+  box-shadow: 0 0 11.7rpx #FF0000;
+  border-bottom: solid 1px #FF0000;
+}
+.btn{
+  padding: 0 35.1rpx;
+  height: 84.24rpx;
+  margin-top: 46.8rpx;
+}
+.btn text{
+  height: 100%;
+  width: 374.4rpx;
+  border-radius: 4.68rpx;
+  display: block;
+  color: #fff;
+  text-align: center;
+  line-height: 84.24rpx;
+  font-size: 28.08rpx;
+  font-weight: bold;
+  float: right;
+
+}
+.btn .hasUrl{
+  background: #1081FF;
+}
+.btn .noUrl{
+  background: #EAF1F5;
+}
+.btn .subing{
+  height: 84.24rpx;
+  width: 374.4rpx;
+  float: right;
+  background: #1081FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn .subing image{
+  width: 46.8rpx;
+  height: 46.8rpx;
+}
+.err-tip{
+  padding-left: 131.04rpx;
+  font-size: 28.08rpx;
+  color: #FF0000;
+}

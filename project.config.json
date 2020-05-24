@@ -1,0 +1,437 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.0",
+	"appid": "wx8c446cdd3d6b26be",
+	"projectname": "cardProgram",
+	"cloudfunctionTemplateRoot": "",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/mine/mine",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/service/service",
+					"pathName": "pages/service/service",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/buildstation/buildstation",
+					"pathName": "pages/buildstation/buildstation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/public/public",
+					"pathName": "tempcard/public/public",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/meter/meter",
+					"pathName": "pages/meter/meter",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid1/mid1",
+					"pathName": "tempcard/pages/mid1/mid1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid2/mid2",
+					"pathName": "tempcard/pages/mid2/mid2",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid3/mid3",
+					"pathName": "tempcard/pages/mid3/mid3",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid4/mid4",
+					"pathName": "tempcard/pages/mid4/mid4",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid5/mid5",
+					"pathName": "tempcard/pages/mid5/mid5",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid6/mid6",
+					"pathName": "tempcard/pages/mid6/mid6",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid7/mid7",
+					"pathName": "tempcard/pages/mid7/mid7",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid8/mid8",
+					"pathName": "tempcard/pages/mid8/mid8",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid9/mid9",
+					"pathName": "tempcard/pages/mid9/mid9",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid10/mid10",
+					"pathName": "tempcard/pages/mid10/mid10",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid11/mid11",
+					"pathName": "tempcard/pages/mid11/mid11",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "tempcard/pages/mid12/mid12",
+					"pathName": "tempcard/pages/mid12/mid12",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid13/mid13",
+					"pathName": "tempcard/pages/mid13/mid13",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid14/mid14",
+					"pathName": "tempcard/pages/mid14/mid14",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid15/mid15",
+					"pathName": "tempcard/pages/mid15/mid15",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid16/mid16",
+					"pathName": "tempcard/pages/mid16/mid16",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid17/mid17",
+					"pathName": "tempcard/pages/mid17/mid17",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid18/mid18",
+					"pathName": "tempcard/pages/mid18/mid18",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid19/mid19",
+					"pathName": "tempcard/pages/mid19/mid19",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid20/mid20",
+					"pathName": "tempcard/pages/mid20/mid20",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid21/mid21",
+					"pathName": "tempcard/pages/mid21/mid21",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid22/mid22",
+					"pathName": "tempcard/pages/mid22/mid22",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid23/mid23",
+					"pathName": "tempcard/pages/mid23/mid23",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid24/mid24",
+					"pathName": "tempcard/pages/mid24/mid24",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid25/mid25",
+					"pathName": "tempcard/pages/mid25/mid25",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid26/mid26",
+					"pathName": "tempcard/pages/mid26/mid26",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid27/mid27",
+					"pathName": "tempcard/pages/mid27/mid27",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid28/mid28",
+					"pathName": "tempcard/pages/mid28/mid28",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid29/mid29",
+					"pathName": "tempcard/pages/mid29/mid29",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid30/mid30",
+					"pathName": "tempcard/pages/mid30/mid30",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid31/mid31",
+					"pathName": "tempcard/pages/mid31/mid31",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid32/mid32",
+					"pathName": "tempcard/pages/mid32/mid32",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid33/mid33",
+					"pathName": "tempcard/pages/mid33/mid33",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid34/mid34",
+					"pathName": "tempcard/pages/mid34/mid34",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid35/mid35",
+					"pathName": "tempcard/pages/mid35/mid35",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid36/mid36",
+					"pathName": "tempcard/pages/mid36/mid36",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid37/mid37",
+					"pathName": "tempcard/pages/mid37/mid37",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid38/mid38",
+					"pathName": "tempcard/pages/mid38/mid38",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid39/mid39",
+					"pathName": "tempcard/pages/mid39/mid39",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "tempcard/pages/mid40/mid40",
+					"pathName": "tempcard/pages/mid40/mid40",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 45,
+					"name": "pages/forminput/forminput",
+					"pathName": "pages/forminput/forminput",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forminput/checkSite/checkSite",
+					"pathName": "pages/forminput/checkSite/checkSite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 47,
+					"name": "pages/choiceMusic/choiceMusic",
+					"pathName": "pages/choiceMusic/choiceMusic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/component/login/login",
+					"pathName": "pages/component/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 49,
+					"name": "pages/forminput/diyurl/diyurl",
+					"pathName": "pages/forminput/diyurl/diyurl",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forminput/avatarCropper/avatarCropper",
+					"pathName": "pages/forminput/avatarCropper/avatarCropper",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 51,
+					"name": "pages/forminput/sitetype/sitetype",
+					"pathName": "pages/forminput/sitetype/sitetype",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/addLable/addLable",
+					"pathName": "pages/addLable/addLable",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/forminput/chooseCode/chooseCode",
+					"pathName": "pages/forminput/chooseCode/chooseCode",
+					"scene": null
+				}
+			]
+		}
+	}
+}

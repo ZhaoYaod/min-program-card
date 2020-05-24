@@ -1,0 +1,38 @@
+/* pages/scan/readData/readData.wxss */
+page{
+  background-color:#808080;
+  height: 100%;
+  width: 100%;
+}
+.readdata-box {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 88.92rpx;
+  background-color:#5E5E5E;
+  height: 100%;
+  width: 100%; */
+}
+
+.readdata-img {
+  transform: rotateX(0deg);
+  transition: 0.3s all;
+  animation:myflah 1s linear infinite;
+}
+
+.readdata-text {
+  font-size: 28.08rpx;
+  color: #6292a6;
+  padding-top: 32.76rpx;
+}
+
+@keyframes myflah {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

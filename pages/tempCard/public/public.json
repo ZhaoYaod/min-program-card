@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "login":"/pages/component/login/login",
+     "popUp": "/pages/component/popUp/popUp",
+     "warnBox": "/pages/component/warnBox/warnBox",
+    "bgm": "/pages/tempCard/bgm/bgm",
+    "bill": "/pages/tempCard/bill/bill"
+  }
+}

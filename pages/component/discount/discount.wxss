@@ -1,0 +1,91 @@
+.activity1{
+  width: 630rpx;
+  height: 723rpx;
+  position: fixed;
+  top: 48%;
+  left: 50%;
+  /* position: absolute;
+  top:-50vh;
+  left: 50vw; */
+  margin: -361rpx 0 0 -315rpx;
+  z-index: 20;
+}
+.activity2{
+  width: 561.6rpx;
+  height: 449.28rpx;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 20;
+  text-align: center;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 23.4rpx;
+}
+.activity2>view>text{
+  color: #FF0000;
+  font-weight: bold;
+}
+.activi_tit{
+  font-size: 46.8rpx;
+  font-weight: bold;
+  color: #FF0000;
+  padding: 49.52rpx 0 30.8rpx;
+}
+.activity2 .close{
+  width: 60rpx;
+  height: 60rpx;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  /* transform: translateX(210rpx) translateY(-210rpx); */
+  transform: translateX(230rpx) translateY(-240rpx);
+}
+.activity2 .activi_btn{
+  width: 325.26rpx;
+  height: 70.2rpx;
+  line-height: 70.2rpx;
+  /* margin-bottom: 65.52rpx; */
+  background: #FF0000;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 9.36rpx;
+  display: inline-block;
+}
+.activity2 view:nth-child(3){
+  padding-bottom: 39.78rpx;
+}
+.activity2 view:nth-child(4){
+  padding-bottom: 36.8rpx;  
+}
+.activity1Box .close{
+  width: 60rpx;
+  height: 60rpx;
+  position: fixed;
+  /* left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(361rpx); */
+  right: 58rpx;
+  top: 106rpx;
+  z-index: 21;
+  /* opacity: 0.5; */
+}
+
+.shade{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 15;
+}
+.sharebtn{
+  width: 100%;
+  height:100vh;
+  position: fixed;
+  left: 0;top:0;
+  z-index: 20;
+  opacity: 0;
+}

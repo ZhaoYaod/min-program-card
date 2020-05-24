@@ -1,0 +1,21 @@
+<!--pages/effectchoose/effectchoose.wxml-->
+
+<view class="effectchoose">
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+      <radio value="{{item.index}}" checked="{{item.checked}}" class="radio-checked" color="#2FB7EC"/>
+      <text class="radio-text">{{item.value}}</text>
+    </label>
+  </radio-group>
+  <button class="btn" bindtap="selectEffect">使用</button>
+  <view id="dot">
+    <text id="dot-l"></text>
+    <text id="dot-m"></text>
+    <text id="dot-s"></text>
+  </view>
+  <text class="no-more">没有更多了</text>
+</view>
+<view class="bg weather rain" wx:if="{{showRain}}"></view>
+<view class="bg weather snow" wx:if="{{showSnow}}"></view>
+
+

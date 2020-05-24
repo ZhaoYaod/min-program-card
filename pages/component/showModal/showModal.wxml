@@ -1,0 +1,21 @@
+<!--pages/component/showModal/showModal.wxml-->
+<!--弹窗-->
+
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{hiddenmodalput}}"></view>
+
+<view class="modal-dialog" wx:if="{{hiddenmodalput}}">
+
+  <view class="modal-title">请输入标签</view>
+
+  <view class="modal-content">
+
+    <view class="modal-input lable-modal" wx:if="{{hiddenmodalput}}" title="请输入标签" confirm-color="#1081FF" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">
+      <input class="inputcolor input" placeholder-class="input-holder" placeholder-style="color:#bbb" type='text' placeholder=" 请输入内容"  value="{{minevalue}}" bindinput="setModal"  focus/>
+      <!-- <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入数量"></input> -->
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="confirm" data-status="confirm">提交</view>
+  </view>
+</view>

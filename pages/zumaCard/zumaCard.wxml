@@ -1,0 +1,63 @@
+<login bind:compontpass="compontpass" bind:myevent="myEvent" loginState ='{{loginState}}' link="{{link}}"></login>
+<scroll-view class="allBox" style="height:{{windowHeight}}px" scroll-y>
+  <view class="build-banner" wx:for="{{bannerList}}" wx:key="index" catchtap="loginClick">
+    <image class="build-banner-h4" src="{{item.url}}"></image>
+    <view class="build-banner-h1">{{item.t1}}</view>
+    <view class="{{index==0?'bannerH2':'build-banner-h2'}}">{{item.t2}}</view>
+    <view class="{{index==0?'bannerH3':'build-banner-h3'}}" catchtap="loginClick">添加名片</view>
+  </view>
+  <!-- <view class="build-banner">
+    <view class="build-banner-h1">一个能在微信社交圈自由传播的智能小程序名片</view>
+    <view class="build-banner-h2">关联网站、小程序、公众号，通过转发实现快速精准引流</view>
+    <view class="build-banner-h3" catchtap="loginClick">添加名片</view>
+  </view> -->
+  <view class="lineSpace2"></view>
+  <view class="templateC">
+    <view class="tText">近百种名片模板任意选</view>
+    <view class="tBox">
+      <view class="imgBox" wx:for="{{imgList}}" wx:key="index" catchtap="linkEachTem" data-tempath="{{item.fXmlPath}}">
+        <image class="realImg" src="{{item.url}}"></image>
+      </view>
+    </view>
+    <view class="build-banner-h3 moreF" catchtap="linkTem">查看模板</view>
+  </view>
+  <view class="lineSpace2"></view>
+  <view class="bodyFoot">
+    <view class="bf3">让社交功能更强大</view>
+    <view class="bf4">
+      <view class="bf4Li" wx:for="{{myList2}}" wx:key="index" data-type="{{item.type}}" catchtap="linkFP">
+          <view class="bf4Text bf4Text1">{{item.text1}}</view>
+          <view class="bf4Text bf4Text2">{{item.text2}}</view> 
+          <image class="bf4LiImg" src="{{item.url}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="notLand">
+    <view class="bodyC">
+      <view class="lineC"></view>
+      <!-- <view class="useNow">立即使用</view> -->
+      <view class="allFunction">族蚂名片十二大创新功能</view>
+      <view class="eachBox">
+        <view class="eachFunction" wx:for="{{myList}}" wx:key="index">
+          <view class="point"></view>
+          <view class="text">{{item.text}}</view>
+        </view>
+      </view>
+      <view style="width:100%;height:1px"></view>
+      <view class="otherC" catchtap="loginClick">创建名片</view>
+      <image class="bodyCImg" src="{{bodyCImgUrl}}"></image>
+    </view>
+  </view>
+  <view class="about_e">
+    <view class="about_e_h1">Copyright @ 2017 www.zuma.com  版权所有 </view>
+    <view class="about_e_h2">上海族蚂信息科技有限公司  沪ICP备18007337号-2</view>
+  </view>
+</scroll-view>
+
+<!-- 弹出框2 -->
+<view class="dialog2Zm" wx:if="{{dailogS}}" catchtap="dialog2C">
+  <view class="deleteBox {{dailogS?'addAn':''}}">
+    <view class="deleteT1 {{colorS&&(colorIndex==0)?'dialogC':''}}" data-index="0" catchtap="dailogClick">为他人建名片</view>
+    <view class="deleteT1 {{colorS&&(colorIndex==1)?'dialogC':''}}" data-index="1" catchtap="dailogClick">为自己建名片</view>
+  </view>
+</view>

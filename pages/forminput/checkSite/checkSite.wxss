@@ -1,0 +1,285 @@
+/* pages/checkSite.wxss */
+
+.checkSiteContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "黑体";
+}
+
+.noCheckSite {
+  padding-top: 187.2rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.checkSite .checkSiteBox:last-child{
+  border-bottom:none;
+}
+.checkSiteIcon {
+  width: 107.64rpx;
+  height: 104.64rpx;
+  display: flex;
+  align-items: center;
+  border: 1px solid #eaf1f5;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.checkSiteImg {
+  width: 37.44rpx;
+  height: 37.44rpx;
+}
+
+.checkSiteText {
+  padding-top: 23.4rpx;
+  font-size: 28.08rpx;
+  color: #6292a6;
+  padding-bottom: 51.48rpx;
+}
+
+.checkSiteBtn {
+  width: 374.4rpx;
+  height: 86.58rpx;
+  line-height: 86.58rpx;
+  border-radius: 4.68rpx;
+  color: white;
+  font-weight: bold;
+  font-size: 28.08rpx;
+  background-color: #1081FF;
+}
+
+.checkSite {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 35.1rpx;
+  border-bottom: solid 9.36rpx #EAF6FA;
+}
+
+.checkSiteBox {
+  width: 100%;
+  padding-top: 23.4rpx;
+  padding-bottom: 23.4rpx;
+  border-bottom: 2.34rpx solid #c0e9f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.checkStateBox {
+  width: 32.76rpx;
+  height: 32.76rpx;
+  border-radius: 50%;
+  border: 2.34rpx solid #e4e4e4;
+  vertical-align: top;
+  margin-right: 14.04rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.checkSiteBox .right{
+  width: 23.4rpx;
+}
+.checkSiteBox .right image{
+  width: 14.04rpx;
+  height: 23.4rpx;
+}
+.checkIS {
+  background-color: #2fb7ec;
+  border: none;
+}
+
+.checkNO {
+  background-color: white;
+}
+
+.checkState {
+  width: 32.76rpx;
+  height: 32.76rpx;
+}
+
+.siteIconBox {
+  display: inline-block;
+  width: 93.6rpx;
+  height: 93.6rpx;
+}
+
+.siteIcon {
+  width: 93.6rpx;
+  height: 100%;
+}
+
+.siteTitleBox {
+  display: inline-block;
+  padding-left: 23.4rpx;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.siteName {
+  font-size: 28.08rpx;
+  color: #122f46;
+}
+
+.siteTitle {
+  color: #6b6b6b;
+  font-size: 23.4rpx;
+  padding-top: 28.08rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.siteProup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18,47,70, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.siteProupBox {
+  width: 175.5rpx;
+  height: 175.5rpx;
+  background-color: white;
+  border-radius: 4.68rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.siteAdmin_a {
+  width: 21.06rpx;
+  height: 21.06rpx;
+  background-color: #3d9be9;
+  border-radius: 50%;
+  animation: myfirst 1s linear 0.5s infinite;
+  /* transition: 0.5s all; */
+}
+
+.siteAdmin_b {
+  width: 16.38rpx;
+  height: 16.38rpx;
+  background-color: #3d9be9;
+  border-radius: 50%;
+  margin-left: 16.38rpx;
+  animation: mytwo 1s linear 0.5s infinite;
+  /* transition: 0.5s all; */
+}
+
+.siteAdmin_c {
+  width: 14.04rpx;
+  height: 14.04rpx;
+  background-color: #3d9be9;
+  border-radius: 50%;
+  margin-left: 16.38rpx;
+  animation: mythree 1s linear 0.5s infinite;
+  /* transition: 0.5s all; */
+}
+.isPublish{
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 46.8rpx;
+  font-size: 28.08rpx;
+  width: 416.52rpx;
+  height: 49.14rpx;
+  line-height: 49.14rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+@keyframes myfirst {
+  0% {
+    width: 21.06rpx;
+    height: 21.06rpx;
+  }
+
+  25% {
+    width: 16.38rpx;
+    height: 16.38rpx;
+  }
+
+  50% {
+    width: 16.38rpx;
+    height: 16.38rpx;
+  }
+
+  75% {
+    width: 16.38rpx;
+    height: 16.38rpx;
+  }
+
+  100% {
+    width: 14.04rpx;
+    height: 14.04rpx;
+  }
+}
+
+@keyframes mythree {
+  0% {
+    width: 14.04rpx;
+    height: 14.04rpx;
+  }
+
+  25% {
+    width: 16.38rpx;
+    height: 16.38rpx;
+  }
+
+  50% {
+    width: 16.38rpx;
+    height: 16.38rpx;
+  }
+
+  75% {
+    width: 16.38rpx;
+    height: 16.38rpx;
+  }
+
+  100% {
+    width: 21.06rpx;
+    height: 21.06rpx;
+  }
+}
+
+@keyframes mytwo {
+  0% {
+    width: 16.38rpx;
+    height: 16.38rpx;
+  }
+
+  25% {
+    width: 21.06rpx;
+    height: 21.06rpx;
+  }
+
+  50% {
+    width: 21.06rpx;
+    height: 21.06rpx;
+  }
+
+  75% {
+    width: 21.06rpx;
+    height: 21.06rpx;
+  }
+
+  100% {
+    width: 14.04rpx;
+    height: 14.04rpx;
+  }
+}

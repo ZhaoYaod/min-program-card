@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "modal":"/pages/component/modal/modal",
+    "warnBox":"/pages/component/warnBox/warnBox",
+    "login": "/pages/component/login/login",
+    "cropper":"/pages/component/cropper/cropper"
+  },
+  "navigationBarTitleText": "编辑名片",
+  "navigationStyle":"default",
+  "navigationBarBackgroundColor":"#1081FF"
+}

@@ -1,0 +1,34 @@
+<!--pages/scan/addLable/addLable.wxml-->
+<view class="lable-container" wx:if="{{warnFlash==0}}">
+  <text class="lable-title">标签：</text>
+  <view class="label-box">
+    <view class="label-item {{item.ischeck?'label-itemischeck':''}}" wx:for="{{labelList}}" wx:key="i" wx:for-index="i" bindtap="ischeck" data-index="{{i}}">
+      {{item.title}}
+    </view>
+    <view class="label-updata" catchtap="update">
+      <view class="{{isupdate?'label-updata-rotate':'label-updata-norotate'}}"></view>
+      <text class="label-updta-text">换一批</text>
+    </view>
+  </view>
+  <view class="lable-prompt">选择或填写你的行业标签，让更多的人找到你！</view>
+  <!-- <view class="lable-warning" wx:if="{{ischeck}}">最多添加4个自定义标签</view> -->
+  <view class="lable-custom-text">
+    <text class="lable-custom">自定义：</text>
+    <!-- <text class="lable-text" wx:for="{{ischeckLable}}">{{item.title}}</text> -->
+    <view class="lable-custom-mine lable-custom-add" wx:for="{{mineList}}" bindlongtap="showfunc" data-index="{{i}}" wx:key="i" wx:for-index="i">
+      {{item.mineLable}}
+      <view class="functab" wx:if="{{item.functab}}">
+        <view bindtap="deleteLable" data-index="{{i}}" class="deleteBox" style="background-image:url({{deleteImg}})"></view>
+      </view>
+    </view>
+    <view wx:if="{{hiddenmodalbtn}}" class="lable-custom-add" bindtap="mineLable">+ 自定义</view>
+  </view>
+  <showModal hiddenmodalput="{{hiddenmodalput}}" minevalue="{{minevalue}}" bind:setValue="setValue" bind:cancel="cancel" bind:confirm="confirm"></showModal>
+  <view class="lable-allow" bindtap="addmark">
+    <view class="lable-mark {{ismark?'lable-ismark':'lable-onmark'}}"></view>
+    <text class="lable-ischeck">允许附近的人通过名片雷达找到你</text>
+  </view>
+  <view class="lable-btn" bindtap="uploading">下一步</view>
+</view>
+<warnBox title='{{warnTit}}' wx:if="{{hideModal}}" warnFlash="{{warnFlash}}"></warnBox>
+<popUp bind:leftBtn="leftBtn" contentTit="{{contentTit}}" direction="{{direction}}" wx:if="{{showPop}}"></popUp>

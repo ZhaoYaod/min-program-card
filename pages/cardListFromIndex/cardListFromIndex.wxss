@@ -1,0 +1,397 @@
+.myShare{
+  /* background-color: red; */
+  border-radius: 6rpx;
+  margin: 0 auto;
+  position: absolute;
+  left: -10000px;
+}
+.allBox{
+  width: 100%;
+  /* background-color: orange; */
+}
+.vienC{
+  position: absolute;
+  width:100%;
+  height:100%;
+  left: 0;
+  top:0;
+  background-color: rebeccapurple;
+}
+.title{
+  position: relative;
+  width: 100%;
+  height: 117rpx;
+  /* background-color: orchid; */
+}
+.imgBox{
+  width: 327.6rpx;
+  height: 70.2rpx;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  margin-top: -35.1rpx;
+  /* overflow: hidden; */
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+}
+.realImg{
+  position: absolute;
+  top:0rpx;
+  width: 70.2rpx;
+  height: 70.2rpx;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+}
+.Img1{
+  /* left: 0rpx; */
+}
+.Img2{
+  /* left: 20rpx; */
+}
+.Img3{
+  /* left: 40.2rpx; */
+}
+.Img4{
+  /* left: 60.2rpx; */
+}
+.titleT{
+  height: 32.76rpx;
+  position: absolute;
+  /* right: 23.4rpx; */
+  top:-22rpx;
+  color: #000;
+  font-size: 32.76rpx;
+  line-height: 117rpx;
+}
+
+.lineSpace{
+  width: 100%;
+  height: 14.04rpx;
+  background-color:#fff;
+}
+
+.eachList{
+  width: 100%;
+  height: 163.8rpx;
+  /* background-color: rosybrown; */
+  position: relative;
+}
+.contentBox{
+  width: 669.24rpx;
+  height: 100%;
+  /* background-color: red; */
+  position: absolute;
+  left: 5%;
+  top:0rpx;
+  border-bottom: 2.34rpx solid #F2F2F2;
+}
+.eachImgBox{
+  position: absolute;
+  left: 0rpx;
+  top:50%;
+  width: 112.32rpx;
+  height: 112.32rpx;
+  margin-top: -56.16rpx;
+  /* background-color: black; */
+  border-radius: 9.36rpx; 
+}
+.eachImg{
+  width: 100%;
+  height: 100%;
+  border-radius: 9.36rpx;
+}
+.eachTitleBox{
+  position: absolute;
+  left: 135.72rpx;
+  /* top:50%; */
+  width: 535rpx;
+  height: 112.32rpx;
+  margin-top: 12.16rpx;
+  /* background-color: orange; */
+
+}
+.eachTitle1,.eachTitle2,.eachTitle3{
+  width: 380rpx;
+  /* 隐藏 */
+  overflow: hidden;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 最后以...结尾 */
+  text-overflow: ellipsis;
+}
+.eachTitle1{
+  color: #000;
+  font-size: 32.76rpx;
+  /* height: 32.76rpx; */
+}
+.eachTitle2{
+  color: #A1A1A1;
+  font-size: 28.08rpx;
+  /* height: 30rpx; */
+  margin-top: 5rpx;
+}
+.eachTitle3{
+  color: #A1A1A1;
+  font-size: 23.4rpx;
+  /* height: 23.4rpx; */
+  margin-top: 5rpx;
+}
+.isShow{
+  visibility: hidden;
+  color: transparent;
+}
+.eachType{
+  position: absolute;
+  right: 0rpx;
+  top:9rpx;
+  background-color: #f2f2f2;
+  font-size: 23.4rpx;
+  color: #9A9B9C;
+  border-radius: 4.68rpx;
+  padding:0 3px;
+}
+.eachStatus{
+  position: absolute;
+  width: 84.24rpx;
+  height: 37.44rpx;
+  right: 0rpx;
+  bottom:0rpx;
+  font-size: 23.4rpx;
+  border-radius: 4.68rpx;
+  text-align: center;
+  line-height: 37.44rpx;
+}
+.isSure{
+  color: #fff;
+  background-color: #F55656;
+}
+.noSure{
+  color: #9A9B9C;
+  background-color: #E4E4E4;
+}
+.help{
+  width:374.4rpx;
+  height:86.58rpx;
+  background-color: #1081FF;
+  border-radius: 4.68rpx;
+  margin: 0 auto;
+  margin-top:70.2rpx;
+  font-size: 32.76rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 86.58rpx;
+}
+.openMenu{
+  width: 248.04rpx;
+  height:407.16rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top:28%;
+  z-index: 2;
+  border-radius: 4.68rpx;
+  box-shadow: 0 0 11.7rpx rgba(0, 0, 0, .35);
+  font-size:32.76rpx;
+  color: #515151;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: column;
+}
+.itemEach{
+  flex-grow: 1;
+  line-height: 101.79rpx;
+  text-indent: 23.4rpx;
+}
+.shareButton{
+  position: absolute;
+  left: 0;
+  top:50%;
+  background-color: red;
+  width: 100%;
+  height: 25%;
+  border-radius: 0;
+  background-color:transparent;
+  border-width:0rpx;
+  /* background-color: red; */
+  z-index: 4;
+}
+.shareButton::after{
+    border: none !important;
+}
+.pressBGC{
+  background-color: #f2f2f2;
+}
+/* 弹出框2样式 */
+.dialogBox{
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, .5);
+  position:fixed;
+  left: 0rpx;
+  top:0rpx;
+}
+.dialog2{
+  width:100%;
+  height:393.12rpx;
+  /* background-color: #fff; */
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-left: -50%;
+  margin-top: -196.56rpx;
+  /* background-color: rgba(0, 0, 0, .5) */
+}
+.deleteBox{
+  width:580.32rpx;
+  height:271.44rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-left: -290.16rpx;
+  margin-top: -135.75rpx;
+  background-color: #fff;
+  border-radius: 11.7rpx;
+  box-shadow: 0 0 11.7rpx rgba(0, 0, 0, .35);
+}
+.animC{
+  /* animation: BoxAnM .3s ease  alternate; */
+  /* 动画的名称。 */
+  animation-name:BoxAnM;
+  /* 规定动画完成一个周期所花费的秒或毫秒 */
+  animation-duration:.6s;
+  /* 规定动画何时开始 */
+  animation-delay:0s;
+  /* 规定动画被播放的次数 */
+  /* animation-iteration-count:infinite; */
+  /* 规定动画是否在下一周期逆向地播放 */
+  /* animation-direction:alternate; */
+}
+@keyframes BoxAnM
+{
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+.deleteT1{
+  height: 154.44rpx;
+  width: auto;
+  color: #474747;
+  font-size: 32.76rpx;
+  /* line-height: 154.442rpx; */
+  text-align: center;
+}
+.deleteT0{
+  padding: 15px 25px;
+  box-sizing: border-box;
+  text-align: left;
+  /* line-height: 0px; */
+}
+.deleteT{
+  height: 117rpx;
+  color: #000;
+  font-weight: bold;
+  border-top: 2.34rpx solid #f2f2f2;
+  line-height: 117rpx;
+}
+.dialogC{
+  color: #1081FF;
+  /* background-color: #f2f2f2; */
+}
+
+/* 删除弹出框样式 */
+.dialogBox2{
+  position: fixed;
+  width: 100%;
+  left:0;
+  top:0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.dialogDelete{
+  width:100%;
+  height:393.12rpx;
+  /* background-color: #fff; */
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-left: -50%;
+  margin-top: -196.56rpx;
+  /* background-color: rgba(0, 0, 0, .5); */
+
+
+}
+.deleteBox2{
+  width:580.32rpx;
+  height:271.44rpx;
+  background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  margin-left: -290.16rpx;
+  margin-top: -135.75rpx;
+  background-color: #fff;
+  border-radius: 11.7rpx;
+  box-shadow: 0 0 11.7rpx rgba(0, 0, 0, .35);
+
+}
+.deleteT2{
+  height: 154.44rpx;
+  width: auto;
+  color: #474747;
+  font-size: 32.76rpx;
+
+  /* padding: 23.4rpx 25px;
+  box-sizing: border-box; */
+}
+.oneLine{
+  line-height: 154.44rpx;
+  text-align: center;
+  /* margin-left: 24%; */
+}
+.twoLine{
+  padding: 27.4rpx 25px;
+  box-sizing: border-box;
+}
+.deleteT22{
+  height: 117rpx;
+  width: 100%;
+  /* background-color: rebeccapurple; */
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+}
+.item2{
+  flex-grow: 1;
+  border-top: 2.34rpx solid #F2F2F2;
+  font-weight: bold;
+  font-size: 32.76rpx;
+  text-align: center;
+  line-height: 117rpx;
+  color:#515151;
+}
+.item2:nth-child(1){
+  border-right: 2.34rpx solid #F2F2F2;
+}
+.item2:nth-child(2){
+  /* border-right: 2.34rpx solid #F2F2F2; */
+}

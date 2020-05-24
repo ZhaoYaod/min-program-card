@@ -1,0 +1,79 @@
+<!--cardListFromIndex.wxml-->
+<!-- <canvas canvas-id='myShare' class="myShare" style="height:162px;width:200px"></canvas> -->
+<view class="allBox" catchtap="cnacelC"  style="height:{{windowHeight}}px">
+
+  <!-- <view class="title">
+    <view class="imgBox">
+      <image class="realImg" mode="aspectFill" style="left:{{index*20}}rpx" wx:for="{{cardlist}}" wx:key="{{index}}" src="{{item.fPhotoUrl}}"></image>
+      <view class="titleT" style="left:{{(cardlist.length-1)*(20)+85}}rpx">好友的名片</view>
+    </view>
+  </view> -->
+  <!-- <view class="lineSpace"></view> -->
+  
+  <view class="listBox">
+    <view class="eachList {{item.bgc?'pressBGC':''}} {{eachBgcS&&(nowIndex==index)?'pressBGC':''}}" wx:for="{{cardlist}}" wx:key="index" data-fid="{{item.fId}}" data-fstate="{{item.fState}}" data-fcardtemplateurl="{{item.fCardTemplateUrl}}" catchtap="cardClick" catchlongpress="cardLongpress" data-index="{{index}}" data-ele="{{item}}" data-fbgm="{{item.fBgm}}" data-phone="{{item.fPhone}}">
+      <!-- 遮罩层 -->
+      <!-- <view class="vienC" wx:if="{{canClick&&nowIndex==index}}"></view> -->
+      <view class="contentBox">
+        <view class="eachImgBox">
+          <image class="eachImg" mode="aspectFill" src="{{item.fPhotoUrl}}"></image>
+        </view>
+        <view class="eachTitleBox">
+          <view class="eachTitle1 {{item.fUserName.length<=0?'isShow':''}}">{{item.fUserName?item.fUserName:'空字符'}}</view>
+          <view class="eachTitle2 {{item.fCorpName.length<=0?'isShow':''}}">{{item.fCorpName?item.fCorpName:'空字符'}}</view>
+          <view class="eachTitle3 {{item.fCardTag.length<=0?'isShow':''}}">{{item.fCardTag?item.fCardTag:'空字符'}}</view>
+          <!-- <view class="eachType">{{item.fCardTemplateName}}</view> -->
+          <view class="eachType">{{item.fPosition}}</view>
+          <view class="eachStatus {{item.fAuthen==1?'isSure':'noSure'}}">{{item.fAuthen==1?'已认证':'未认证'}}</view>
+        </view>
+
+      </view>
+      <view class="openMenu" wx:if="{{item.menuS&&!item.dailogS}}">
+        <view class="itemEach {{colorChange.colorShow&&colorChange.index==0?'dialogC':''}}" catchtap="menuClick" data-index="0" data-deleteindex="{{index}}" data-phone="{{item.fPhone}}" data-fid="{{item.fId}}" data-fstate="{{item.fState}}">置顶</view>
+        <view class="itemEach {{colorChange.colorShow&&colorChange.index==1?'dialogC':''}}" catchtap="menuClick" data-index="1" data-deleteindex="{{index}}" data-phone="{{item.fPhone}}" data-fid="{{item.fId}}" data-fstate="{{item.fState}}">移除名片</view>
+        <view  class="itemEach {{colorChange.colorShow&&colorChange.index==2?'dialogC':''}}" catchtap="menuClick" data-index="2" data-deleteindex="{{index}}" data-phone="{{item.fPhone}}" data-fid="{{item.fId}}" data-fstate="{{item.fState}}">转发</view>
+        <view class="itemEach {{colorChange.colorShow&&colorChange.index==3?'dialogC':''}}" catchtap="menuClick" data-index="3" data-deleteindex="{{index}}" data-phone="{{item.fPhone}}" data-fid="{{item.fId}}" data-fstate="{{item.fState}}">生成海报</view>
+        <button wx:if="{{item.fState==0}}" class="shareButton" data-ele="{{item}}" data-name="shareBtn" data-fid="{{item.fId}}" data-fusername="{{item.fUserName}}" data-fcardtemplateurl="{{item.fCardTemplateUrl}}" data-fphotourl="{{item.fPhotoUrl}}" open-type="share" data-fbgm="{{item.fBgm}}" catchtap="onShareAppMessage"></button>
+      </view>
+      <!-- 弹出框2 -->
+      <view class="dialogBox2" catchtap="dialogBox2Click" catchlongpress="cardLongpress2" wx:if="{{item.dailogS}}" style="height:{{windowHeight}}px">
+        <view class="dialogDelete">
+          <view class="deleteBox2">
+            <view class="deleteT2 {{lineP?'oneLine':'twoLine'}}" catchtap="doNothing">{{title}}</view>
+            <view class="deleteT22">
+              <view class="isCancel2 item2" data-index="0" data-deleteindex="{{index}}" catchtap="isCancelOrNot">取消</view>
+              <view class="isSure2 item2" data-index="1" data-deleteindex="{{index}}" catchtap="isCancelOrNot">移除</view>
+            </view>
+          </view>
+      </view>
+      <!-- 该名片已被所有者删除，是否移除该名片？ -->
+      <!-- <view class="dialogBox2" catchtap="dialogBox2Click" wx:if="{{item.dailogS}}" style="height:{{windowHeight}}px">
+        <view class="dialogDelete">
+          <view class="deleteBox2">
+            <view class="deleteT2">该名片已被所有者删除，是否移除该名片？</view>
+            <view class="deleteT22">
+              <view class="isCancel2 item2" data-index="0" data-deleteindex="{{index}}" catchtap="isCancelOrNot">取消</view>
+              <view class="isSure2 item2" data-index="1" data-deleteindex="{{index}}" catchtap="isCancelOrNot">移除</view>
+            </view>
+          </view>
+      </view> -->
+      
+    </view>
+
+    </view>
+  </view>
+  <view class="help" wx:if="{{cardlist.length>0}}" catchtap="helpClick">帮忙做一个</view>
+  <!-- 弹出框 -->
+  <view class="dialogBox" wx:if="{{dailogS}}" catchtap="dialogBoxClick" style="height:{{windowHeight}}px">
+    <view class="dialog2">
+      <view class="deleteBox {{addAnm?'animC':''}}">
+        <view class="deleteT1 deleteT0" catchtap="dailogClick2">该手机号已达到5张名片上限，无法继续创建</view>
+        <view class="deleteT1 deleteT"  catchtap="dailogClick">查看选择</view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<warningB warnFlash="{{num}}" title="{{warnTitle}}" hideModal="{{isShow}}"></warningB>
+

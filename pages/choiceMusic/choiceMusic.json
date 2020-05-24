@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "warnBox": "/pages/component/warnBox/warnBox"
+  },
+  "navigationStyle": "default",
+  "navigationBarBackgroundColor": "#1081FF",
+  "navigationBarTitleText": "音乐选择"
+}

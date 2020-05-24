@@ -1,0 +1,23 @@
+.posterImg{
+    width:570.8rpx;
+    height:1020rpx;
+    border-radius: 5px;
+    border: 4.68rpx solid #f2f2f2;
+    /* margin-top: 23.4rpx; */
+    position: absolute;
+    top:23.4rpx;
+    left:50%;
+    transform:translateX(-50%)
+}
+.saveImg{
+    width:468rpx;
+    height:84.24rpx;
+    background-color: #1081FF;
+    text-align: center;
+    line-height: 84.24rpx;
+    margin: 0 auto;
+    margin-top:1100.16rpx;
+    color: #fff;
+    font-size: 30.42rpx;
+    border-radius: 42.12rpx;
+  }

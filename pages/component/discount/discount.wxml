@@ -1,0 +1,21 @@
+<view wx:if="{{discount1||discount2}}" class="activity_box">
+    <view wx:if="{{discount1}}" class="activity1Box">
+        <image class="activity1" src="{{imgurl+'discount.png'}}" bindtap="receive"></image>
+        <image class="close" src="{{imgurl+'close.png'}}" bindtap="hidden"></image>
+    </view>
+    <view wx:if="{{ discount2}}" class="activity2" bindtap="creat">
+        <image class="close" src="{{imgurl+'close2.png'}}" bindtap="hidden"></image>
+        <view class="activi_tit">恭喜您</view>
+        <view >本期获得<text>{{relayAmount}}</text>元现金奖励！</view>
+        <view>累计已获得<text>{{amount}}</text>元奖励！</view>
+        <view class="activi_btn" catchtap="hidden">我知道了</view>
+    </view>
+    <view class="shade" bindtap="hidden"></view>
+</view>
+<!-- 组件 -->
+<warningB warnFlash="{{num}}" title="{{warnTitle}}" hideModal="{{isShow}}"></warningB>
+<!-- <login bind:myevent="onMyEvent" loginState="{{loginState}}"></login> -->
+<!-- <official-account></official-account> -->
+<!-- <scan wx:if="{{scan}}" showModal="{{scan}}" bindtap="onscan"></scan> -->
+
+

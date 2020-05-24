@@ -1,0 +1,44 @@
+/* pages/siteType.wxss */
+.common{
+  height: 186.56rpx;
+  display: flex;
+  border-bottom:solid 1px #F2F2F2;
+  padding: 0 37.44rpx;
+  box-sizing: border-box;
+}
+.zm-left{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+.zm-left>text{
+  color: #AEAEAE;
+  font-size: 28.08rpx;
+}
+.left-tit{
+  display: flex;
+  align-items: center;
+  font-size: 28.08rpx;
+  color: #000000;
+}
+
+.left-tit image{
+  width: 70.2rpx;
+  height: 70.2rpx;
+  margin-left: 2px;
+}
+.zm-right{
+  width: 105.3rpx;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.zm-right image{
+  width: 14.04rpx;
+  height: 23.4rpx;
+}
+.from-out .left-tit{
+  margin-bottom: 9.63rpx;
+}

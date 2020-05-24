@@ -1,0 +1,244 @@
+/* searchFromIndex.wxss */
+/* pages/index/index.wxss */
+@import "../index/indexIcon.wxss";
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.land{
+  width: 100%;
+  height: auto;
+   background-color: #f8fafb;
+}
+/* 已登录样式=========================================start */
+.serBox{
+  width: 100%;
+  height:107.64rpx;
+  position: fixed;
+  left: 0;
+  top:0;
+  background-color: #fff;
+  border-bottom: 1px solid #f2f2f2;
+  z-index:2;
+}
+.search{
+  width: 100%;
+  height:107.64rpx;
+  background-color: #fff;
+  position: relative;
+  border-bottom: 1px solid #f2f2f2;
+  z-index:2;
+}
+.deleteIcon{
+  width:44.46rpx;
+  height:44.46rpx;
+  /* background-color: #DBDBDB; */
+  position: absolute;
+  right: 6%;
+  top:48%;
+  margin-top: -20.23rpx;
+  border-radius: 50%;
+  z-index: 10;
+}
+.searchIcon{
+  position: absolute;
+  height: 33.08rpx;
+  width: 33.08rpx;
+  left: 33.08rpx;
+  top:50%;
+  margin-top: -21rpx;
+  font-size: 33.08rpx;
+  color: #8a8a8a;
+}
+.search-input{
+  position: absolute;
+  height: 40rpx;
+  width: 576rpx;
+  left: 52rpx;
+  top:0rpx;
+  font-size: 28.08rpx;
+  color:#161616;
+}
+.addMp{
+  position: absolute;
+  left: 78%;
+  top:54rpx;
+  margin-top:-30.42rpx;
+  width:140.4rpx;
+  height:60.84rpx;
+  background-color: #2FB7EC;
+  border-radius: 9.36rpx;
+  color: #fff;
+  font-size: 28.08rpx;
+  text-align: center;
+  line-height: 60.84rpx;
+  z-index:3;
+}
+.scBox{
+  position: absolute;
+  left: 0;
+  top:100rpx;
+  width: 100%;
+  height: auto;
+  /* background-color: #f2f2f2; */
+}
+.mpTitle{
+  width: 678.6rpx;
+  height:70.2rpx;
+  margin: 0 auto;
+  color: #a1a1a1;
+  font-size: 28.32rpx;
+  line-height: 70.2rpx;
+  border-bottom:1px solid #f2f2f2;
+}
+.ecSC{
+  width: 678.6rpx;
+  height:135.72rpx;
+  margin: 0 auto;
+  /* background-color: rosybrown; */
+  border-bottom:1px solid #f2f2f2;
+  padding-top: 18.72rpx;
+  padding-bottom: 18.72rpx;
+  box-sizing: border-box;
+}
+.imgBox{
+  display: inline-block;
+  width: 93.6rpx;
+  height: 93.6rpx;
+  /* margin-left: 37.44rpx; */
+  box-sizing: content-box;
+  background-color: #f2f2f2;
+  position: relative;
+}
+.nowImg,.nowImg2,.nowImg3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 4.68rpx;
+  border:2.34rpx solid transparent;
+  font-size: 53rpx;
+  /* background-color: #f2f2f2; */
+  color: #BFBFBF;
+}
+.nowImg{ 
+  left:0rpx;
+  top:0rpx;
+}
+.nowImg2{ 
+  left:-5rpx;
+  top:5rpx;
+}
+.nowImg3{ 
+  left:-10rpx;
+  top:10rpx;
+}
+.textBox{
+  display: inline-block;
+  vertical-align: top;
+  width: 504rpx;
+  height: 93.6rpx;
+  margin-left: 23.4rpx;
+  /* background-color: orangered; */
+  position: relative;
+}
+.textC1Box,.textC2Box{
+   /* display: inline-block; */
+   position: absolute;
+}
+.textC1Box{
+  left: 0rpx;
+  top:-8rpx;
+  /* 隐藏 */
+  overflow: hidden;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 最后以...结尾 */
+  text-overflow: ellipsis;
+  width: 220px;
+  font-size: 32.76rpx;
+}
+.textC2Box{
+  margin-left: 23.4rpx;
+}
+.textC3Box{
+  position: absolute;
+  left: 0rpx;
+  bottom: -4rpx;
+  width: 100%;
+  color: #a1a1a1;
+  /* 隐藏 */
+  overflow: hidden;
+  /* 不换行 */
+  white-space: nowrap;
+  /* 最后以...结尾 */
+  text-overflow: ellipsis;
+
+}
+.textC1,.textC2,.textC3{
+  width:100%;
+}
+.textC1{
+  color: #000;
+  font-size: 32.76rpx;
+  vertical-align: top;
+}
+.textC2{
+  color: #a1a1a1;
+  font-size: 28.32rpx;
+  vertical-align: top;
+  margin-left: 23.4rpx;
+}
+.textC3{
+  color: #a1a1a1;
+  font-size: 23.4rpx;
+}
+/* 搜索关键字高亮样式 */
+.highlight {
+  color: red;
+}
+.normal {
+  color: #484848;
+}
+.searcNo{
+  width: 100%;
+  height:117rpx;
+  background-color: #fff;
+  position: relative;
+  top:107.64rpx;
+  /* box-shadow: 0 0 4.68rpx rgba(0, 0, 0, .35) */
+}
+.searcNoBgc{
+  /* width: 100%; */
+  /* height:1000rpx; */
+  background-color: #F8FAFB;
+}
+.leidaIcon{
+  position: absolute;
+  width: 53.82rpx;
+  height:53.82rpx;
+  left: 5%;
+  top:50%;
+  margin-top:-30rpx;
+  /* background-color: red; */
+  color: #2FB7EC;
+  font-size: 53.82rpx;
+}
+.leidaText{
+  position: absolute;
+  width: 70%;
+  height:70.2rpx;
+  left: 14%;
+  top:50%;
+  margin-top:-35.1rpx;
+  /* background-color: rgb(55, 0, 255); */
+}
+.leidaText1{
+  color: #000;
+  font-size: 28.08rpx;
+}
+.leidaText2{
+  color: #BCBCBC;
+  font-size: 23.4rpx;
+}
+/* 已登录样式=========================================end */

@@ -1,0 +1,97 @@
+/* pages/scan/scan.wxss */
+
+.scan-container {
+  /* background-color: rgba(red, green, blue, alpha); *//* padding-left: 4.68rpx;
+  padding-right: 4.68rpx; *//* width: 100%; *//* box-sizing: border-box; *//* height: auto; *//* position: relative; */
+}
+
+.closeIMG {
+  width: 74.88rpx;
+  height: 74.88rpx;
+  position: absolute;
+  right: 58rpx;
+  top: 38rpx;
+  z-index: 11;
+  opacity: 0.5;
+}
+
+.closeImgS {
+  animation: mycloseImg 0.5s linear both;
+}
+
+@keyframes mycloseImg {
+  from {
+    height: 259.74rpx;
+    bottom: 0rpx;
+  }
+
+  to {
+    height: 0;
+    bottom: -259.74rpx;
+  }
+}
+
+.mask {
+  padding-left: 4.68rpx;
+  padding-right: 4.68rpx;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.scan-box {
+  background-color: white;
+  position: fixed;
+  left: 4.68rpx;
+  right: 4.68rpx;
+  border-top-left-radius: 14.04rpx;
+  border-top-right-radius: 14.04rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32.76rpx;
+  color: #797979;
+  text-align: left;
+  box-sizing: border-box;
+  padding-top: 56.16rpx;
+  z-index: 11;
+  animation: myflash 0.3s linear both;
+}
+
+@keyframes myflash {
+  from {
+    height: 0;
+    bottom: -259.74rpx;
+  }
+
+  to {
+    height: 259.74rpx;
+    bottom: 0rpx;
+  }
+}
+
+.scan-createcards {
+  width: 100%;
+  padding-left: 45rpx;
+  padding-bottom: 35rpx;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.scan-mycards {
+  width: 100%;
+  padding-top:35rpx;
+  padding-left: 45rpx;
+  padding-bottom: 74.88rpx;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.selectClass {
+  color: #1081ff;
+  /* transition: 1s all; */
+}

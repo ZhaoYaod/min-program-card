@@ -1,0 +1,67 @@
+<!--pages/service/service.wxml-->
+<scroll-view scroll-y="true">
+  <view class="radar" catchtap="radarlink">
+    <view class="img-box">
+      <image class="lists-img" src="{{imgUrl+'s-leidasou.png'}}" />
+    </view>
+    <text class="radar-h1">雷达搜</text>
+    <text class="radar-h2">标签、行业名、手机号码搜附近的名片</text>
+    <view class="iconfont icon-jiantou2">
+      <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+    </view>
+  </view>
+  <view class="member-centre" bindtap="redirectUrl">
+    <view class="img-box">
+      <image class="lists-img" src="{{imgUrl+'s-huiyuan.png'}}" />
+    </view>
+    <text class="radar-h1">会员中心</text>
+    <text class="radar-h2">查看会员资料，购物订单及服务订单</text>
+    <view class="iconfont icon-jiantou2">
+      <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+    </view>
+  </view>
+  <view class="my-product" catchtap="selectSubject">
+    <view class="img-box">
+      <image class="lists-img" src="{{imgUrl+'s-zhuti.png'}}" />
+    </view>
+    <text class="radar-h1">信息管理</text>
+    <text class="radar-h2">发布产品、服务、文章、合伙人管理</text>
+    <view class="iconfont icon-jiantou2">
+      <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+    </view>
+  </view>
+ 
+  <view class="my-artical" catchtap="saleOrder">
+    <view class="img-box">
+      <image class="lists-img" src="{{imgUrl+'s-dingdan.png'}}" />
+    </view>
+    <text class="radar-h1">销售订单</text>
+    <text class="radar-h2">管理订单及处理售后及投诉</text>
+    <view class="iconfont icon-jiantou2">
+      <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+    </view>
+  </view>
+  <view class="zuma-carte" catchtap="zmCard">
+    <view class="img-box">
+      <image class="lists-img" src="{{imgUrl+'s-mingpian.png'}}" />
+    </view>
+    <text class="radar-h1">关于族蚂名片</text>
+    <text class="radar-h2">了解族蚂名片的更多功能</text>
+    <view class="iconfont icon-jiantou2">
+      <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+    </view>
+  </view>
+  <view class="zuma-build   {{showPublic? 'marB100' : ''}}" catchtap="buildlink">
+    <view class="img-box">
+      <image class="lists-img" src="{{imgUrl+'s-jianzhan.png'}}" />
+    </view>
+    <text class="radar-h1">族蚂建站</text>
+    <text class="radar-h2">搭建在线交易的网站，链接到我的个人名片</text>
+    <view class="iconfont icon-jiantou2">
+      <image class="icon-jiantou2-img" src="{{jiantouImg}}" />
+    </view>
+  </view>
+</scroll-view>
+<tabbar scanback='{{scanBack}}'></tabbar>
+<wxpublic wx:if="{{showPublic}}" class="{{model == 1? 'wxPublicIPhone' : 'wxPublic'}}"></wxpublic>
+<login bind:myevent="onMyEvent" loginState='{{loginState}}'  link="{{link}}"></login>

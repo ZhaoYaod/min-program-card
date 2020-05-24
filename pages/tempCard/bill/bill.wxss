@@ -1,0 +1,90 @@
+/* pages/tempCard/bill/bill.wxss */
+.overCanvas{
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  height: 100%;
+  z-index: 9999999999999999;
+}
+.billStyle{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  /* background: #fff; */
+
+}
+.myBill{
+  border: 1rpx solid #f2f2f2;
+}
+.billWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.billEnter{
+  right: -100%;
+  animation: billActive 0.5s ease both;
+  z-index: 1000;
+  background-color: white;
+}
+
+.billHide {
+  right: 0;
+  z-index: 100;
+  animation: billNoActive 0.5s ease both;
+  background-color: white;
+}
+
+@keyframes  billActive{
+  form {
+    right: -100%;
+  }
+
+  to {
+    right: 0;
+  }
+}
+
+@keyframes  billNoActive{
+  form {
+    right: 0;
+  }
+
+  to {
+    right: -100%;
+  }
+}
+
+
+.canvaC{
+  margin:0 auto;
+  width: 280px;
+  margin-top: 23.4rpx;
+  border-radius: 11.7rpx;
+  border: 4.68rpx solid #f2f2f2;
+  overflow: hidden;
+}
+.saveImg {
+  width: 468rpx;
+  height: 84.24rpx;
+  background-color: #1081FF;
+  text-align: center;
+  line-height: 84.24rpx;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  color: #fff;
+  font-size: 30.42rpx;
+  border-radius: 42.12rpx;
+
+}

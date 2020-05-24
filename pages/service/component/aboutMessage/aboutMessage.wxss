@@ -1,0 +1,188 @@
+.absoutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "黑体";
+}
+
+.about_a {
+  width: 100%;
+  color: white;
+  /* padding-top: 86.58rpx; */
+  /* padding-bottom: 98.28rpx; */
+  text-align: center;
+  position: relative;
+  height:514.8rpx;
+}
+.about_a-banner{
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+  width:100%;
+  height:100%;
+  display: block;
+}
+.about_h1 {
+  font-size: 37.44rpx;
+  font-weight: bold;
+  padding-top:119.34rpx;
+  padding-left: 50.16rpx;
+  padding-right: 50.18rpx;
+  padding-bottom: 42.12rpx;
+  letter-spacing: 3rpx;
+  text-indent: 8rpx;
+}
+
+.about_h2 {
+  font-size: 28.08rpx;
+  padding-left: 65.52rpx;
+  padding-right: 65.52rpx;
+  text-align: center;
+  padding-bottom: 60.84rpx;
+}
+
+.about_h2_cont {
+  text-indent: 28rpx;
+  padding-left: 12.36rpx;
+  padding-right: 9.36rpx;
+  width: 610.74rpx;
+  box-sizing: border-box;
+}
+
+.about_btn {
+  width: 187.2rpx;
+  height: 60.84rpx;
+  line-height: 60.84rpx;
+  display: inline-block;
+  border: 2.34rpx white dashed;
+  font-size: 28.08rpx;
+}
+
+.message_a {
+  background-color: #f2f2f2;
+  width: 100%;
+  padding-top: 51.48rpx;
+  padding-bottom: 65.52rpx;
+  text-align: center;
+}
+
+.message_a_h1 {
+  font-size: 37.44rpx;
+  padding-bottom: 35.1rpx;
+}
+
+.message_a_imgBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 46.8rpx;
+  padding-right: 55.52rpx;
+  box-sizing: border-box;
+}
+
+.message_a_imgCont {
+  width: calc(100%/2.12);
+  margin-left: 18.72rpx;
+  display: inline-block;
+}
+
+.message_a_img {
+  height: 187.2rpx;
+  width: 100%;
+  box-sizing: border-box;
+  /* border: 1px solid #797979;
+  background-color: white; */
+}
+
+.message_a_text {
+  padding-top: 9.36rpx;
+  padding-bottom: 9.36rpx;
+  font-size: 28.08rpx;
+  color:#868686;
+}
+
+.message_a_imgCont:nth-child(n+3) {
+  margin-top: 14.04rpx;
+}
+.message_b{
+  text-align: left;
+  padding-top:46.8rpx;
+  padding-left: 65.52rpx;
+  width: 100%;
+  padding-bottom: 65.52rpx;
+  box-sizing: border-box;
+}
+.message_b_cont-line{
+  position: absolute;
+  width:16.38rpx;
+  height:215.3rpx;
+}
+.eachStep {
+  /* background-color: red; */
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.eachS {
+  font-size: 28.08rpx;
+  color: #000;
+  margin-left: 42.12rpx;
+}
+
+.eachS:nth-child(n+2) {
+  margin-top: 70.2rpx;
+}
+
+.imgL {
+  height: 94%;
+  width: 18.72rpx;
+  background-color: #fff;
+  position: absolute;
+  left: -1rpx;
+  top: 10rpx;
+}
+.message_b_h1{
+  font-size: 37.44rpx;
+  padding-bottom: 65.52rpx;
+}
+.message_b_text{
+    position: relative;
+    font-size: 28.08rpx;
+    padding-left:25.74rpx;
+    /* padding-bottom: 53.82rpx; */
+    padding-bottom:52.84rpx;
+    /* border-left:1px solid #2FB7EC; */
+}
+.about_e{
+  width:100%;
+  background-color:#1081FF;
+  color:white;
+  font-size: 23.4rpx;
+  padding-top: 58.5rpx;
+  padding-left:51.48rpx;
+  padding-bottom: 79.56rpx;
+}
+.kefu{
+  width: 117rpx;
+  height: 117rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 23.4rpx rgba(0, 0, 0, .2);
+  position: fixed;
+  right: 37.44rpx;
+  bottom:177.84rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kefuText{
+  font-size: 28.08rpx;
+  color: #000;
+  text-align: center;
+  width: 56.16rpx;
+}

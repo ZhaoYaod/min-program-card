@@ -1,0 +1,34 @@
+<!--pages/my_product/my_product.wxml-->
+<view class="search">
+  <button class="btn-addtocard {{blueBg?'btn-addtocard-bg1':'btn-addtocard-bg2'}}" bindtap="deleToList">
+    <text class="" selectable="false" space="false" decode="false">移除{{type}}</text>
+  </button>
+</view>
+<scroll-view scroll-y="true" class="scroll-item">
+  <view wx:for="{{list}}" wx:key="{{item.image}}" data-index="{{index}}" wx:if="{{item.isShow}}"
+    class="product-item {{showA[index] ?'product-item-selected':''}}" catchtap="productSelect">
+    <view class="check-radio {{item.isCheck ?'check-radio-bg':''}}">
+    </view>
+    <image mode='aspectFill' src="{{item.fGoodsImgUrl}}" class="product-item-image" wx:if="{{item.fGoodsImgUrl}}">
+    </image>
+    <view class="item-box"
+      style="left:{{item.fGoodsImgUrl ?'230.4rpx': '86.58rpx' }};width:{{item.fGoodsImgUrl ?'475.02rpx':'627.12rpx'}}">
+      <rich-text class='product-item-title' nodes="{{item.fGoodsName}}"
+        style="top:{{item.fGoodsImgUrl ?'21.6rpx': '35.1rpx'}};height:{{type=='文章' ? '42.12rpx' : '81.9rpx'}}">
+      </rich-text>
+      <rich-text wx:if="{{item.fGoodsContentShow}}" class='product-item-content' nodes="{{item.fGoodsContent}}"
+        style="top:{{item.fGoodsImgUrl ?'65.52rpx': '75.52rpx'}};height:{{type=='文章' ? '42.12rpx' : '81.9rpx'}}">
+      </rich-text>
+      <view class="product-item-price">
+        <text wx:if="{{type=='产品' || type=='服务'}}" style="font-size:23.4rpx">¥</text>
+        <text wx:if="{{type=='产品' || type=='服务'}}" class="product-item-price-text">{{item.fGoodsPrice/100}}</text>
+        <text wx:if="{{type=='文章'}}" class="product-item-price-text" style="color:#bbbbbb">{{item.fCreateTime}}</text>
+      </view>
+      <text class="product-item-subName">来自{{item.fEntrepName}}</text>
+    </view>
+    <view class="item-bottom-line"></view>
+  </view>
+    
+</scroll-view>
+<warnBox id="myComponent" title="{{title}}" warnFlash="{{warnFlash}}" hideModal="{{hideModal}}"></warnBox>
+<login bind:myevent="onMyEvent" loginState='{{loginState}}'  link="{{link}}"></login>

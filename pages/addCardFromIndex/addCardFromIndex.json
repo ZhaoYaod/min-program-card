@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+      "login": "/pages/component/login/login"
+  },
+  "navigationBarTitleText": "添加名片"
+}

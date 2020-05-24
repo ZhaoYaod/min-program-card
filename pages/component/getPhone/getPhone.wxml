@@ -1,0 +1,11 @@
+<!--pages/component/scan/scan.wxml-->
+<getPhone class="scan-container">
+  <view class="mask" catchtouchmove="preventTouchMove"></view>
+  <view class="scan-box">
+    <image src="{{indexImg}}" mode="aspectFit" class="scan-imgae"></image>
+    <view class="scan-text">族蚂名片</view>
+    <!-- <loading>dddd</loading> -->
+    <button open-type="getPhoneNumber" class="scan-createcards" bindgetphonenumber="getPhoneNumber">
+      <image class="scan-weimage" mode="aspectFit" src="{{weChat}}"></image>绑定手机号</button>
+  </view>
+</getPhone>

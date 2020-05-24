@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "warnBox": "../warnBox/warnBox",
+    "popUp": "../popUp/popUp"
+  }
+}

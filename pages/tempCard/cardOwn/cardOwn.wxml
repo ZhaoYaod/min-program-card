@@ -1,0 +1,29 @@
+<!--pages/tempCard/cardOwn/cardOwb.wxml-->
+
+
+
+<view class="tempcardOwn">
+    <!-- //头像 -->
+    <view class="cavatarimg">
+        <image class="cavatar" src="{{cavatarSrc}}" mode="aspectFill"  data-src="{{cavatarSrc}}" catchtap="showBigImg"></image>
+    </view>
+    <!-- // 姓名 + 职位 + 公司 cmessage1 -->
+    <view>
+      <view class="cname">
+        <text class="cmessage1tit">{{cmessage1.cname.cnameTit}}</text>
+        <text class="cmessage1cont cmessage1cont1">{{cmessage1.cname.cnameCont}}</text>
+      </view>
+      <view class="cpost">
+        <text class="cmessage1tit">{{cmessage1.cpost.cpostTit}}</text>
+        <!-- <rich-text class="cmessage1cont cmessage1cont2" space="nbsp" nodes="{{cmessage1.cpost.cpostCont}}"></rich-text> -->
+        <view class="cmessage1cont cmessage1cont2">{{cmessage1.cpost.cpostCont}}</view>
+      </view>
+      <view class="ctitle">
+        <text class="cmessage1tit">{{cmessage1.ctitle.ctitleTit}}</text>
+        <!-- <rich-text class="cmessage1cont cmessage1cont3" space="nbsp" nodes="{{cmessage1.ctitle.ctitleCont}}"></rich-text> -->
+        <view class="cmessage1cont cmessage1cont3">{{cmessage1.ctitle.ctitleCont}}</view>
+      </view>
+    </view>
+    
+</view>
+  

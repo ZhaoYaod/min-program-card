@@ -1,0 +1,248 @@
+<login  bind:myevent="onMyEvent" loginState='{{loginStatus}}'></login>
+<view wx:if="{{loading}}">
+  <warnBox
+    id="myComponent"
+    title="数据加载中"
+    warnFlash="1"
+  ></warnBox>
+</view>
+<view-scroll scroll-y="true" style="height:{{winH}}" wx:else>
+  <wxs src='./filter.wxs' module='filter'></wxs>
+  <view class="lable" data-id='4' bindtap="redirectUrl">
+    <text>标签</text>
+    <text>{{filter.lable(lable)}}</text>
+    <view class="right">
+      <image src="{{imgUrl+'jiantou.png'}}"></image>
+    </view>
+  </view>
+  <view class="tempname" data-id='5' bindtap="redirectUrl">
+    <text class="leftx">*</text>
+    <text class="leftcont">模板</text>
+    <text>{{tempname}}</text>
+    <view class="right">
+      <image src="{{imgUrl+'jiantou.png'}}"></image>
+    </view>
+  </view>
+  <view class="forminput">
+    <view class="noavatar" wx:if="{{error!=''}}">{{error}}</view>
+    <view class="tempavatar" id="head">
+      <text class="leftx">*</text>
+      <text class="leftcont">头像</text>
+      <view class="imginput">
+        <view class="inner" id="inner" style="height:{{filter.headType(headType,'H')}}rpx;width:{{filter.headType(headType,'W')}}rpx;border:2px dashed #1081FF;position:relative;overflow:hidden;" bindtap="editorAgainPhoto">
+            <image style="height:{{headH}}px;width:{{headW}}px;position:absolute;top:{{fixedy}}px;left:{{fixedx}}px;" src="{{photolist}}" mode="aspectFit" bindload="imgload"></image>
+          <view class="page__bd page__bd_spacing" wx:if="{{progressType==1}}">
+            <view class="weui-progress">
+                <view class="weui-progress__bar">
+                    <progress percent="{{progress}}" stroke-width="3" />
+                </view>
+            </view>
+          </view>
+        </view>
+        <view bindtap="uploadimg" class="upload-btn" data-id="1">上传</view>
+      </view>
+    </view>
+    <view class="textinput {{activedata=='cname'?'active':errorname=='cname'?'errorred':''}}" id="name">
+      <text class="leftx">*</text>
+      <text class="leftcont">姓名</text>
+      <input class="" data-active="cname" value="{{cname}}" maxlength='10' confirm-type="next" bindfocus="onfocus" bindblur="nofocus" data-type="0" placeholder=" 填写姓名" placeholder-style='color:#BBBBBB;font-size:28.08rpx;'></input>
+      <text class="er" wx:if="{{errorname=='cname'}}"></text>
+    </view>
+    <view class="textinput {{activedata=='cnumber'?'active':errorname=='cnumber'?'errorred':''}}" id="telphone">
+      <view class="countryCode" bindtap="code">
+        <text>{{filter.code(countryCode)}}</text>
+        <image src='{{imgUrl+"jiantou.png"}}'></image>
+      </view>
+      <input class="" data-active="cnumber" data-type="1"  value="{{cnumber}}" maxlength='11' confirm-type="next" bindfocus="onfocus" bindblur="nofocus" bindtouchend="changePhone" bindinput="inputEnd" placeholder=" 请填写手机号码" placeholder-style='color:#BBBBBB;font-size:28.08rpx;' focus="{{focus}}"></input>
+      <text class="er" wx:if="{{errorname=='cnumber'}}"></text>
+    </view>
+    <view class="textinput">
+      <text class="butn">企业名称</text>
+      <input class="{{activedata=='ctitle'?'active':errorname=='ctitle'?'errorred':''}}" data-active="ctitle" value="{{ctitle}}" maxlength='60' confirm-type="next" bindfocus="onfocus" bindblur="nofocus" data-type="2" placeholder=" 填写企业名称" placeholder-style='color:#BBBBBB;font-size:28.08rpx;'></input>
+      <text class="er" wx:if="{{errorname=='ctitle'}}"></text>
+    </view>
+    <view class="textinput">
+      <text class="butn">职务</text>
+      <input class="{{activedata=='cpost'?'active':errorname=='cpost'?'errorred':''}}" data-active="cpost" value="{{cpost}}" maxlength='20' confirm-type="next" bindfocus="onfocus" bindblur="nofocus" data-type="3" placeholder=" 填写职务" placeholder-style='color:#BBBBBB;font-size:28.08rpx;' bindinput="limitLen"></input>
+    </view>
+    <view class="textinput {{activedata=='cmail'?'active':errorname=='cmail'?'errorred':''}}" id="mail">
+      <text class="butn">邮箱</text>
+      <input class="" data-active="cmail" value="{{cmail}}" maxlength='50' confirm-type="next" bindfocus="onfocus" bindblur="nofocus" data-type="4" placeholder=" 填写邮箱" placeholder-style='color:#BBBBBB;font-size:28.08rpx;' bindinput="limitLen"></input>
+      <text class="er" wx:if="{{errorname=='cmail'}}"></text>
+    </view>
+    <view class="textinput">
+      <text class="butn">微信号</text>
+      <input class="{{activedata=='cwx'?'active':errorname=='cwx'?'errorred':''}}" data-active="cwx" value="{{cwx}}" confirm-type="next" bindfocus="onfocus" bindblur="nofocus" data-type="5" placeholder=" 填写微信号" placeholder-style='color:#BBBBBB;font-size:28.08rpx;' bindinput="limitLen"></input>
+    </view>
+    <view class="location {{errorname=='location'?'errorred':''}}">
+      <text>详细地址</text>
+      <input value="{{location}}" disabled="{{chnLocation}}" data-id="1" bindtap="chooselocation" data-active="location" placeholder=" 填写详细地址" placeholder-style='color:#BBBBBB;font-size:28.08rpx;' maxlength="60" bindinput="limitLen"></input>
+      <view class="map" bindtap="chooselocation"  data-id="2">
+        <image src='{{imgUrl+"ditu.png"}}' style="width:51.42rpx;height:51.42rpx" wx:if="{{chnCode}}"></image>
+        <image src='{{imgUrl+"ditu2.png"}}' style="width:51.42rpx;height:51.42rpx" wx:else></image>
+      </view>
+    </view>
+    <!-- <view class="location">
+      <text>动效</text>
+      <text bindtap="redirectUrl" data-id="1">{{gif}}</text>
+      <view class="right" bindtap="redirectUrl" data-id="1">
+        <image src='{{imgUrl+"right2.png"}}' style="width:12rpx;height:18rpx"></image>
+      </view>
+    </view> -->
+    <view class="music location">
+      <text>音效</text>
+      <text bindtap="redirectUrl" data-id="2" id="{{bgmurl?'hasBgm':''}}">{{bgm}}</text>
+      <view class="right" bindtap="redirectUrl" data-id="2">
+        <image src='{{imgUrl+"jiantou.png"}}' style="width:24rpx;height:30rpx"></image>
+      </view>
+    </view>
+    <view class="music" wx:if="{{ccreatetype==1}}">
+      <text>产品</text>
+      <text bindtap="redirectUrl" data-id="6">已选择<text class="blue">“{{PRODUCT}}”</text>个产品</text>
+      <view class="right" bindtap="redirectUrl" data-id="6">
+        <image src='{{imgUrl+"jiantou.png"}}' style="width:24rpx;height:30rpx"></image>
+      </view>
+    </view>
+    <view class="music" wx:if="{{ccreatetype==1}}">
+      <text>服务</text>
+      <text bindtap="redirectUrl" data-id="7">已选择<text class="blue">“{{SERVICE}}”</text>个服务</text>
+      <view class="right" bindtap="redirectUrl" data-id="7">
+        <image src='{{imgUrl+"jiantou.png"}}' style="width:24rpx;height:30rpx"></image>
+      </view>
+    </view>
+    <view class="music" wx:if="{{ccreatetype==1}}">
+      <text>文章</text>
+      <text bindtap="redirectUrl" data-id="8">已选择<text class="blue">“{{ARTICAL}}”</text>个文章</text>
+      <view class="right" bindtap="redirectUrl" data-id="8">
+        <image src='{{imgUrl+"jiantou.png"}}' style="width:24rpx;height:30rpx"></image>
+      </view>
+    </view>
+    <view class="connectwarn">可选择族蚂网创建的URL或者填写外站URL</view>
+    <view class="location music">
+      <text>网址</text>
+      <text bindtap="redirectUrl" data-id="3" id="{{webadress?'hasWebadress':''}}">{{webadress}}</text>
+      <view class="right" data-id="3" bindtap="redirectUrl">
+        <image src='{{imgUrl+"jiantou.png"}}' style="width:24rpx;height:30rpx"></image>
+      </view>
+    </view>
+    <view class="small-procedures">
+      <view class="procedures-tit">
+        <text>小程序及公众号二维码：</text>
+      </view>
+      <view class="procedures-tip">
+        <text>展示小程序二维码快速跳转指定小程序（收费10元）</text>
+        <text>展示公众号二维码保存至相册再进行扫码识别（收费5元）</text>
+      </view>
+      <view class="upload-code">
+        <view style="width:178.57rpx;margin-right: 51.48rpx;">
+          <view class="xcx code">
+            <image class="nopro" wx:if="{{!submitProcode}}" src="{{cprocode}}" lazy-load="false" bindtap="uploadimg" data-id="2"></image>
+            <image class="haspro" wx:else src="{{cprocode}}" lazy-load="false" bindtap="uploadimg" data-id="2" mode="aspectFit"></image>
+            <view class="page__bd page__bd_spacing" wx:if="{{progressType==2}}">
+              <view class="weui-progress">
+                  <view class="weui-progress__bar">
+                      <progress percent="{{progress}}" stroke-width="3" />
+                  </view>
+              </view>
+            </view>
+          </view>
+          <image src="{{imgUrl+'XX.png'}}" class="close" bindtap="changeCode" data-id="1" wx:if="{{checkCodeArr[0]==1}}"></image>
+          <text style="font-size:28.57rpx;color:#122f46">小程序码</text>
+        </view>
+        <view style="width:178.57rpx">
+          <view class="gzh code">
+            <image class="nopro"  wx:if="{{!sibmitPubcode}}" src="{{cpubcode}}" lazy-load="false" bindtap="uploadimg" data-id="3"></image>
+            <image class="haspro" wx:else src="{{cpubcode}}" lazy-load="false"  bindtap="uploadimg" data-id="3" mode="aspectFit"></image>
+            <view class="page__bd page__bd_spacing" wx:if="{{progressType==3}}">
+              <view class="weui-progress">
+                  <view class="weui-progress__bar">
+                      <progress percent="{{progress}}" stroke-width="3" />
+                  </view>
+              </view>
+            </view>
+          </view>
+          <image src="{{imgUrl+'XX.png'}}" class="close" bindtap="changeCode"  data-id="2" wx:if="{{checkCodeArr[1]==1}}"></image>
+          <text style="font-size:28.57rpx;color:#122f46">公众号二维码</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="formbotton">
+    <button class="{{submitstatus==0?'':'none'}}">提交</button>
+    <button class="{{submitstatus==1?'':'none'}}" bindtap="submitInfo">提交</button>
+    <button class="{{submitstatus==2?'':'none'}}"><image src="{{imgUrl+'wait.png'}}"></image></button>
+  </view>
+  <view class="modal" wx:if="{{modalState}}">
+      <modal 
+      id="myComponent" 
+      textAlign='left' 
+      fweight='bold'
+      bind:leftBtn="modalLeft" 
+      bind:rightBtn='modalRight' 
+      content='{{content}}' 
+      leftBtn='{{leftBtn}}' 
+      rightcolor='{{rightColor}}'
+      data-type="2"
+      bindtap="closeMask"
+      rightBtn="{{rightBtn}}"></modal>
+  </view>
+  <view class="mask" wx:if="{{showModal}}" data-state="{{closeModalStatus}}" catchtouchmove="return" bindtap="closeMask" data-type="1">
+    <view class="modal-body">
+      <view class="up" style="text-align:{{modalContentText}}">
+        <text>{{modalContent}}</text>
+      </view>
+      <view class="down" catchtap="closeModal">
+        <text>{{modalBtn}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="subModal-mask" wx:if="{{subModal.view}}" catchtouchmove="return">
+    <view class="subModal" wx:if="{{subModal.type==2}}">
+      <view class="subModalIcon" wx:if="{{subModal.icon}}">
+        <image src="{{subModal.iconSrc}}"></image>
+      </view>
+      <view class="subModalContent">
+        <text>{{subModal.content}}</text>
+      </view>
+    </view>
+    <view wx:if="{{subModal.type==1}}">
+      <warnBox
+        id="myComponent"
+        title="{{subModal.content}}"
+        warnFlash="1"
+      ></warnBox>
+    </view>
+  </view>
+  <view class="pay-modal-mask" catchtouchmove="return" wx:if="{{payModal.view}}" bindtap="closeMask" data-type="3">
+    <view class="pay-modal" id="pay" wx:if="{{payModal.view}}">
+      <view class="title">
+        <view class="close-icon" catchtap="closeDiolog">
+          <image src="{{imgUrl+'u1606.png'}}"></image>
+        </view>
+      </view>
+      <view class="content">
+        <text wx:for="{{payItems}}" wx:key="{{item.type}}">{{filter.fee(item.type,item.price)}}</text>
+      </view>
+      <view class="fee">
+        <text wx:if="{{!discountMoney}}">合计费用：{{totalFee/100}}元</text>
+        <text wx:else>合计费用：{{totalFee/100}}元，{{filter.disCount(discountMoney,totalFee)}}</text>
+      </view>
+      <view class="btn">
+        <text catchtap="closeDiolog">取消</text>
+        <text bindtap="pay">{{filter.payText(discountMoney,totalFee)}}</text>
+      </view>
+    </view>
+  </view>
+</view-scroll>
+<view wx:if="{{cropper}}" style="position:fixed;z-index:100;top:0;left:0;width:100%;height:100%">
+  <cropper
+    imgSrc="{{photolist}}"
+    height2="{{height2}}"
+    width2="{{width2}}"
+    disable_rotate="true"
+    disable_width='true'
+    disable_height='true'
+    bind:tapcut='editorPhoto'
+    ></cropper>
+</view>
+<canvas canvas-id='myShare' class="myShare" style="height:162px;width:200px"></canvas>
